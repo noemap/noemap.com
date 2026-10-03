@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { connection } from "next/server";
 import { publicEntryData, entryCatalog } from "../server/entry";
 import { entrySelection } from "../domain/entry";
@@ -8,6 +9,35 @@ import { QuestionDiscovery } from "../components/entry/QuestionDiscovery";
 import { KnowledgeMotif } from "../components/entry/KnowledgeMotif";
 import { NodeCards } from "../components/exploration/NodeCards";
 import { SearchForm } from "../components/exploration/SearchForm";
+
+export const metadata: Metadata = {
+  openGraph: {
+    title: "NOEMAP — 人間とは何か。",
+    type: "website",
+    url: "/",
+    images: [
+      {
+        url: "/brand/noemap-home-og.png",
+        width: 1200,
+        height: 630,
+        alt: "NOEMAP — 人間とは何か。",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NOEMAP — 人間とは何か。",
+    images: [
+      {
+        url: "/brand/noemap-home-og.png",
+        width: 1200,
+        height: 630,
+        alt: "NOEMAP — 人間とは何か。",
+      },
+    ],
+  },
+};
 
 export default async function Home({
   searchParams,

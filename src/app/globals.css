@@ -678,6 +678,21 @@ textarea.manage-reason {
   color: var(--muted);
 }
 
+.site-header {
+  background: #fff;
+}
+.site-header .brand {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  min-height: 44px;
+  letter-spacing: normal;
+}
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 32px;
+}
 .site-header nav {
   flex-wrap: wrap;
   gap: 8px 22px;
