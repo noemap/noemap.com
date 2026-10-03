@@ -1,7 +1,7 @@
 import "server-only";
 import { value } from "./database";
 import { isLocalFictional } from "./mode";
-import { realDataset } from "./real-dataset";
+import { getRealDataset } from "./real-dataset";
 import { isUuid } from "./public";
 import type {
   NodeDocument,
@@ -32,7 +32,8 @@ function validOffset(offset: number) {
   return Number.isSafeInteger(offset) && offset >= 0 && offset <= 10000;
 }
 export async function resolveNode(collection: string, key: string) {
-  if (!isLocalFictional()) return realDataset.resolveNode(collection, key);
+  if (!isLocalFictional())
+    return (await getRealDataset()).resolveNode(collection, key);
   if (
     !collections.has(collection) ||
     (!isUuid(key) && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(key)) ||
@@ -45,7 +46,7 @@ export async function resolveNode(collection: string, key: string) {
   ]);
 }
 export async function publicNode(id: string) {
-  if (!isLocalFictional()) return realDataset.publicNode(id);
+  if (!isLocalFictional()) return (await getRealDataset()).publicNode(id);
   if (!isUuid(id)) return null;
   return value<NodeDocument | null>(
     `WITH document AS MATERIALIZED (SELECT api.public_node($1,'ja') AS data)
@@ -57,7 +58,7 @@ export async function publicNode(id: string) {
 // A page and its relations are projected in one SQL statement/snapshot.
 // A correction or revocation cannot mix endpoints from different snapshots.
 export async function nodePage(id: string, offset = 0) {
-  if (!isLocalFictional()) return realDataset.nodePage(id, offset);
+  if (!isLocalFictional()) return (await getRealDataset()).nodePage(id, offset);
   if (!isUuid(id) || !validOffset(offset)) return null;
   return value<{
     document: NodeDocument;
@@ -71,7 +72,8 @@ export async function nodePage(id: string, offset = 0) {
   );
 }
 export async function neighbors(id: string, offset = 0) {
-  if (!isLocalFictional()) return realDataset.neighbors(id, offset);
+  if (!isLocalFictional())
+    return (await getRealDataset()).neighbors(id, offset);
   if (!isUuid(id) || !validOffset(offset)) return emptyNeighbors();
   return value<NeighborPage>("SELECT api.public_neighbors($1,'ja',20,$2)", [
     id,
@@ -79,7 +81,8 @@ export async function neighbors(id: string, offset = 0) {
   ]);
 }
 export async function searchNodes(q: string, type?: string, offset = 0) {
-  if (!isLocalFictional()) return realDataset.searchNodes(q, type, offset);
+  if (!isLocalFictional())
+    return (await getRealDataset()).searchNodes(q, type, offset);
   if (!validOffset(offset) || (type && !types.has(type)))
     return { items: [], offset: 0, has_more: false } satisfies NodePage;
   const query = q.normalize("NFKC").trim().slice(0, 160);
@@ -90,7 +93,7 @@ export async function searchNodes(q: string, type?: string, offset = 0) {
   ]);
 }
 export async function explorationHome() {
-  if (!isLocalFictional()) return realDataset.explorationHome();
+  if (!isLocalFictional()) return (await getRealDataset()).explorationHome();
   return value<ExplorationHome>(
     `WITH home AS MATERIALIZED (SELECT api.public_home('ja') AS data)
      SELECT data || jsonb_build_object('neighbors', CASE WHEN data->'root' = 'null'::jsonb
@@ -99,7 +102,8 @@ export async function explorationHome() {
   );
 }
 export async function timelineNodes(offset = 0) {
-  if (!isLocalFictional()) return realDataset.timelineNodes(offset);
+  if (!isLocalFictional())
+    return (await getRealDataset()).timelineNodes(offset);
   if (!validOffset(offset))
     return { items: [], offset: 0, has_more: false } satisfies TimelinePage;
   return value<TimelinePage>("SELECT api.public_timeline('ja',20,$1)", [

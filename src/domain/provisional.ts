@@ -684,6 +684,48 @@ export function createProvisionalRelease(input: ProvisionalReleaseInput) {
     );
   }
   return {
+    // Keep UUID/alias tombstones while adding stable raw identities before a
+    // save/restore assigns another release ID. Dependencies remain implicit.
+    normalizedWithdrawals(): ProvisionalReleaseInput["withdrawn"] {
+      const result = {
+        sources: new Set(release.withdrawn.sources),
+        nodes: new Set(release.withdrawn.nodes),
+        assertions: new Set(release.withdrawn.assertions),
+        relationships: new Set(release.withdrawn.relationships),
+      };
+      for (const id of sources.keys())
+        if (withdrawn("sources", "source", id)) result.sources.add(id);
+      for (const id of nodes.keys())
+        if (withdrawn("nodes", "node", id)) result.nodes.add(id);
+      for (const id of claims.keys())
+        if (withdrawn("assertions", "assertion", id)) result.assertions.add(id);
+      for (const date of release.temporal_records)
+        if (withdrawn("assertions", "temporal", date.id))
+          result.assertions.add(date.id);
+      for (const [key, relation] of relations)
+        if (
+          withdrawn("relationships", "relationship", key) ||
+          withdrawals.relationships.has(relationKey(relation))
+        )
+          result.relationships.add(key);
+      return {
+        sources: [...result.sources],
+        nodes: [...result.nodes],
+        assertions: [...result.assertions],
+        relationships: [...result.relationships],
+      };
+    },
+    // Raw IDs only; copies prevent callers from changing the captured snapshot.
+    // Persistence uses this to omit hidden content before anonymous DB reads.
+    visibility() {
+      return {
+        sources: [...activeSources],
+        nodes: [...activeNodes],
+        assertions: [...activeClaims],
+        relationships: activeRelations.map(([key]) => key),
+        temporals: activeDates.map((date) => date.id),
+      };
+    },
     resolveNode(collection: string, key: string) {
       const id = nodeLookup.get(key);
       const node = id ? summaries.get(id) : undefined;

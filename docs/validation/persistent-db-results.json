@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-10-03T03:36:53.118Z",
+  "scope": "disposable local PostgreSQL only; no remote Supabase or real Auth",
+  "fixture": "36 source-backed provisional nodes; pending human review; stub Auth users",
+  "migration": "supabase/migrations/20261003031858_noemap_persistent_snapshots.sql",
+  "postgres": "18.4",
+  "node": "v24.19.0",
+  "status": "passed",
+  "passed": 15,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "P01 migration and initial 36-node public projection match the visibility adapter",
+      "status": "passed",
+      "duration_ms": 91
+    },
+    {
+      "name": "P02 anonymous users can read only the public row, with no history, helpers, writes or editor RPC",
+      "status": "passed",
+      "duration_ms": 8
+    },
+    {
+      "name": "P03 authenticated membership is required freshly and direct raw writes remain forbidden",
+      "status": "passed",
+      "duration_ms": 27
+    },
+    {
+      "name": "P04 private pending draft does not publish; stale generation and reused operations are rejected",
+      "status": "passed",
+      "duration_ms": 133
+    },
+    {
+      "name": "P05 two connections serialize edits and reject the actual blocked stale writer",
+      "status": "passed",
+      "duration_ms": 122
+    },
+    {
+      "name": "P06 SQL projection matches JS reading for every source and node/claim/relation/date withdrawal",
+      "status": "passed",
+      "duration_ms": 1656
+    },
+    {
+      "name": "P07 public projection strips private nested text and preserves unknown data only in private history",
+      "status": "passed",
+      "duration_ms": 225
+    },
+    {
+      "name": "P08 source withdrawal publication updates atomically and exposes no withdrawn raw records",
+      "status": "passed",
+      "duration_ms": 234
+    },
+    {
+      "name": "P09 private restore preserves accumulated withdrawals and never republishes historical raw text",
+      "status": "passed",
+      "duration_ms": 198
+    },
+    {
+      "name": "P10 public optional fields reject nested objects, and failed saves do not alter state",
+      "status": "passed",
+      "duration_ms": 224
+    },
+    {
+      "name": "P11 revision withdrawals remain effective after save and restore assign new release IDs",
+      "status": "passed",
+      "duration_ms": 499
+    },
+    {
+      "name": "P12 committed public head, private history and withdrawal protection survive database restart",
+      "status": "passed",
+      "duration_ms": 1511
+    },
+    {
+      "name": "P13 implicit arrow aliases and explicit relation identities agree before and after SQL normalization",
+      "status": "passed",
+      "duration_ms": 365
+    },
+    {
+      "name": "P14 generated initial import applies to an empty DB and rejects repeat import without changes",
+      "status": "passed",
+      "duration_ms": 728
+    },
+    {
+      "name": "P15 generated backup import treats SQL delimiters as data and preserves current withdrawals in the private draft",
+      "status": "passed",
+      "duration_ms": 922
+    }
+  ]
+}

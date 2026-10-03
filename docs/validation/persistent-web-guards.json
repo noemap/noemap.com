@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-03T03:36:33.731Z",
+  "scope": "local production build, no database connection or real Auth",
+  "status": "passed",
+  "checks": [
+    "unconfigured editor rejects forged cookie",
+    "unconfigured login does not collect credentials",
+    "unauthorized backup download denied",
+    "unconfigured authentication POST is closed"
+  ]
+}

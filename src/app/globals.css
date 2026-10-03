@@ -422,6 +422,59 @@ footer {
     display: none;
   }
 }
+
+.about-page {
+  max-width: 740px;
+  margin: 40px auto 64px;
+}
+.about-page h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 24px;
+}
+.about-page p {
+  line-height: 1.95;
+}
+.about-page .about-lead {
+  font-size: 21px;
+  font-weight: 600;
+}
+.about-page section {
+  margin-top: 40px;
+}
+.about-page h2 {
+  font-size: 22px;
+}
+.about-entrances {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.about-entrances a {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  text-decoration: none;
+}
+.about-entrances strong,
+.about-entrances span {
+  display: block;
+}
+.about-entrances span {
+  font-size: 14px;
+  margin-top: 8px;
+  color: var(--muted);
+}
+.about-start {
+  margin-top: 40px;
+}
+@media (max-width: 650px) {
+  .about-page {
+    margin-top: 24px;
+  }
+  .about-entrances {
+    grid-template-columns: 1fr;
+  }
+}
 ul,
 ol {
   overflow-wrap: anywhere;
@@ -559,6 +612,61 @@ select {
   border-top: 1px solid var(--line);
   padding: 18px 0;
   overflow-wrap: anywhere;
+}
+
+.manage-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+.manage-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.manage-fields {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.manage-choices,
+.manage-evidence {
+  min-width: 0;
+  border: 1px solid var(--line);
+  padding: 16px;
+  margin: 24px 0;
+}
+.manage-choices legend,
+.manage-evidence legend {
+  font-weight: 600;
+}
+.manage-choice-list {
+  max-height: 360px;
+  overflow-y: auto;
+}
+.manage-reference {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.manage-reference button {
+  margin-top: 12px;
+}
+textarea.manage-reason {
+  min-height: 90px;
+}
+.manage-history-node {
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.manage-page details > summary {
+  min-height: 44px;
+  cursor: pointer;
+  padding: 10px 0;
+}
+.manage-release-state details {
+  margin: 18px 0;
 }
 .evidence-list > div {
   padding-top: 12px;
