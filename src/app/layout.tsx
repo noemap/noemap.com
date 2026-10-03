@@ -21,8 +21,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </a>
             <nav aria-label="主要な案内">
               <a href="/questions">問い</a>
-              <a href="/search">探す</a>
-              <a href="/timeline">年表</a>
+              <a href="/themes">テーマ</a>
+              <a href="/explore">人物・概念</a>
+              <a href="/search">検索</a>
               {local ? <a href="/editor">編集</a> : null}
             </nav>
           </header>

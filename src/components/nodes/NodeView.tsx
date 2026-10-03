@@ -4,8 +4,11 @@ import {
   temporalRoleNames,
   type NodeDocument,
   type NeighborPage,
+  type NodeSummary,
 } from "../../domain/nodes";
 import { Neighborhood } from "./Neighborhood";
+import { EntryReturnLink } from "../entry/EntryReturnLink";
+import type { classificationFor } from "../../domain/entry";
 function httpsSourceUrl(value: string | null) {
   if (!value) return null;
   try {
@@ -20,9 +23,18 @@ function httpsSourceUrl(value: string | null) {
 export function NodeView({
   node,
   neighbors,
+  classification,
+  readingRoutes = [],
 }: {
   node: NodeDocument;
   neighbors: NeighborPage;
+  classification?: ReturnType<typeof classificationFor>;
+  readingRoutes?: {
+    id: string;
+    title: string;
+    description: string;
+    nodes: NodeSummary[];
+  }[];
 }) {
   const sources = new Map(
     node.article.sections.flatMap((section) =>
@@ -35,6 +47,7 @@ export function NodeView({
   );
   return (
     <>
+      {node.type === "question" ? <EntryReturnLink nodeId={node.id} /> : null}
       <nav className="node-breadcrumb" aria-label="現在位置">
         <a href="/">人間とは何か？</a>
         <span aria-hidden="true">/</span>
@@ -45,6 +58,29 @@ export function NodeView({
       <div className="article-heading">
         <span className="type-label">{nodeTypeNames[node.type]}</span>
         <h1>{node.title}</h1>
+        <p className="node-introduction">{node.summary}</p>
+        {classification ? (
+          <div className="entry-node-meta">
+            {classification.themes.map((t) => (
+              <a key={t.id} href={`/themes/${t.slug}`}>
+                {t.title}
+              </a>
+            ))}
+            {classification.disciplines.map((d) => (
+              <a key={d.id} href={`/explore?discipline=${d.id}`}>
+                {d.title}
+              </a>
+            ))}
+            {classification.updatedAt ? (
+              <span>
+                更新日：
+                <time dateTime={classification.updatedAt}>
+                  {classification.updatedAt}
+                </time>
+              </span>
+            ) : null}
+          </div>
+        ) : null}
         {node.aliases.length ? (
           <p className="muted">別名：{node.aliases.join("、")}</p>
         ) : null}
@@ -178,6 +214,28 @@ export function NodeView({
           <Neighborhood node={node} page={neighbors} />
         </aside>
       </div>
+      {readingRoutes.length ? (
+        <section className="entry-section" aria-label="次に読むページ">
+          <h2>同じ問いを、別のページから考える</h2>
+          {readingRoutes.map((route) => (
+            <article className="entry-route" key={route.id}>
+              <h3>{route.title}</h3>
+              <p>{route.description}</p>
+              <ol>
+                {route.nodes
+                  .filter((n) => n.id !== node.id)
+                  .map((n) => (
+                    <li key={n.id}>
+                      <a href={n.href}>
+                        {n.title} <span aria-hidden="true">→</span>
+                      </a>
+                    </li>
+                  ))}
+              </ol>
+            </article>
+          ))}
+        </section>
+      ) : null}
     </>
   );
 }

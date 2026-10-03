@@ -1,77 +1,92 @@
 import { connection } from "next/server";
-import { explorationHome } from "../server/exploration";
+import { publicEntryData, entryCatalog } from "../server/entry";
+import { entrySelection } from "../domain/entry";
+import { queryText, type PageQuery } from "../domain/nodes";
+import { EntryExplorer } from "../components/entry/EntryExplorer";
 import { NodeCards } from "../components/exploration/NodeCards";
 import { SearchForm } from "../components/exploration/SearchForm";
-import { Neighborhood } from "../components/nodes/Neighborhood";
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<PageQuery>;
+}) {
   await connection();
-  const home = await explorationHome();
-  const questions = home.questions.filter(
-    (question) => question.id !== home.root?.id,
-  );
+  const [data, query] = await Promise.all([publicEntryData(), searchParams]);
+  const questions = data.nodes.filter((n) => n.type === "question");
   return (
-    <>
-      <section className="exploration-hero">
-        <h1>人間とは何か？</h1>
-        <p>
-          {home.root?.summary ||
-            "問いから人物や概念をたどり、考え方とその根拠を読む。"}
-        </p>
-        {home.root ? (
-          <a className="button" href={home.root.href}>
-            この問いから始める →
-          </a>
-        ) : null}
+    <div className="entry-home">
+      <section className="entry-hero">
+        <p className="entry-eyebrow">NOEMAP</p>
+        <h1>人間とは何か。</h1>
+        <p>気になる問いから、知識のつながりを辿る。</p>
       </section>
-      <SearchForm />
-      <section
-        className="exploration-section"
-        aria-labelledby="question-heading"
-      >
+      <section aria-labelledby="entry-heading" className="entry-section">
+        <h2 id="entry-heading">どこから考えてみる？</h2>
+        <EntryExplorer
+          themes={data.themes}
+          initialSelection={entrySelection(
+            data.themes,
+            queryText(query.theme),
+            queryText(query.group),
+          )}
+        />
+      </section>
+      <section className="entry-search" aria-label="問い・人物・概念の検索">
+        <SearchForm compact />
+      </section>
+      <section className="entry-section" aria-labelledby="question-heading">
         <div className="exploration-section-heading">
-          <h2 id="question-heading">どの問いから考える？</h2>
+          <h2 id="question-heading">気になる問いを、そのまま読む</h2>
           <a href="/questions">すべての問い →</a>
         </div>
-        {questions.length ? (
-          <NodeCards nodes={questions} headingLevel={3} />
-        ) : (
-          <p>問いの公開準備を進めています。</p>
-        )}
+        <NodeCards nodes={questions.slice(0, 3)} headingLevel={3} />
       </section>
-      <div className="home-lower-grid">
-        <section className="panel exploration-entrances">
-          <h2>ほかの入口</h2>
-          <ul>
-            <li>
-              <a href="/people">
-                人物から探す <span aria-hidden="true">→</span>
-              </a>
-            </li>
-            <li>
-              <a href="/concepts">
-                概念から探す <span aria-hidden="true">→</span>
-              </a>
-            </li>
-            <li>
-              <a href="/books">
-                著作から探す <span aria-hidden="true">→</span>
-              </a>
-            </li>
-            <li>
-              <a href="/timeline">
-                年代から探す <span aria-hidden="true">→</span>
-              </a>
-            </li>
-          </ul>
+      {data.routes.length ? (
+        <section className="entry-section">
+          <h2>知識のつながりを歩く</h2>
+          {data.routes.map((route) => (
+            <article className="entry-route" key={route.id}>
+              <h3>{route.title}</h3>
+              <p>{route.description}</p>
+              <ol>
+                {route.nodes.map((n) => (
+                  <li key={n.id}>
+                    <a href={n.href}>
+                      {n.title} <span aria-hidden="true">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </article>
+          ))}
         </section>
-        {home.root ? (
-          <Neighborhood
-            node={home.root}
-            page={home.neighbors}
-            pagination={false}
-          />
-        ) : null}
-      </div>
-    </>
+      ) : null}
+      <section className="entry-section">
+        <div className="exploration-section-heading">
+          <h2>最近整えたページ</h2>
+          <a href="/explore">人物・概念を探す →</a>
+        </div>
+        <NodeCards
+          nodes={data.nodes.filter((n) => n.type === "person").slice(0, 3)}
+          headingLevel={3}
+        />
+        <p className="small muted">
+          資料に基づくページを、問いと一緒に読み進められます。
+        </p>
+      </section>
+      <section className="entry-policy">
+        <h2>ひとつの答えで、終わらせない。</h2>
+        <p>
+          異なる見方を読み比べ、その記述がどの資料に基づくかを確かめる。NOEMAPは、そのための知識の地図です。
+        </p>
+        <a href="/about">このサイトと編集方針について →</a>
+        <div className="entry-secondary-links">
+          <a href="/timeline">出典付きの年表</a>
+          <a href={`/explore?discipline=${entryCatalog.disciplines[0].id}`}>
+            学問の視点から探す
+          </a>
+        </div>
+      </section>
+    </div>
   );
 }

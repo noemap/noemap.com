@@ -7,6 +7,8 @@ import {
   type PageQuery,
 } from "../../domain/nodes";
 import { NodeView } from "./NodeView";
+import { entryCatalog, publicEntryData } from "../../server/entry";
+import { classificationFor } from "../../domain/entry";
 export async function NodeRoute({
   collection,
   params,
@@ -23,7 +25,19 @@ export async function NodeRoute({
   const offset = queryOffset(query.offset);
   if (resolved.redirect)
     permanentRedirect(`${resolved.href}${offset ? `?offset=${offset}` : ""}`);
-  const page = await nodePage(resolved.id, offset);
+  const [page, entry] = await Promise.all([
+    nodePage(resolved.id, offset),
+    publicEntryData(),
+  ]);
   if (!page) notFound();
-  return <NodeView node={page.document} neighbors={page.neighbors} />;
+  return (
+    <NodeView
+      node={page.document}
+      neighbors={page.neighbors}
+      classification={classificationFor(entryCatalog, resolved.id)}
+      readingRoutes={entry.routes.filter((r) =>
+        r.nodeIds.includes(resolved.id),
+      )}
+    />
+  );
 }

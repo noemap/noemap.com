@@ -6,3 +6,12 @@ export default function Concepts(props: {
 }) {
   return <NodeRoute collection="concepts" {...props} />;
 }
+
+import { nodeMetadata } from "../../../server/node-metadata";
+export function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  return nodeMetadata("concepts", params);
+}

@@ -6,3 +6,12 @@ export default function Question(props: {
 }) {
   return <NodeRoute collection="questions" {...props} />;
 }
+
+import { nodeMetadata } from "../../../server/node-metadata";
+export function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  return nodeMetadata("questions", params);
+}

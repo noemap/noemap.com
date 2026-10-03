@@ -1,5 +1,8 @@
 import { connection } from "next/server";
 import { searchNodes } from "../../server/exploration";
+import { searchEntryNodes } from "../../server/entry";
+import { SearchForm } from "./SearchForm";
+import { queryText } from "../../domain/nodes";
 import {
   nodeTypeNames,
   nodeCollections,
@@ -18,13 +21,26 @@ export async function CollectionView({
 }) {
   await connection();
   const query = await searchParams;
-  const page = await searchNodes("", type, queryOffset(query.offset));
+  const theme = queryText(query.theme),
+    discipline = queryText(query.discipline);
+  const page =
+    theme || discipline
+      ? await searchEntryNodes({
+          type,
+          theme,
+          discipline,
+          offset: queryOffset(query.offset),
+        })
+      : await searchNodes("", type, queryOffset(query.offset));
   return (
     <>
       <div className="exploration-heading">
         <h1>{nodeTypeNames[type]}から探す</h1>
         <a href="/search">名前・別名で検索する</a>
       </div>
+      {type === "question" ? (
+        <SearchForm type={type} theme={theme} discipline={discipline} />
+      ) : null}
       {page.items.length ? (
         <NodeCards nodes={page.items} />
       ) : (
@@ -38,6 +54,7 @@ export async function CollectionView({
         pathname={`/${nodeCollections[type]}`}
         offset={page.offset}
         hasMore={page.has_more}
+        query={{ theme, discipline }}
       />
     </>
   );
