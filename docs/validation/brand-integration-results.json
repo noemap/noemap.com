@@ -1,0 +1,181 @@
+{
+  "checked_at": "2026-10-03T13:07:38.446Z",
+  "repository": "noemap/noemap.com",
+  "baseline_commit": "416b3c7e5b3ebbeacf1d1a724c53db0b858ce848",
+  "environment": "Local production build; checked-in source-backed release; no live database configuration",
+  "origin": "http://127.0.0.1:4330",
+  "status": "passed",
+  "assets": [
+    {
+      "name": "noemap-logo.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 4357,
+      "sha256": "8a4947f5bffd6bf780c01f625d947d3a6331d38ceece30dc574c84a5aa0dfdfd"
+    },
+    {
+      "name": "noemap-symbol.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 434,
+      "sha256": "a29b9d40f128d12d12c98b5bd7bf1c76f2b06c5f893916f2db04e1321475e1d3"
+    },
+    {
+      "name": "noemap-icon.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 17022,
+      "sha256": "2ff92c75889f22ee9b6df32d8a4f4885554f2f4721241099e2ab6065f54447e0",
+      "width": 512,
+      "height": 512,
+      "format": "png"
+    },
+    {
+      "name": "favicon.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 578,
+      "sha256": "f257e28e4a07f0404cd8918b91c355ce6f89f59e780e627df5fe516c698f52d7"
+    },
+    {
+      "name": "favicon.ico",
+      "status": 200,
+      "content_type": "image/x-icon",
+      "bytes": 2317,
+      "sha256": "31f621d55764a626e6b72dcabd64ed013f080492824de4470b9f18170459d0b2"
+    },
+    {
+      "name": "apple-touch-icon.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 4103,
+      "sha256": "3fda3882d30df0b443e61dfc7923ba69d0124008d322ac363ebfa6cc3aa5f683",
+      "width": 180,
+      "height": 180,
+      "format": "png"
+    },
+    {
+      "name": "noemap-logo-preview.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 28777,
+      "sha256": "0c0cfe1363c40b5edb82d6110fe2bee719b5fd4e2bcea0a0b6974ea6029b8c36",
+      "width": 1440,
+      "height": 480,
+      "format": "png"
+    },
+    {
+      "name": "noemap-home-og.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 57243,
+      "sha256": "e7890dbb810294bec25b2174bd343ed24c71d64c5bab47218aad874c32442164",
+      "width": 1200,
+      "height": 630,
+      "format": "png"
+    }
+  ],
+  "wordmark": {
+    "symbol_count": 1,
+    "outlined_letters": ["O", "E", "M", "A", "P"],
+    "font": "Montserrat",
+    "weight": 650,
+    "adjusted_m_path": true,
+    "exact_font_match": false,
+    "external_font_or_bitmap": false
+  },
+  "ico_entries": [16, 32, 48],
+  "home_metadata": {
+    "og_image": "https://noemap.com/brand/noemap-home-og.png",
+    "dimensions": [1200, 630],
+    "alt": "NOEMAP — 人間とは何か。",
+    "twitter_card": "summary_large_image",
+    "icons": [
+      "/brand/favicon.svg",
+      "/brand/favicon.ico",
+      "/brand/apple-touch-icon.png"
+    ]
+  },
+  "inner_pages": [
+    {
+      "path": "/people/hume-p-hume",
+      "status": 200,
+      "home_card_applied": false
+    },
+    {
+      "path": "/questions/hume-q-personal-identity",
+      "status": 200,
+      "home_card_applied": false
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "home_card_applied": false
+    }
+  ],
+  "existing_checks": {
+    "release_unit": {
+      "passed": 32
+    },
+    "editor_unit": {
+      "passed": 47
+    },
+    "public_http": {
+      "checked_at": "2026-10-03T13:04:57.514Z",
+      "origin": "http://127.0.0.1:4330",
+      "release_id": "noemap-provisional-20261003-v1",
+      "checks": [
+        {
+          "name": "home serves real content and links to the site introduction",
+          "status": "passed"
+        },
+        {
+          "name": "search pagination exposes all 36 unique released nodes",
+          "status": "passed"
+        },
+        {
+          "name": "all node routes render and UUID routes redirect to canonical URLs",
+          "status": "passed"
+        },
+        {
+          "name": "node summaries and every visible claim retain accessible source pages",
+          "status": "passed"
+        },
+        {
+          "name": "English aliases and NFKC search work through the public API",
+          "status": "passed"
+        },
+        {
+          "name": "all collections and the search form load",
+          "status": "passed"
+        },
+        {
+          "name": "chronology separates five sourced publication and title-year records",
+          "status": "passed"
+        },
+        {
+          "name": "invalid public queries fail with 400 and unknown items with 404",
+          "status": "passed"
+        },
+        {
+          "name": "local editor pages and forged editor POSTs are inaccessible",
+          "status": "passed"
+        },
+        {
+          "name": "public responses allow indexing and editor responses disallow it",
+          "status": "passed"
+        }
+      ],
+      "nodes": 36,
+      "status": "passed"
+    }
+  },
+  "typecheck": "passed",
+  "format_check": "passed",
+  "production_build": "passed",
+  "limitations": [
+    "Live domain asset retrieval and external SNS cache not checked; production not deployed.",
+    "Eight-theme expansion UI absent in baseline; existing exploration preserved.",
+    "Supplied bitmap is a design reference; outlined letters approximate its forms."
+  ]
+}

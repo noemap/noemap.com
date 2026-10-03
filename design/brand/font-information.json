@@ -1,0 +1,27 @@
+{
+  "wordmark": {
+    "family": "Montserrat",
+    "weight": 650,
+    "license": "SIL Open Font License 1.1",
+    "source": "https://github.com/google/fonts/tree/main/ofl/montserrat",
+    "license_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/OFL.txt",
+    "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7",
+    "version": "Version 9.000",
+    "note": "OEMAPの各字を参照01の幅・高さ・間隔へ調整。Mの中央Vの角度と深さも参照に合わせてパスを調整。完全一致ではない。"
+  },
+  "og_heading": {
+    "family": "Noto Sans JP",
+    "weight": 700,
+    "license": "SIL Open Font License 1.1",
+    "source": "https://github.com/google/fonts/tree/main/ofl/notosansjp",
+    "license_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/OFL.txt",
+    "sha256": "5113756f8a3b5d01b2211025e267c50121e3b36f465b7bbaf3cdaf4c3430bfd0",
+    "version": "Version 2.04;241114210129;non-release"
+  },
+  "symbol": {
+    "design": "NOEMAP supplied approved N reference, recreated with vector geometry",
+    "two_nodes": true,
+    "reference_bbox": [302, 269]
+  },
+  "font_delivery": "Font files are used only for authoring. Website assets contain outlined paths and no font files or external requests."
+}

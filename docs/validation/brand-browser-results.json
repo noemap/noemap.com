@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "environment": "Local production build, checked-in public release",
+  "viewports": [
+    {
+      "bodyText": "public-release",
+      "documentWidth": 1265,
+      "headerBackground": "rgb(255, 255, 255)",
+      "heading": "人間とは何か。",
+      "linkHref": "/",
+      "linkName": "NOEMAP ホーム",
+      "loaded": true,
+      "logo": {
+        "bottom": 55,
+        "height": 32,
+        "right": 221.0625,
+        "width": 148.5625,
+        "x": 72.5,
+        "y": 23
+      },
+      "logoCss": ["32px", "148.562px"],
+      "nav": {
+        "bottom": 61,
+        "height": 44,
+        "right": 1192.5,
+        "width": 128,
+        "x": 1064.5,
+        "y": 17
+      },
+      "overflow": false,
+      "overlap": false,
+      "viewport": [1280, 900]
+    },
+    {
+      "bodyText": "public-release",
+      "documentWidth": 375,
+      "headerBackground": "rgb(255, 255, 255)",
+      "heading": "人間とは何か。",
+      "linkHref": "/",
+      "linkName": "NOEMAP ホーム",
+      "loaded": true,
+      "logo": {
+        "bottom": 48,
+        "height": 32,
+        "right": 164.5625,
+        "width": 148.5625,
+        "x": 16,
+        "y": 16
+      },
+      "logoCss": ["32px", "148.562px"],
+      "nav": {
+        "bottom": 98,
+        "height": 44,
+        "right": 359,
+        "width": 343,
+        "x": 16,
+        "y": 54
+      },
+      "overflow": false,
+      "overlap": false,
+      "viewport": [390, 844]
+    },
+    {
+      "bodyText": "public-release",
+      "documentWidth": 305,
+      "headerBackground": "rgb(255, 255, 255)",
+      "heading": "人間とは何か。",
+      "linkHref": "/",
+      "linkName": "NOEMAP ホーム",
+      "loaded": true,
+      "logo": {
+        "bottom": 48,
+        "height": 32,
+        "right": 164.5625,
+        "width": 148.5625,
+        "x": 16,
+        "y": 16
+      },
+      "logoCss": ["32px", "148.562px"],
+      "nav": {
+        "bottom": 98,
+        "height": 44,
+        "right": 289,
+        "width": 273,
+        "x": 16,
+        "y": 54
+      },
+      "overflow": false,
+      "overlap": false,
+      "viewport": [320, 760]
+    }
+  ],
+  "interactions": [
+    {
+      "action": "start from home",
+      "result": "/questions/hume-q-personal-identity"
+    },
+    {
+      "action": "logo home link from question",
+      "result": "/"
+    },
+    {
+      "action": "search David Hume",
+      "result": "/search?q=David+Hume&type="
+    },
+    {
+      "action": "search result to person",
+      "result": "/people/hume-p-hume"
+    },
+    {
+      "action": "person connection to work",
+      "result": "/books/hume-w-treatise"
+    },
+    {
+      "action": "logo home link from work",
+      "result": "/"
+    }
+  ],
+  "limitations": [
+    "Eight-theme expansion UI absent in baseline",
+    "No app dark mode; favicon checked visually against white/dark backgrounds",
+    "No live database settings or production deployment used"
+  ]
+}
