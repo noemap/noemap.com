@@ -1,6 +1,6 @@
 {
   "prepared_at": "2026-10-03T03:38:02.882Z",
-  "status": "cloud_initialized_pending_production_deployment",
+  "status": "production_connected_and_editor_verified",
   "initial_public_nodes": 36,
   "human_review": "pending",
   "local_checks": {
@@ -23,12 +23,17 @@
     "data_imported": true,
     "editor_account_enrolled": true,
     "environment_configured": true,
-    "production_auth_verified": false,
+    "production_auth_verified": true,
     "advisors_run": true,
-    "live_site_changed": false,
-    "oauth_redirect_configured": true
+    "live_site_changed": true,
+    "oauth_redirect_configured": true,
+    "draft_save_verified": true,
+    "publish_verified": true,
+    "restore_verified": true,
+    "initial_content_preserved": true,
+    "verification_draft_remaining": false
   },
-  "updated_at": "2026-10-03T04:15:35.7083670Z",
+  "updated_at": "2026-10-03T04:23:02.6694071Z",
   "cloud_checks": {
     "public_projection": "matches application projection",
     "anonymous_read": "passed",
@@ -36,7 +41,7 @@
     "anonymous_editor_rpc": "denied",
     "anonymous_direct_write": "denied",
     "unenrolled_authenticated_editor_rpc": "denied",
-    "enrolled_editor_rpc": "passed using transaction-local identity; browser login pending"
+    "enrolled_editor_rpc": "passed using transaction-local identity and real Google browser login"
   },
   "initial_cloud_content": {
     "nodes": 36,

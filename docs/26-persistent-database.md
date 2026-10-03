@@ -1,6 +1,6 @@
 # 永続DBと編集画面の準備
 
-2026-10-03、ユーザーが指定した既存Supabase「nikotaro」にNOEMAP専用領域を作成し、公開中の実資料36項目を登録した。無料プロジェクト数を増やさず、他サイトのテーブル・契約は変更していない。指定された既存Googleログインの本人にNOEMAPの編集権限を登録し、Vercelには本番だけの公開URL・公開キーを保存した。既存のnikotaro用URLを保持し、NOEMAPのGoogleログインの戻り先を追加した。本番再配置後の確認を進めている。
+2026-10-03、ユーザーが指定した既存Supabase「nikotaro」にNOEMAP専用領域を作成し、公開中の実資料36項目を登録した。無料プロジェクト数を増やさず、他サイトのテーブル・契約は変更していない。指定された既存Googleログインの本人にNOEMAPの編集権限を登録し、Vercelには本番だけの公開URL・公開キーを保存した。既存のnikotaro用URLを保持し、NOEMAPのGoogleログインの戻り先を追加した。本番へ反映し、本人のGoogleログイン・下書き保存・公開反映、公開HTTP検査10項目、認証HTTP検査5項目を確認した。
 
 公開用の `public.noemap_public_release` と、非公開の `noemap_private` を使う。公開用JSONがアプリの可視性処理と一致すること、匿名の読み取り、非公開領域の読み取り拒否、匿名の管理RPC・直接更新拒否、未登録の認証利用者の管理RPC拒否を実DBで確認した。
 
@@ -24,7 +24,7 @@
 6. noemap.comのVercelプロジェクトへ `NEXT_PUBLIC_SUPABASE_URL` と `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` を設定する。公開キー以外は受け付けない。プレビューへ本番DBの書込権限を渡さない。
 7. 公開サイトのDB読み取り、本人ログイン、下書き保存、公開反映、撤回と復元を確認して接続を完了する。
 
-現在は上記の1〜6と匿名・未登録・指定編集者のDB権限検査が完了している。Googleログインの戻り先追加も完了し、7は本番再配置後に確認する。ブラウザーの本人ログイン・実際の保存操作は、SQLでの権限検査とは別に確認する。
+現在は上記の1〜6と匿名・未登録・指定編集者のDB権限検査が完了している。Googleログインの戻り先追加、本番再配置、ブラウザーでの本人ログイン・保存・公開反映も完了した。記述・出典を変えない接続確認を履歴に残した。初期版を新しい下書きとして復元し、版IDを除く元データ・公開データの一致を照合して公開へ反映した。確認用の下書きは残していない。撤回を維持する復元の制約はローカルの使い捨てDBでも確認済み。本番で実資料を撤回する試験は行っていない。
 
 Supabase Advisorも実施した。NOEMAPの非公開4テーブルは意図的にRLSを有効にして直接アクセスを全拒否しているため、ポリシーなしのINFOが出る。権限付き内部関数からのみ操作する。現在版・下書き・公開版の外部キーはそれぞれ1行の状態テーブルで参照するため、追加索引なしのINFOを許容する。既存サイトの関数・認証・ポリシーの警告は、今回のNOEMAP追加前から存在し、他サイトの動作を変えず別途確認する。
 
@@ -51,6 +51,6 @@ DBを失った場合は、`node scripts/prepare-persistent-database.mjs --backup
 
 この手順の本番移行は未実施。管理画面のJSONは最新内容の復旧用であり、全履歴の移行完了を保証するものではない。公式手順: [バックアップと移行](https://supabase.com/docs/guides/platform/migrating-within-supabase/backup-restore)。
 
-ローカルの使い捨てPostgreSQLと架空の認証情報で、アクセス制限、出典ごとの可視性、直接RPCでの不正入力拒否、同時編集、操作の再試行、撤回を維持する復元、DB再起動後のデータ保持を検証した。記録は `docs/validation/persistent-db-results.json`。実DBの権限・Advisor・Vercel本番環境変数の設定は完了。本人のブラウザーログインと本番の保存操作は未確認。
+ローカルの使い捨てPostgreSQLと架空の認証情報で、アクセス制限、出典ごとの可視性、直接RPCでの不正入力拒否、同時編集、操作の再試行、撤回を維持する復元、DB再起動後のデータ保持を検証した。記録は `docs/validation/persistent-db-results.json`。実DBの権限・Advisor・Vercel本番環境変数の設定は完了。本人のブラウザーログインと本番の保存・公開反映も確認済み。
 
 実装に参照した公式資料: [SupabaseのAPIキー](https://supabase.com/docs/guides/getting-started/api-keys)、[Next.jsの認証連携](https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs)、[データの保護](https://supabase.com/docs/guides/database/secure-data)。
