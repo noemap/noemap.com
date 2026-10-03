@@ -57,6 +57,17 @@ await check(
       /rel="canonical" href="https:\/\/noemap.com\/questions\/hume-q-personal-identity"/,
     );
     assert.match(h, /デイヴィッド・ヒューム|ヒューム/);
+    assert.ok(
+      h.indexOf('id="reading-perspectives"') < h.indexOf('id="section-0"'),
+      "a question offers perspectives before editorial source notes",
+    );
+    for (const locator of [
+      "T 1.4.6.5, SBN 253",
+      "T 1.4.6.4, SBN 252–253",
+      "T App.20, SBN 635–636",
+    ])
+      assert.ok(h.includes(locator), locator);
+    assert.match(h, /ヒューム自身の日本語の発言として表示しない/);
   },
 );
 await check("theme, discipline, type and alias search compose", async () => {
@@ -81,6 +92,31 @@ await check(
   },
 );
 await check(
+  "search disclosures and clear links preserve the keyword",
+  async () => {
+    const h = await html(
+      "/search?q=David%20Hume&type=person&theme=self&discipline=philosophy",
+    );
+    assert.match(h, /<form[^>]+method="get"/);
+    assert.match(h, /<details[^>]+open=""/);
+    assert.match(h, /3<!-- -->条件/);
+    assert.match(h, /href="\/search\?q=David\+Hume"/);
+    for (const name of ["type", "theme", "discipline"])
+      assert.ok(h.includes(`name="${name}"`));
+  },
+);
+await check(
+  "a discovered public question is restored on a direct return URL",
+  async () => {
+    const h = await html("/?discovery=4f43d8f5-7bcf-44b1-a763-32765ca427a3");
+    const discovery = h.slice(h.indexOf('class="discovery-card"'));
+    assert.match(
+      discovery.slice(0, discovery.indexOf("</a>")),
+      /href="\/questions\/descartes-q-self"/,
+    );
+  },
+);
+await check(
   "explore and empty search provide continuing navigation",
   async () => {
     assert.match(
@@ -88,7 +124,8 @@ await check(
       /ジョン・ロック/,
     );
     const h = await html("/search?discipline=psychology");
-    assert.match(h, /該当する項目はありません/);
+    assert.match(h, /まだ見つかりませんでした/);
+    assert.match(h, /href="\/questions"/);
     assert.match(h, /href="\/themes"/);
     assert.match(h, /name="theme"/);
     assert.match(h, /name="discipline"/);

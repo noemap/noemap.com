@@ -14,6 +14,7 @@ import {
 import { SearchForm } from "../../components/exploration/SearchForm";
 import { NodeCards } from "../../components/exploration/NodeCards";
 import { Pagination } from "../../components/exploration/Pagination";
+import styles from "./SearchPage.module.css";
 export default async function Search({
   searchParams,
 }: {
@@ -36,24 +37,48 @@ export default async function Search({
     <>
       <div className="exploration-heading">
         <h1>知識を探す</h1>
-        <p>名前・別名・要約から、問い・人物・概念・著作を検索できます。</p>
+        <p>ひとつの言葉から、まだ知らない問いへ。</p>
       </div>
       <SearchForm query={q} type={type} theme={theme} discipline={discipline} />
-      <h2 className="search-result-heading">
-        {q ? `「${q}」の検索結果` : "公開済みの知識"}
+      <h2 className={`search-result-heading ${styles.resultHeading}`}>
+        {q ? `「${q}」の検索結果` : "読み進められるページ"}
       </h2>
       {page.items.length ? (
         <NodeCards nodes={page.items} />
       ) : (
-        <p className="empty-state">
-          {page.offset
-            ? "このページに表示できる項目はありません。"
-            : "該当する項目はありません。名前を短くするか、別名を試してください。"}
-        </p>
+        <section className={styles.emptyState} aria-label="ほかの探索方法">
+          <p className={styles.emptyTitle}>
+            {page.offset
+              ? "このページには結果がありません。"
+              : "この条件のページは、まだ見つかりませんでした。"}
+          </p>
+          <p className={styles.emptyDescription}>
+            {page.offset
+              ? "前のページへ戻るか、別の入口から探索を続けられます。"
+              : "言葉を短くしたり、絞り込みを減らしてみてください。問いやテーマからも探せます。"}
+          </p>
+          <div className={styles.emptyEntrances}>
+            <a href="/questions">
+              <span>
+                <strong>別の問いから探す</strong>
+                <span>問いの一覧から、気になるひとつを。</span>
+              </span>
+              <span className={styles.entranceArrow} aria-hidden="true">
+                →
+              </span>
+            </a>
+            <a href="/themes">
+              <span>
+                <strong>テーマを選ぶ</strong>
+                <span>こころ、自分、知識。興味のある入口へ。</span>
+              </span>
+              <span className={styles.entranceArrow} aria-hidden="true">
+                →
+              </span>
+            </a>
+          </div>
+        </section>
       )}
-      {!page.items.length ? (
-        <a href="/themes">テーマを変えて、探索を続ける →</a>
-      ) : null}
       <Pagination
         pathname="/search"
         offset={page.offset}

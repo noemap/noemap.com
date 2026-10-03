@@ -1,0 +1,389 @@
+.page {
+  --reading-ink: #233947;
+  --reading-muted: #536471;
+  --reading-blue: #325b70;
+  --reading-line: #dce3e4;
+  --reading-wash: #f1f4f3;
+  color: var(--reading-ink);
+}
+
+.page :global(.article-heading) {
+  padding: 24px 0 32px;
+  margin-bottom: 12px;
+  border-color: var(--reading-line);
+}
+
+.page :global(.article-heading) h1 {
+  max-width: 22ch;
+  margin: 10px 0 20px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: clamp(30px, 4.5vw, 50px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+.page :global(.node-introduction) {
+  max-width: 55ch;
+  font-size: 18px;
+  line-height: 1.95;
+  color: var(--reading-muted);
+}
+
+.page :global(.node-breadcrumb) {
+  font-size: 14px;
+}
+
+.page :global(.entry-node-meta) {
+  gap: 4px 12px;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.page :global(.entry-node-meta) a {
+  min-height: 44px;
+}
+
+.page :global(.node-grid) {
+  gap: 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.62fr);
+}
+
+.page :global(.node-aside) {
+  padding-top: 28px;
+}
+
+.page :global(.reading) > section {
+  padding: 32px 0;
+  border-color: var(--reading-line);
+  scroll-margin-top: 24px;
+}
+
+.page :global(.reading) > section > h2 {
+  font-size: 22px;
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+}
+
+.page :global(.reading) > section > p {
+  font-size: 17px;
+  line-height: 2;
+}
+
+.page :global(.reading) details > summary {
+  min-height: 44px;
+  cursor: pointer;
+  display: list-item;
+  align-content: center;
+}
+
+.page :global(.reading) summary:focus-visible,
+.page :global(.reading) a:focus-visible {
+  outline: 3px solid #9d6629;
+  outline-offset: 4px;
+}
+
+.page :global(.reading) :global(.small) {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.page :global(.evidence-list) p {
+  white-space: pre-line;
+}
+
+.page :global(.evidence-list) p > span {
+  display: block;
+  margin-top: 6px;
+}
+
+.page :global(.evidence-list) a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.page :global(.assertion-links) {
+  margin: 8px 0 0;
+}
+
+.page :global(.assertion-links) a {
+  min-height: 44px;
+}
+
+.sourceCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--reading-blue);
+  text-decoration-thickness: 1px;
+}
+
+.readingNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.readingNav a {
+  min-height: 44px;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--reading-blue);
+}
+
+.sectionIntroduction {
+  color: var(--reading-muted);
+  font-size: 15px !important;
+  line-height: 1.9 !important;
+  margin-bottom: 20px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 44px;
+  padding: 20px;
+  border: 1px solid var(--reading-line);
+  border-radius: 14px;
+  background: #fffefd;
+  color: var(--reading-ink);
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.card:hover {
+  color: var(--reading-ink);
+  border-color: #92a8b0;
+  background: #f6f9f8;
+}
+
+.cardType {
+  margin-bottom: 10px;
+  color: var(--reading-blue);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.cardArrow {
+  flex: none;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--reading-blue);
+}
+
+.cardSummary {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--reading-muted);
+}
+
+.cardReason {
+  display: block;
+  margin-top: auto;
+  padding-top: 18px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--reading-blue);
+}
+
+.routeNote {
+  margin: 22px 0 0;
+  color: var(--reading-muted);
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+}
+
+.routeNote strong,
+.routeNote span {
+  display: block;
+}
+
+.routeNote strong {
+  margin-bottom: 6px;
+}
+
+.sourceList {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+
+.source {
+  display: flex;
+  gap: 14px;
+  padding: 24px 0;
+  border-top: 1px solid var(--reading-line);
+}
+
+.source:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.sourceNumber {
+  flex: none;
+  padding-top: 3px;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--reading-blue);
+}
+
+.sourceBody {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.sourceBody h3 {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 17px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.locatorLabel {
+  display: block;
+  margin-top: 12px;
+  color: var(--reading-muted);
+  font-size: 13px;
+}
+
+.locators {
+  padding-left: 18px;
+  margin: 6px 0 10px;
+  font-size: 14px;
+  color: var(--reading-muted);
+  line-height: 1.8;
+}
+
+.locators li + li {
+  margin-top: 6px;
+}
+
+.sourceActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 14px;
+}
+
+.sourceActions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.sourceDetails {
+  margin-top: 4px;
+  border: 1px solid var(--reading-line);
+  border-radius: 9px;
+  padding: 0 14px;
+}
+
+.sourceDetails summary {
+  color: var(--reading-muted);
+  font-size: 14px;
+}
+
+.sourceDetails > div {
+  padding: 4px 0 10px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--reading-muted);
+}
+
+.sourceDetails p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .page :global(.node-grid) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .page :global(.node-aside) {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .page :global(.article-heading) {
+    padding: 12px 0 24px;
+  }
+
+  .page :global(.article-heading) h1 {
+    font-size: 30px;
+    line-height: 1.6;
+  }
+
+  .page :global(.node-introduction) {
+    font-size: 16px;
+  }
+
+  .page :global(.reading) > section {
+    padding: 28px 0;
+  }
+
+  .page :global(.reading) > section > p {
+    font-size: 16px;
+    line-height: 1.95;
+  }
+
+  .cardGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .source {
+    gap: 10px;
+  }
+
+  .readingNav {
+    gap: 0 16px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}

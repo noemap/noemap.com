@@ -1,6 +1,6 @@
 {
-  "origin": "http://127.0.0.1:4347",
-  "checked_at": "2026-10-03T13:07:25.613Z",
+  "origin": "http://127.0.0.1:4350",
+  "checked_at": "2026-10-03T14:04:09.680Z",
   "checks": [
     {
       "name": "eight cards precede search and use real published article links",
@@ -20,6 +20,14 @@
     },
     {
       "name": "unknown classification query returns 400, not an unfiltered result",
+      "status": "passed"
+    },
+    {
+      "name": "search disclosures and clear links preserve the keyword",
+      "status": "passed"
+    },
+    {
+      "name": "a discovered public question is restored on a direct return URL",
       "status": "passed"
     },
     {

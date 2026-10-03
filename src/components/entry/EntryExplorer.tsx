@@ -158,7 +158,7 @@ export function EntryExplorer({
                       className="entry-overview"
                       onClick={() => rememberEntry(group.overview!.id)}
                     >
-                      この問いの概要を読む <span aria-hidden="true">→</span>
+                      この小テーマの入口を読む <span aria-hidden="true">→</span>
                     </Link>
                   ) : null}
                 </div>
@@ -203,8 +203,13 @@ export function EntryExplorer({
             {!theme.groups.length ? (
               <span className="entry-preparing">準備中</span>
             ) : (
-              <span className="entry-theme-arrow" aria-hidden="true">
-                ⌄
+              <span className="entry-theme-availability">
+                {selection.theme === theme.id
+                  ? "閉じる"
+                  : `${new Set(theme.groups.flatMap((g) => g.questions.map((q) => q.id))).size}つの問い`}{" "}
+                <span className="entry-theme-arrow" aria-hidden="true">
+                  ⌄
+                </span>
               </span>
             )}
           </button>

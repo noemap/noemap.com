@@ -1,0 +1,88 @@
+.resultHeading {
+  margin: 0 0 20px;
+  font-size: 22px;
+  overflow-wrap: anywhere;
+}
+
+.emptyState {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.emptyTitle {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.emptyDescription {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.emptyEntrances {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.emptyEntrances a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 12px;
+  padding: 16px;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.emptyEntrances a:hover {
+  border-color: var(--green);
+  background: var(--pale);
+}
+
+.emptyEntrances strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.emptyEntrances a > span > span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.entranceArrow {
+  color: var(--green);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .emptyState {
+    padding: 20px;
+  }
+
+  .emptyEntrances {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .emptyEntrances a {
+    transition:
+      border-color 0.15s,
+      background-color 0.15s;
+  }
+}
