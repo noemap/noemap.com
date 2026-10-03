@@ -1,0 +1,625 @@
+{
+  "schema_version": 1,
+  "batch_id": "descartes-real-source-draft-20261003",
+  "status": "draft",
+  "human_review": {
+    "status": "pending",
+    "reviewer": null,
+    "approved_at": null
+  },
+  "database_imported": false,
+  "published": false,
+  "purpose": "第一・第二省察を、訳・編集の経路と議論の段階を残して探索する。資料照合は済、採用は人のレビュー待ち。",
+  "node_candidates": [
+    {
+      "id": "descartes-q-certainty",
+      "type": "question",
+      "label": "確かな知はあるか？",
+      "nature": "editorial",
+      "summary_ja": "疑いから確かさを探る入口。",
+      "basis": ["descartes-a-doubt", "descartes-a-existence"]
+    },
+    {
+      "id": "descartes-q-self",
+      "type": "question",
+      "label": "私は何か？",
+      "nature": "editorial",
+      "summary_ja": "存在の確かさから自己を問う入口。",
+      "basis": [
+        "descartes-a-existence",
+        "descartes-a-thinking-thing",
+        "descartes-a-body-undecided"
+      ]
+    },
+    {
+      "id": "descartes-p-descartes",
+      "type": "person",
+      "label": "ルネ・デカルト",
+      "aliases": ["René Descartes", "デカルト"],
+      "summary_ja": "『省察』の著者。",
+      "biography_status": "本候補では生没年・経歴を未照合",
+      "evidence": [
+        {
+          "source": "descartes-s-bennett",
+          "locator": "扉：著者名",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-w-meditations",
+      "type": "work",
+      "label": "省察",
+      "aliases": [
+        "Meditationes de prima philosophia",
+        "Meditations on First Philosophy",
+        "第一哲学についての省察"
+      ],
+      "summary_ja": "本候補は第一・第二省察を扱う。",
+      "bibliography_status": "原著と今回の訳・編集版をsourcesで区別。邦訳書誌は未照合。",
+      "evidence": [
+        {
+          "source": "descartes-s-bennett",
+          "locator": "扉、目次、第一・第二省察見出し",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-c-doubt",
+      "type": "concept",
+      "label": "方法的懐疑（第一省察）",
+      "aliases": ["methodical doubt"],
+      "summary_ja": "確かさのために同意を留保する。",
+      "definition_scope": "デカルト『省察』第一省察の探究手続き。案内語としての「方法的懐疑」。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第一省察：疑いを含む意見への同意留保を述べる段落",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-c-senses",
+      "type": "concept",
+      "label": "感覚の誤り（第一省察）",
+      "aliases": ["sensory deception"],
+      "summary_ja": "感覚を全面的に信頼できるか。",
+      "definition_scope": "第一省察で感覚の誤りを疑いの理由とする箇所。感覚一般の心理学的定義ではない。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第一省察：感覚が時に誤ると述べる段落",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-c-dream",
+      "type": "concept",
+      "label": "夢による疑い（第一省察）",
+      "aliases": ["dream argument"],
+      "summary_ja": "夢と覚醒を確実に区別できるか。",
+      "definition_scope": "第一省察の夢による懐疑。作品内の検討段階を保持する。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第一省察：夢と覚醒の確実な指標を検討する段落",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-c-deceiver",
+      "type": "concept",
+      "label": "欺く者の仮定（第一省察）",
+      "aliases": ["悪霊の仮定", "malicious demon"],
+      "summary_ja": "強力な欺く者を仮に置く。",
+      "definition_scope": "第一省察末尾の、疑いを維持するための仮定。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第一省察末尾：悪意ある欺く者を想定する段落",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-c-existence",
+      "type": "concept",
+      "label": "存在の確かさ（第二省察）",
+      "aliases": ["コギト（案内語）"],
+      "summary_ja": "自分の存在を考える際の確かさ。",
+      "definition_scope": "第二省察の存在命題。「我思う、ゆえに我あり」をこの箇所の原文引用として登録しない。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第二省察：欺かれていても、自分の存在を述べ・考える際の真を述べる段落",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-c-thinking-thing",
+      "type": "concept",
+      "label": "考えるもの（第二省察）",
+      "aliases": ["thinking thing"],
+      "summary_ja": "省察者が確実に認める自己。",
+      "definition_scope": "第二省察でその段階において認められる自己の把握。身体との実在的区別はここだけで確定しない。",
+      "evidence": [
+        {
+          "source": "descartes-s-veitch",
+          "locator": "第二省察 §6（編者付与段落番号）、PDF23枚目",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-c-thought",
+      "type": "concept",
+      "label": "思考の諸様態（第二省察）",
+      "aliases": ["modes of thinking"],
+      "summary_ja": "疑い・意志・想像なども思考。",
+      "definition_scope": "第二省察で考えるものの活動を列挙する箇所。感覚は「そう感じられる」という限定された意味で扱う。",
+      "evidence": [
+        {
+          "source": "descartes-s-bennett",
+          "locator": "第二省察、印刷pp.5–6（PDF6–7枚目）：思考活動の列挙と感覚の限定",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "descartes-c-wax",
+      "type": "concept",
+      "label": "蝋の考察（第二省察）",
+      "aliases": ["wax example"],
+      "summary_ja": "変化する蝋を知る働きを考える。",
+      "definition_scope": "第二省察の一片の蝋をめぐる認識の考察。物体の実在証明として扱わない。",
+      "evidence": [
+        {
+          "source": "descartes-s-bennett",
+          "locator": "第二省察、印刷pp.6–8（PDF7–9枚目）：蝋の考察",
+          "role": "support"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "descartes-s-johnston",
+      "title": "Meditations on First Philosophy — Ian Johnston translation",
+      "author": "René Descartes",
+      "host": "Vancouver Island University",
+      "url": "https://web.viu.ca/johnstoi/descartes/descartesmeditations.htm",
+      "accessed_date": "2026-10-03",
+      "language": "en",
+      "original_work": {
+        "title": "Meditationes de prima philosophia",
+        "language": "la",
+        "first_publication_year": 1641,
+        "basis_locator": "TRANSLATOR’S NOTE"
+      },
+      "edition": "Ian Johnston 英訳。2012年ウェブ掲載。訳者注は1641年ラテン語版を基礎とし、1642年の訂正と1647年フランス語版の一部追加を反映すると説明。",
+      "translator": "Ian Johnston",
+      "edition_notes_locator": "扉、TRANSLATOR’S NOTE",
+      "editorial_processing": [
+        "反論・答弁を省略",
+        "角括弧でフランス語版の追加を表示",
+        "訳者の解説注を付与"
+      ],
+      "examined_locations": ["訳者注", "第一省察", "第二省察の存在命題"],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "usage_notice": "翻訳には著作権上の制限あり。用途の具体条件は未確認。",
+      "stored_full_text": false,
+      "original_language_collation": false
+    },
+    {
+      "id": "descartes-s-bennett",
+      "title": "Meditations on First Philosophy — Jonathan Bennett edited version, Meditations I–II",
+      "author": "René Descartes",
+      "host": "Simon Fraser University",
+      "url": "https://www.sfu.ca/~jillmc/descartes1641_1-2.pdf",
+      "accessed_date": "2026-10-03",
+      "language": "en",
+      "original_work": {
+        "title": "Meditationes de prima philosophia",
+        "original_work_ref": "descartes-w-meditations",
+        "original_edition_not_identical_to_accessed_file": true
+      },
+      "edition": "Jonathan Bennett による英語編集版。扉は初公開2004年7月、最終改訂2007年4月、著作権表示2017年。原語底本・翻訳底本の詳細はこのファイルだけでは未確認。",
+      "editor": "Jonathan Bennett",
+      "edition_notes_locator": "扉（PDF1枚目）；対話形式の注記：印刷pp.1,4（PDF2,5枚目）",
+      "editorial_processing": [
+        "角括弧の編者説明",
+        "小点で囲む追加",
+        "短い難解箇所の省略",
+        "原著にない対話形式"
+      ],
+      "examined_locations": [
+        "扉",
+        "第一省察の編集注記",
+        "第二省察、印刷pp.4–8"
+      ],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "usage_notice": "扉にAll rights reservedの表示。本文転載の許可として扱わない。",
+      "stored_full_text": false,
+      "original_language_collation": false
+    },
+    {
+      "id": "descartes-s-veitch",
+      "title": "Descartes' Meditations — A Trilingual HTML Edition (PDF reproduction)",
+      "author": "René Descartes",
+      "host": "Wright State University / CORE Scholar",
+      "url": "https://research.wright.edu/ws/portalfiles/portal/40561546/Descartes%20Meditations%20-%20Trilingual%20Edition.pdf",
+      "accessed_date": "2026-10-03",
+      "language": "en",
+      "original_work": {
+        "title": "Meditationes de prima philosophia",
+        "language": "la",
+        "first_publication_year": 1641,
+        "basis_locator": "PDF2–3枚目：Introduction to the HTML Edition"
+      },
+      "edition": "David B. Manley / Charles S. Taylor 編の三言語版（著作権表示1996年）。今回の本文照合は John Veitch 1901年英訳部分。原文・仏訳の全面照合はしていない。",
+      "translator": "John Veitch",
+      "editors": ["David B. Manley", "Charles S. Taylor"],
+      "edition_notes_locator": "PDF2–3枚目：編者・使用版・段落付番の説明",
+      "editorial_processing": [
+        "英訳・ラテン語版・1647年フランス語版を収録",
+        "原ラテン語の段落区分に基づく編者付与番号"
+      ],
+      "examined_locations": ["編集版の紹介", "第二省察 §6–7（PDF23枚目）"],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "usage_notice": "学術目的の配布に言及し、有償販売は編者許可が必要と説明。NOEMAP公開用途は未確認。",
+      "stored_full_text": false,
+      "original_language_collation": false
+    }
+  ],
+  "assertion_candidates": [
+    {
+      "id": "descartes-a-doubt",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-doubt",
+      "text_ja": "省察者は、疑いを含む意見への同意を留保する。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第一省察：疑わしい意見への同意留保の段落（Now, for this で始まる）",
+          "role": "support"
+        }
+      ],
+      "limit": "全意見の偽を証明したとは扱わない。",
+      "argument_role": "position"
+    },
+    {
+      "id": "descartes-a-senses",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-senses",
+      "text_ja": "省察者は、感覚が時に誤ることを疑いの理由にする。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第一省察：感覚の信頼性を述べる段落（Up to this で始まる）",
+          "role": "support"
+        }
+      ],
+      "limit": "感覚が常に偽であるという主張にしない。",
+      "argument_role": "position"
+    },
+    {
+      "id": "descartes-a-dream",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-dream",
+      "text_ja": "省察者は、夢と覚醒を確実に区別する指標を疑う。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第一省察：夢の検討（Yes, of course で始まる段落）",
+          "role": "support"
+        }
+      ],
+      "limit": "夢を見ている事実の確定ではない。",
+      "argument_role": "position"
+    },
+    {
+      "id": "descartes-a-deceiver",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-deceiver",
+      "text_ja": "省察者は、強力な欺く者を仮定して疑いを維持する。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第一省察末尾：欺く者の仮定（Therefore, I will で始まる段落）",
+          "role": "support"
+        }
+      ],
+      "limit": "欺く者の実在を断定しない。",
+      "argument_role": "hypothetical-supposition"
+    },
+    {
+      "id": "descartes-a-existence",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-existence",
+      "text_ja": "省察者は、自分の存在を述べ・考える際の真を認める。",
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "第二省察：存在命題（But then, if で始まる段落）",
+          "role": "support"
+        }
+      ],
+      "limit": "この時点の認識の確かさに限る。",
+      "argument_role": "position"
+    },
+    {
+      "id": "descartes-a-duration-limit",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-existence",
+      "text_ja": "省察者は、思考が止まった場合の存在をここでは確定しない。",
+      "evidence": [
+        {
+          "source": "descartes-s-veitch",
+          "locator": "第二省察 §6、PDF23枚目",
+          "role": "qualification"
+        }
+      ],
+      "limit": "自己の永続性の証明にも、不存在の断定にもしない。",
+      "argument_role": "qualification"
+    },
+    {
+      "id": "descartes-a-thinking-thing",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-thinking-thing",
+      "text_ja": "省察者は、この段階の自己を考えるものと捉える。",
+      "evidence": [
+        {
+          "source": "descartes-s-veitch",
+          "locator": "第二省察 §6、PDF23枚目",
+          "role": "support"
+        }
+      ],
+      "limit": "著作全体の心身論をこの一節で代表させない。",
+      "argument_role": "position"
+    },
+    {
+      "id": "descartes-a-body-undecided",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-thinking-thing",
+      "text_ja": "省察者は、未確定な身体と自己の同一性をここでは決めない。",
+      "evidence": [
+        {
+          "source": "descartes-s-veitch",
+          "locator": "第二省察 §7、PDF23枚目",
+          "role": "qualification"
+        }
+      ],
+      "limit": "第二省察のみから実在的な心身の区別を導かない。",
+      "argument_role": "qualification"
+    },
+    {
+      "id": "descartes-a-thought-modes",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-thought",
+      "text_ja": "省察者は、疑い・理解・意志・想像・感覚を思考に含める。",
+      "evidence": [
+        {
+          "source": "descartes-s-bennett",
+          "locator": "第二省察、印刷pp.5–6（PDF6–7枚目）",
+          "role": "support"
+        }
+      ],
+      "limit": "感覚は対象の実在でなく、そう感じられることとして扱う。",
+      "argument_role": "position"
+    },
+    {
+      "id": "descartes-a-wax",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-wax",
+      "text_ja": "省察者は、変化する蝋を捉える知性の働きを論じる。",
+      "evidence": [
+        {
+          "source": "descartes-s-bennett",
+          "locator": "第二省察、印刷pp.6–7（PDF7–8枚目）",
+          "role": "support"
+        }
+      ],
+      "limit": "蝋を観察する経験的実験として登録しない。",
+      "argument_role": "position"
+    },
+    {
+      "id": "descartes-a-mind-priority",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "René Descartes",
+      "attribution_role": "著作内の省察者の議論",
+      "subject": "descartes-c-wax",
+      "text_ja": "省察者は、蝋の認識から自分の心をより確かに知ると論じる。",
+      "evidence": [
+        {
+          "source": "descartes-s-bennett",
+          "locator": "第二省察、印刷pp.7–8（PDF8–9枚目）",
+          "role": "support"
+        }
+      ],
+      "limit": "認識の順序と存在論上の独立を混同しない。",
+      "argument_role": "position"
+    }
+  ],
+  "relationship_candidates": [
+    {
+      "id": "descartes-r-certainty-doubt",
+      "from": "descartes-q-certainty",
+      "to": "descartes-c-doubt",
+      "nature": "editorial",
+      "reason": "確かさを探す手続きへ進む。",
+      "basis": ["descartes-a-doubt"]
+    },
+    {
+      "id": "descartes-r-doubt-senses",
+      "from": "descartes-c-doubt",
+      "to": "descartes-c-senses",
+      "nature": "editorial",
+      "reason": "疑いの理由として感覚を読む。",
+      "basis": ["descartes-a-doubt", "descartes-a-senses"]
+    },
+    {
+      "id": "descartes-r-doubt-dream",
+      "from": "descartes-c-doubt",
+      "to": "descartes-c-dream",
+      "nature": "editorial",
+      "reason": "夢による疑いへ進む。",
+      "basis": ["descartes-a-doubt", "descartes-a-dream"]
+    },
+    {
+      "id": "descartes-r-doubt-deceiver",
+      "from": "descartes-c-doubt",
+      "to": "descartes-c-deceiver",
+      "nature": "editorial",
+      "reason": "疑いを維持する仮定を読む。",
+      "basis": ["descartes-a-doubt", "descartes-a-deceiver"]
+    },
+    {
+      "id": "descartes-r-deceiver-existence",
+      "from": "descartes-c-deceiver",
+      "to": "descartes-c-existence",
+      "nature": "editorial",
+      "reason": "欺きの仮定下での存在命題を読む。",
+      "basis": ["descartes-a-deceiver", "descartes-a-existence"]
+    },
+    {
+      "id": "descartes-r-self-existence",
+      "from": "descartes-q-self",
+      "to": "descartes-c-existence",
+      "nature": "editorial",
+      "reason": "自己を問う前提を検討する。",
+      "basis": ["descartes-a-existence"]
+    },
+    {
+      "id": "descartes-r-existence-thinker",
+      "from": "descartes-c-existence",
+      "to": "descartes-c-thinking-thing",
+      "nature": "editorial",
+      "reason": "確かさから自己の把握へ進む。",
+      "basis": [
+        "descartes-a-existence",
+        "descartes-a-thinking-thing",
+        "descartes-a-duration-limit",
+        "descartes-a-body-undecided"
+      ]
+    },
+    {
+      "id": "descartes-r-thinker-modes",
+      "from": "descartes-c-thinking-thing",
+      "to": "descartes-c-thought",
+      "nature": "editorial",
+      "reason": "思考に含められる活動を読む。",
+      "basis": ["descartes-a-thinking-thing", "descartes-a-thought-modes"]
+    },
+    {
+      "id": "descartes-r-person-work",
+      "from": "descartes-p-descartes",
+      "to": "descartes-w-meditations",
+      "nature": "editorial",
+      "reason": "今回照合した著作の議論へ進む。",
+      "basis": ["descartes-a-doubt", "descartes-a-thinking-thing"]
+    },
+    {
+      "id": "descartes-r-work-doubt",
+      "from": "descartes-w-meditations",
+      "to": "descartes-c-doubt",
+      "nature": "editorial",
+      "reason": "第一省察の探究手続きへ進む。",
+      "basis": ["descartes-a-doubt"]
+    },
+    {
+      "id": "descartes-r-work-wax",
+      "from": "descartes-w-meditations",
+      "to": "descartes-c-wax",
+      "nature": "editorial",
+      "reason": "第二省察の具体例を読む。",
+      "basis": ["descartes-a-wax", "descartes-a-mind-priority"]
+    },
+    {
+      "id": "descartes-r-wax-thinker",
+      "from": "descartes-c-wax",
+      "to": "descartes-c-thinking-thing",
+      "nature": "editorial",
+      "reason": "蝋の認識と心の認識を併せて読む。",
+      "basis": [
+        "descartes-a-wax",
+        "descartes-a-mind-priority",
+        "descartes-a-thinking-thing"
+      ]
+    },
+    {
+      "id": "descartes-r-senses-thought",
+      "from": "descartes-c-senses",
+      "to": "descartes-c-thought",
+      "nature": "editorial",
+      "reason": "感覚の信頼性と感じられることの区別を読む。",
+      "basis": ["descartes-a-senses", "descartes-a-thought-modes"]
+    }
+  ],
+  "temporal_candidates": [],
+  "review_requirements": [
+    "日本語要約と各訳の意味を人が照合",
+    "原語・他訳との対応と正式な底本書誌の追加確認",
+    "概念ラベルの案内語と原文の語を区別",
+    "既存Entityとの重複・版対応を確認",
+    "編集関係の根拠と述語をDB形式へ対応付け",
+    "公開用途の条件と最終文章の承認"
+  ],
+  "acceptance_checks": [
+    "Bennett版の対話役名を人物Entityにしない",
+    "編者注・追加をデカルトの原文として保存しない",
+    "第二省察だけから自己の永続性・魂の不死・心身の実在的区別を確定しない",
+    "存在の確かさと、その自己が何であるかの問いを分ける",
+    "根拠を撤回した際は依存する記述・編集関係も非公開にする",
+    "生没年は照合なしに年表へ追加しない",
+    "草稿を人の公開承認として扱わない"
+  ],
+  "next_action": "資料・要約・編集関係を人が確認した後、DBの下書きへの登録を検討する。"
+}

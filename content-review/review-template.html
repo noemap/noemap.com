@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NOEMAP — 初期コンテンツの確認</title>
+    <style>
+      :root { color-scheme: light; --ink: #26372f; --muted: #59675d; --line: #d7ddd2; --paper: #f4f3eb; --white: #fffef9; --green: #305946; --soft: #e7ede2; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Yu Gothic UI", "Meiryo", sans-serif; line-height: 1.8; }
+      a { color: var(--green); text-underline-offset: 3px; overflow-wrap: anywhere; }
+      button, input, select { font: inherit; }
+      button, select { cursor: pointer; }
+      button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid #8b6532; outline-offset: 3px; }
+      header { max-width: 1180px; margin: auto; padding: 34px 28px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+      .brand { letter-spacing: .12em; font-size: 20px; font-weight: 700; }
+      .status { font-size: 13px; padding: 4px 12px; border-radius: 30px; color: #66512d; background: #ece4cf; }
+      main { max-width: 1180px; margin: auto; padding: 45px 28px 60px; }
+      h1 { font-family: "Yu Mincho", serif; font-size: clamp(27px, 4vw, 44px); font-weight: 600; letter-spacing: .015em; line-height: 1.5; margin: 0 0 18px; }
+      .intro { max-width: 740px; color: var(--muted); margin: 0; }
+      .counts { margin: 25px 0; display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; }
+      .counts strong { font-size: 23px; margin-right: 4px; color: var(--green); }
+      .notice { border-left: 3px solid #8c744e; padding: 10px 16px; background: #eee9dc; font-size: 14px; margin: 24px 0 30px; }
+      .controls { padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 16px; }
+      .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+      .tabs button { background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 24px; padding: 7px 17px; font-size: 14px; }
+      .tabs button[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: white; }
+      .fields { display: grid; grid-template-columns: minmax(0,1fr) 180px; gap: 16px; }
+      label { display: block; font-size: 13px; color: var(--muted); }
+      input, select { display: block; width: 100%; padding: 10px 12px; margin-top: 6px; border: 1px solid #bdc9b8; border-radius: 6px; background: var(--white); color: var(--ink); min-width: 0; }
+      #result-count { font-size: 14px; color: var(--muted); margin: 24px 0 18px; }
+      .grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+      .card { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 24px; scroll-margin-top: 24px; min-width: 0; }
+      .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; gap: 10px; }
+      .type { background: var(--soft); color: var(--green); padding: 1px 7px; border-radius: 3px; }
+      h2 { font-size: 20px; line-height: 1.55; margin: 0 0 10px; }
+      .card p { font-size: 15px; margin: 10px 0; }
+      .scope { color: var(--muted); font-size: 13px !important; }
+      details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; font-size: 13px; }
+      summary { cursor: pointer; color: var(--green); }
+      .evidence { padding-left: 18px; }
+      .evidence li { margin: 8px 0; overflow-wrap: anywhere; }
+      .links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+      .links a { font-size: 13px; border: 1px solid var(--line); border-radius: 4px; padding: 2px 8px; text-decoration: none; }
+      .links a:hover { background: var(--soft); }
+      .empty { padding: 28px; border: 1px dashed var(--line); grid-column: 1/-1; }
+      .section { margin-top: 44px; }
+      .section > h2 { font-family: "Yu Mincho", serif; font-size: 25px; margin-bottom: 18px; }
+      .claim { padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .claim p { margin: 5px 0; font-size: 14px; }
+      .claim .limit { color: #775a35; }
+      .source { padding: 19px 0; border-bottom: 1px solid var(--line); }
+      .source h3 { font-size: 16px; margin: 0 0 8px; }
+      .source p { margin: 5px 0; color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+      footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 20px; color: var(--muted); font-size: 13px; }
+      @media(max-width: 700px) { header { padding: 20px 18px 0; } main { padding: 32px 18px 40px; } .grid { grid-template-columns: 1fr; } .fields { grid-template-columns: 1fr; gap: 12px; } .card { padding: 20px; } .counts { gap: 14px; } .tabs button { padding: 6px 12px; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">NOEMAP</div>
+      <span class="status">内容確認待ち</span>
+    </header>
+    <main>
+      <h1>「私」をめぐる、最初の探索。</h1>
+      <p class="intro">
+        同じ私であり続けるとは、どういうことか。ヒューム、ロック、デカルトの原典を入口に、問い・人物・概念・著作をつなぐ初期コンテンツを準備しました。各項目から、参照した箇所と要約の範囲を確認できます。
+      </p>
+      <div class="counts" id="counts"></div>
+      <div class="notice">
+        この画面はレビュー用の草稿です。人による内容確認・公開承認、DB登録はまだ行っていません。別の著者が使う似た用語は、文脈を持つ別項目として扱っています。
+      </div>
+      <section class="controls" aria-label="項目を探す">
+        <div class="tabs" id="tabs"></div>
+        <div class="fields">
+          <label
+            >名前・別名・説明から探す<input
+              id="query"
+              type="search"
+              placeholder="例：記憶、蝋、知覚"
+          /></label>
+          <label
+            >種類<select id="type">
+              <option value="">すべての種類</option>
+              <option value="question">問い</option>
+              <option value="person">人物</option>
+              <option value="concept">概念</option>
+              <option value="work">著作</option>
+            </select></label
+          >
+        </div>
+      </section>
+      <p id="result-count" role="status" aria-live="polite"></p>
+      <section class="grid" id="nodes" aria-label="知識の候補"></section>
+      <section class="section">
+        <h2>記述と留保を確認する</h2>
+        <p class="intro">
+          原典の立場を紹介する要約と、NOEMAPがつなぐ編集上の関係を分けています。下記の文面に人の承認は付いていません。
+        </p>
+        <div id="claims"></div>
+      </section>
+      <section class="section">
+        <h2>参照した資料と版</h2>
+        <div id="sources"></div>
+      </section>
+      <section class="section">
+        <h2>公開前に確認すること</h2>
+        <ol>
+          <li>日本語の要約が、原典の文脈や留保を強めていないか。</li>
+          <li>オンラインの版・翻訳・編者の加工と、原著を区別できているか。</li>
+          <li>既存の知識項目との同一性と、資料の用途を確認できているか。</li>
+          <li>
+            固定した版ごとに人の審査を記録し、DBへ登録した後も根拠まで辿れるか。
+          </li>
+        </ol>
+      </section>
+      <footer>
+        2026年10月3日作成 ·
+        この画面での構造検査は、内容審査や公開承認を意味しません。PR
+        #2の探索MVPとは独立した確認画面です。
+      </footer>
+    </main>
+    <script id="batch-data" type="application/json">
+      __BATCH_DATA__
+    </script>
+    <script>
+      const batches = JSON.parse(document.getElementById("batch-data").textContent);
+      const labels = { question: "問い", person: "人物", concept: "概念", work: "著作" };
+      const escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
+      const batchName = batch => batch.batch_id.includes("hume") ? "ヒューム" : batch.batch_id.includes("locke") ? "ロック" : "デカルト";
+      const allNodes = batches.flatMap(batch => batch.node_candidates.map(node => ({ ...node, batch, group: batchName(batch) })));
+      const sourceMap = new Map(batches.flatMap(batch => batch.sources.map(source => [source.id, source])));
+      const claimMap = new Map(batches.flatMap(batch => batch.assertion_candidates.map(claim => [claim.id, claim])));
+      let group = "";
+      const query = document.getElementById("query");
+      const type = document.getElementById("type");
+      const counts = [[allNodes.length, "項目"], [claimMap.size, "記述"], [batches.reduce((n,b) => n + b.relationship_candidates.length,0), "関係"], [sourceMap.size, "参照先"]];
+      document.getElementById("counts").innerHTML = counts.map(([n,label]) => `<span><strong>${n}</strong>${label}</span>`).join("");
+      const evidenceHtml = evidence => `<ul class="evidence">${evidence.map(item => { const source = sourceMap.get(item.source); return `<li><a href="${escape(source.url)}" target="_blank" rel="noopener">${escape(source.title)}</a><br>${escape(item.locator)}${item.role === "qualification" ? " · 留保" : ""}</li>`; }).join("")}</ul>`;
+      const evidenceForNode = node => node.evidence?.length ? node.evidence : (node.basis ?? []).flatMap(id => claimMap.get(id).evidence);
+      function renderTabs() {
+        document.getElementById("tabs").innerHTML = ["", "ヒューム", "ロック", "デカルト"].map(name => `<button type="button" data-group="${name}" aria-pressed="${group === name}">${name || "すべて"}</button>`).join("");
+        document.querySelectorAll("[data-group]").forEach(button => button.addEventListener("click", () => { group = button.dataset.group; renderTabs(); renderNodes(); }));
+      }
+      function renderNodes() {
+        const term = query.value.normalize("NFKC").toLocaleLowerCase("ja").trim();
+        const nodes = allNodes.filter(node => (!group || node.group === group) && (!type.value || node.type === type.value) && (!term || [node.label, ...(node.aliases ?? []), node.summary_ja].join(" ").normalize("NFKC").toLocaleLowerCase("ja").includes(term)));
+        document.getElementById("result-count").textContent = `${allNodes.length}項目中 ${nodes.length}項目を表示`;
+        document.getElementById("nodes").innerHTML = nodes.length ? nodes.map(node => {
+          const related = node.batch.relationship_candidates.filter(r => r.from === node.id || r.to === node.id).map(r => { const target = allNodes.find(n => n.id === (r.from === node.id ? r.to : r.from)); return `<a href="#${escape(target.id)}" data-node="${escape(target.id)}" title="${escape(r.reason)}">${escape(target.label)}</a>`; }).join("");
+          return `<article class="card" id="${escape(node.id)}"><div class="meta"><span class="type">${labels[node.type]}</span><span>${node.group}の経路${node.nature === "editorial" ? " · 編集上の問い" : ""}</span></div><h2>${escape(node.label)}</h2><p>${escape(node.summary_ja)}</p>${node.definition_scope ? `<p class="scope">扱う範囲：${escape(node.definition_scope)}</p>` : ""}<details><summary>根拠・参照箇所を読む</summary>${evidenceHtml(evidenceForNode(node))}</details><div class="links">${related}</div></article>`;
+        }).join("") : '<p class="empty">条件に合う項目がありません。検索語や種類を変更してください。</p>';
+        document.querySelectorAll("[data-node]").forEach(link => link.addEventListener("click", () => { group = ""; query.value = ""; type.value = ""; renderTabs(); renderNodes(); }));
+      }
+      document.getElementById("claims").innerHTML = batches.map(batch => `<details><summary>${batchName(batch)} · ${batch.assertion_candidates.length}記述</summary>${batch.assertion_candidates.map(claim => `<article class="claim"><p>${escape(claim.text_ja)}</p><p class="scope">帰属：${escape(claim.attribution)} · ${escape(claim.nature)}</p><p class="limit">留保：${escape(claim.limit)}</p>${evidenceHtml(claim.evidence)}</article>`).join("")}</details>`).join("");
+      document.getElementById("sources").innerHTML = [...sourceMap.values()].map(source => `<article class="source"><h3><a href="${escape(source.url)}" target="_blank" rel="noopener">${escape(source.title)}</a></h3><p>${escape(source.edition)}</p><p>確認日：${escape(source.accessed_date)} · ${escape(source.language)} · 引用・全文公開等の用途確認は未了</p>${source.usage_notice ? `<p>${escape(source.usage_notice)}</p>` : ""}</article>`).join("");
+      query.addEventListener("input", renderNodes);
+      type.addEventListener("change", renderNodes);
+      renderTabs(); renderNodes();
+    </script>
+  </body>
+</html>

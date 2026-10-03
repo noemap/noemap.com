@@ -1,0 +1,40 @@
+{
+  "name": "noemap-foundation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node tests/db/run.mjs",
+    "dev:local": "node scripts/dev-local.mjs",
+    "build": "node scripts/build-public-release.mjs && next build",
+    "dev": "node scripts/build-public-release.mjs && next dev --hostname 127.0.0.1 --port 4330",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test:web": "node tests/web/smoke.mjs",
+    "test:content": "node tests/content-review.test.mjs",
+    "test:release": "node tests/public-release.test.mjs && node tests/provisional.test.mjs",
+    "content:release": "node scripts/build-public-release.mjs",
+    "content:review": "node scripts/content-review.mjs",
+    "content:preview": "node scripts/serve-content-review.mjs",
+    "format:check": "prettier --check src scripts/dev-local.mjs tests/db/editorial.mjs tests/db/editor-api.mjs tests/fixtures tests/web next.config.ts tsconfig.json package.json"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.4",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "embedded-postgres": "18.4.0-beta.17",
+    "prettier": "3.9.9",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "next": "16.3.8",
+    "pg": "8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "0.0.1"
+  }
+}

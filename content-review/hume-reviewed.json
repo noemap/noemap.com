@@ -1,0 +1,803 @@
+{
+  "schema_version": 1,
+  "batch_id": "real-source-hume-review-20261003",
+  "status": "draft",
+  "human_review": {
+    "status": "pending",
+    "reviewer": null,
+    "approved_at": null
+  },
+  "database_imported": false,
+  "published": false,
+  "purpose": "ヒュームの人格同一性を入口に、本人の本文・補遺とオンライン版の編集説明を照合した12項目のレビュー草稿。",
+  "derivation": {
+    "pilot_file": "hume-pilot.json",
+    "pilot_modified": false,
+    "source_verification": "agent_checked",
+    "human_approval": "pending"
+  },
+  "editorial_policy": {
+    "summaries": "日本語の短い言い換え。既存日本語訳の引用ではない。",
+    "concept_identity": "概念ラベルはヒュームの用法に限定する。ロックや現代心理学の概念へ自動統合しない。",
+    "relationships": "閲覧経路の編集案。人物間の歴史的影響を表す関係は作らない。",
+    "dates": "原著刊行年とオンライン版の情報を分離する。今回、生没年や正確な刊行月日は登録しない。"
+  },
+  "bibliographic_review": {
+    "work_id": "hume-w-treatise",
+    "canonical_title": "A Treatise of Human Nature",
+    "title_ja": "人間本性論",
+    "original_publication": {
+      "volumes_1_and_2": {
+        "year": 1739,
+        "evidence": [
+          {
+            "source": "hume-s-copytexts",
+            "locator": "§1 List of Editions, Treatise paragraph",
+            "role": "support"
+          }
+        ]
+      },
+      "volume_3": {
+        "year": 1740,
+        "evidence": [
+          {
+            "source": "hume-s-copytexts",
+            "locator": "§1 List of Editions, Treatise paragraph",
+            "role": "support"
+          }
+        ]
+      },
+      "appendix": {
+        "year": 1740,
+        "evidence": [
+          {
+            "source": "hume-s-treatise-index",
+            "locator": "Contents: Appendix (1740)",
+            "role": "support"
+          }
+        ]
+      },
+      "publisher_place_and_imprint": "not_verified",
+      "full_original_title_page_transcription": "not_verified"
+    },
+    "online_edition": {
+      "host": "Hume Texts Online",
+      "editors": ["Amyas Merivale", "Peter Millican"],
+      "publication_or_revision_date": null,
+      "display_used": "default_edited_text",
+      "copytext": "原刊本のECCO所蔵スキャンを底本とするオンライン編集版。",
+      "editorial_notes_ja": "既定の編集表示は正誤表や補遺の訂正・追加を第1巻へ組み込み、組み込んだ追加を補遺側から外す。原文表示にも段落ラベル等の変更がある。SBNは底本ではなく参照版の頁番号。",
+      "evidence": [
+        {
+          "source": "hume-s-treatise-notes",
+          "locator": "Heading credits; introductory copytext paragraph; §1 ERRATA changes; §2 Appendix changes and additions",
+          "role": "support"
+        },
+        {
+          "source": "hume-s-original-notes",
+          "locator": "Introductory paragraph; §1 Labels and pagination",
+          "role": "support"
+        },
+        {
+          "source": "hume-s-edited-notes",
+          "locator": "Introductory paragraphs",
+          "role": "support"
+        }
+      ],
+      "scope_limit": "編集方針を確認した。今回の全段落について原刊スキャンとの逐語校合を完了したという意味ではない。"
+    }
+  },
+  "node_candidates": [
+    {
+      "id": "hume-q-personal-identity",
+      "type": "question",
+      "label": "私は同じ私なのか？",
+      "nature": "editorial",
+      "summary_ja": "変化する自分の同一性を問う入口。",
+      "basis": ["hume-a-scope", "hume-a-bundle", "hume-a-appendix-difficulty"],
+      "scope_limit": "NOEMAPの問い。ヒューム自身の日本語の発言として表示しない。"
+    },
+    {
+      "id": "hume-p-hume",
+      "type": "person",
+      "label": "デイヴィッド・ヒューム",
+      "nature": "factual",
+      "aliases": ["David Hume", "ヒューム"],
+      "summary_ja": "『人間本性論』の著者。",
+      "evidence": [
+        {
+          "source": "hume-s-treatise-notes",
+          "locator": "Opening paragraph: Hume's first publication",
+          "role": "support"
+        }
+      ],
+      "scope_limit": "本草稿では著者の同定のみを扱う。生没年や生涯は未登録。"
+    },
+    {
+      "id": "hume-w-treatise",
+      "type": "work",
+      "label": "人間本性論",
+      "nature": "factual",
+      "aliases": ["A Treatise of Human Nature"],
+      "summary_ja": "1739〜1740年刊行の著作。",
+      "evidence": [
+        {
+          "source": "hume-s-treatise-index",
+          "locator": "Title and contents: Books 1–3 and Appendix",
+          "role": "support"
+        },
+        {
+          "source": "hume-s-copytexts",
+          "locator": "§1 List of Editions, Treatise paragraph",
+          "role": "support"
+        }
+      ],
+      "scope_limit": "原著というWork候補。参照するHume Texts Online版と同一の版Entityとして扱わない。"
+    },
+    {
+      "id": "hume-c-personal-identity",
+      "type": "concept",
+      "label": "人格同一性（ヒューム）",
+      "nature": "position",
+      "aliases": ["personal identity (Hume)"],
+      "summary_ja": "思考・想像に関する自己の同一性。",
+      "definition_scope": "T 1.4.6で扱う意味。情念や自己への関心の側面と区別して読む。",
+      "evidence": [
+        {
+          "source": "hume-s-personal",
+          "locator": "T 1.4.6.5, SBN 253",
+          "role": "support"
+        },
+        {
+          "source": "hume-s-appendix",
+          "locator": "T App.20–21, SBN 635–636",
+          "role": "qualification"
+        }
+      ],
+      "scope_limit": "本文の説明には補遺の留保を併記する。"
+    },
+    {
+      "id": "hume-c-perception",
+      "type": "concept",
+      "label": "知覚（ヒューム）",
+      "nature": "position",
+      "aliases": ["perception (Hume)"],
+      "summary_ja": "印象と観念を含む心の内容。",
+      "definition_scope": "T 1.1.1のperception。感覚だけに限定しない。",
+      "evidence": [
+        {
+          "source": "hume-s-ideas",
+          "locator": "T 1.1.1.1, SBN 1–2",
+          "role": "support"
+        }
+      ],
+      "scope_limit": "現代の知覚研究の一般定義ではない。"
+    },
+    {
+      "id": "hume-c-impression",
+      "type": "concept",
+      "label": "印象（ヒューム）",
+      "nature": "position",
+      "aliases": ["impression (Hume)"],
+      "summary_ja": "感覚・情念・感情の強く生き生きした現れ。",
+      "definition_scope": "T 1.1.1.1の初出の区別。",
+      "evidence": [
+        {
+          "source": "hume-s-ideas",
+          "locator": "T 1.1.1.1, SBN 1–2",
+          "role": "support"
+        }
+      ],
+      "scope_limit": "同段落は弱い印象など両者の強さが近づく場合も認める。強さだけの機械的分類にしない。"
+    },
+    {
+      "id": "hume-c-idea",
+      "type": "concept",
+      "label": "観念（ヒューム）",
+      "nature": "position",
+      "aliases": ["idea (Hume)"],
+      "summary_ja": "思考や推論における、印象の弱い像。",
+      "definition_scope": "T 1.1.1.1のidea。",
+      "evidence": [
+        {
+          "source": "hume-s-ideas",
+          "locator": "T 1.1.1.1, SBN 1–2",
+          "role": "support"
+        },
+        {
+          "source": "hume-s-ideas",
+          "locator": "T 1.1.1.4–5, SBN 3–4",
+          "role": "qualification"
+        }
+      ],
+      "scope_limit": "全ての複合観念が経験の完全な写しだとは述べない。"
+    },
+    {
+      "id": "hume-c-bundle",
+      "type": "concept",
+      "label": "知覚の束（ヒューム）",
+      "nature": "position",
+      "aliases": ["bundle of perceptions (Hume)"],
+      "summary_ja": "心を移り変わる知覚の集合とする説明。",
+      "definition_scope": "T 1.4.6.4の集合の説明を読むための編集ラベル。",
+      "evidence": [
+        {
+          "source": "hume-s-personal",
+          "locator": "T 1.4.6.4, SBN 252–253",
+          "role": "support"
+        },
+        {
+          "source": "hume-s-appendix",
+          "locator": "T App.20–21, SBN 635–636",
+          "role": "qualification"
+        }
+      ],
+      "scope_limit": "後世の理論名を本人の命名と同一視しない。補遺の未解決点を伴う説明として読む。"
+    },
+    {
+      "id": "hume-c-memory",
+      "type": "concept",
+      "label": "記憶（ヒューム）",
+      "nature": "position",
+      "aliases": ["memory (Hume)"],
+      "summary_ja": "過去の知覚の像を呼び戻す能力。",
+      "definition_scope": "T 1.4.6.18のmemory。T 1.1.3も参照する。",
+      "evidence": [
+        {
+          "source": "hume-s-personal",
+          "locator": "T 1.4.6.18, SBN 260–261",
+          "role": "support"
+        },
+        {
+          "source": "hume-s-personal",
+          "locator": "T 1.4.6.20, SBN 261–262",
+          "role": "qualification"
+        }
+      ],
+      "scope_limit": "記憶だけが人格同一性の全てを作るとはしない。T 1.4.6.20, SBN 261–262参照。"
+    },
+    {
+      "id": "hume-c-imagination",
+      "type": "concept",
+      "label": "想像力（ヒューム）",
+      "nature": "position",
+      "aliases": ["imagination (Hume)"],
+      "summary_ja": "観念を並べ替え、変える能力。",
+      "definition_scope": "T 1.1.3の記憶との対比。",
+      "evidence": [
+        {
+          "source": "hume-s-memory-imagination",
+          "locator": "T 1.1.3.4, SBN 10",
+          "role": "support"
+        }
+      ],
+      "scope_limit": "想像力の働きの一側面。人格同一性を扱う箇所ではT 1.4.6.5も読む。"
+    },
+    {
+      "id": "hume-c-resemblance",
+      "type": "concept",
+      "label": "類似（ヒューム）",
+      "nature": "position",
+      "aliases": ["resemblance (Hume)"],
+      "summary_ja": "似た観念への移行を促す関係。",
+      "definition_scope": "T 1.1.4の観念連合の原理としての類似。",
+      "evidence": [
+        {
+          "source": "hume-s-association",
+          "locator": "T 1.1.4.2, SBN 11",
+          "role": "support"
+        }
+      ],
+      "scope_limit": "類似していることと数的に同一であることを混同しない。"
+    },
+    {
+      "id": "hume-c-causation",
+      "type": "concept",
+      "label": "因果関係（ヒューム）",
+      "nature": "position",
+      "aliases": ["causation (Hume)", "cause and effect (Hume)"],
+      "summary_ja": "観念の連合を促す原因と結果の関係。",
+      "definition_scope": "T 1.1.4.2で説明する観念連合の側面に限定。",
+      "evidence": [
+        {
+          "source": "hume-s-association",
+          "locator": "T 1.1.4.2, SBN 11",
+          "role": "support"
+        }
+      ],
+      "scope_limit": "ヒュームの因果論全体や必然的結合の定義を、この一段落で代表させない。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "hume-s-personal",
+      "title": "A Treatise of Human Nature, Book 1, Part 4, Section 6: Of personal identity",
+      "author": "David Hume",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/texts/t/1/4/6",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "primary_text_online_edition",
+      "edition": "Amyas Merivale / Peter Millican編、原刊本のECCOスキャンを底本とするHume Texts Onlineの既定編集表示。正誤表と補遺の変更を反映する。原刊第1巻1739年と、未確認のオンライン版の更新日を区別する。",
+      "examined_locations": [
+        "T 1.4.6.1–5, SBN 251–253",
+        "T 1.4.6.16–21, SBN 259–262"
+      ],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-appendix",
+      "title": "A Treatise of Human Nature, Appendix",
+      "author": "David Hume",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/texts/t/app",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "primary_text_online_edition",
+      "edition": "Hume Texts Onlineの既定編集表示。原刊補遺1740年。第1巻へ組み込まれた追加部分はこの表示の補遺から取り除かれている。",
+      "examined_locations": ["T App.10, SBN 633", "T App.11–21, SBN 633–636"],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-ideas",
+      "title": "A Treatise of Human Nature, Book 1, Part 1, Section 1: Of the Origin of our Ideas",
+      "author": "David Hume",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/texts/t/1/1/1",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "primary_text_online_edition",
+      "edition": "Hume Texts Onlineの既定編集表示。原刊第1巻1739年。オンラインの編集日未確認。",
+      "examined_locations": ["T 1.1.1.1, SBN 1–2", "T 1.1.1.4–5, SBN 3–4"],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-memory-imagination",
+      "title": "A Treatise of Human Nature, Book 1, Part 1, Section 3: Of the ideas of the memory and imagination",
+      "author": "David Hume",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/texts/t/1/1/3",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "primary_text_online_edition",
+      "edition": "Hume Texts Onlineの既定編集表示。原刊第1巻1739年。オンラインの編集日未確認。",
+      "examined_locations": ["T 1.1.3.1–4, SBN 8–10"],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-association",
+      "title": "A Treatise of Human Nature, Book 1, Part 1, Section 4: Of the connexion or association of ideas",
+      "author": "David Hume",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/texts/t/1/1/4",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "primary_text_online_edition",
+      "edition": "Hume Texts Onlineの既定編集表示。原刊第1巻1739年。オンラインの編集日未確認。",
+      "examined_locations": ["T 1.1.4.1–2, SBN 10–11"],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-treatise-index",
+      "title": "A Treatise of Human Nature (1739–40): contents",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/texts/t/",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "online_edition_metadata",
+      "edition": "オンライン版の目次。括弧内の年は原著各部の刊行年で、Web版の公開年ではない。",
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-copytexts",
+      "title": "Hume Texts Online: Copytexts",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/notes/copytexts",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "online_edition_metadata",
+      "edition": "サイトによる底本選択の説明。§1のTreatise刊行年を確認。",
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-treatise-notes",
+      "title": "A Treatise of Human Nature: Editorial Notes",
+      "author": "Amyas Merivale and Peter Millican",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/texts/t/notes",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "online_edition_metadata",
+      "edition": "オンライン版の編者名、ECCO底本、正誤表と補遺の処理に関する編者説明。",
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-original-notes",
+      "title": "Hume Texts Online: Original Versions",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/notes/original",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "online_edition_metadata",
+      "edition": "既定表示、原文表示、段落ラベルと参照版の頁番号に関する説明。",
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "hume-s-edited-notes",
+      "title": "Hume Texts Online: Edited Versions",
+      "host": "Hume Texts Online",
+      "url": "https://davidhume.org/notes/edited",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "source_kind": "online_edition_metadata",
+      "edition": "編集介入とShow Changesの説明。個別作品の変更点は作品別説明へ委ねる。",
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    }
+  ],
+  "assertion_candidates": [
+    {
+      "id": "hume-a-author",
+      "kind": "claim",
+      "nature": "fact_report",
+      "attribution": "Hume Texts Online編者 Amyas Merivale / Peter Millican（書誌説明）",
+      "subject": "hume-w-treatise",
+      "text_ja": "『人間本性論』はヒュームの著作である。",
+      "evidence": [
+        {
+          "source": "hume-s-treatise-notes",
+          "locator": "Opening paragraph: Hume's first publication",
+          "role": "support"
+        }
+      ],
+      "limit": "編者の書誌報告に基づく著者の同定。ヒューム本人の哲学的立場ではない。刊行年は別の書誌フィールドで扱う。"
+    },
+    {
+      "id": "hume-a-classification",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-perception",
+      "text_ja": "ヒュームは知覚を印象と観念に分ける。",
+      "evidence": [
+        {
+          "source": "hume-s-ideas",
+          "locator": "T 1.1.1.1, SBN 1–2",
+          "role": "support"
+        }
+      ],
+      "limit": "この用語区分への帰属。現代心理学の合意を主張しない。"
+    },
+    {
+      "id": "hume-a-introspection",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-p-hume",
+      "text_ja": "内省しても、知覚を離れた自己は捉えられないと述べる。",
+      "evidence": [
+        {
+          "source": "hume-s-personal",
+          "locator": "T 1.4.6.3, SBN 252",
+          "role": "support"
+        }
+      ],
+      "limit": "本人の内省の報告。T 1.4.6.1に紹介される他説を本人の立場にしない。"
+    },
+    {
+      "id": "hume-a-bundle",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-bundle",
+      "text_ja": "人を、移り変わる異なる知覚の集合として説明する。",
+      "evidence": [
+        {
+          "source": "hume-s-personal",
+          "locator": "T 1.4.6.4, SBN 252–253",
+          "role": "support"
+        }
+      ],
+      "limit": "本文の説明。補遺の留保を伴い、仏教等への影響や同一性は導かない。"
+    },
+    {
+      "id": "hume-a-scope",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-personal-identity",
+      "text_ja": "当該節の対象を、思考・想像に関する人格同一性に限定する。",
+      "evidence": [
+        {
+          "source": "hume-s-personal",
+          "locator": "T 1.4.6.5, SBN 253",
+          "role": "support"
+        }
+      ],
+      "limit": "情念や自己への関心の側面と区別する。著作全体の対象の限定ではない。"
+    },
+    {
+      "id": "hume-a-memory-order",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-memory",
+      "text_ja": "記憶の主な働きは、観念の元の順序と位置を保つことだと述べる。",
+      "evidence": [
+        {
+          "source": "hume-s-memory-imagination",
+          "locator": "T 1.1.3.3, SBN 9",
+          "role": "support"
+        }
+      ],
+      "limit": "同段落は記憶の欠陥や不完全さも認める。常に正確な記憶という主張にはしない。"
+    },
+    {
+      "id": "hume-a-imagination",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-imagination",
+      "text_ja": "想像力には観念を並べ替え、変える自由があると述べる。",
+      "evidence": [
+        {
+          "source": "hume-s-memory-imagination",
+          "locator": "T 1.1.3.4, SBN 10",
+          "role": "support"
+        }
+      ],
+      "limit": "想像力のこの働きに限定。人間の自由意志一般の主張にしない。"
+    },
+    {
+      "id": "hume-a-resemblance",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-resemblance",
+      "text_ja": "類似により、想像力は一つの観念から似た観念へ移りやすいと述べる。",
+      "evidence": [
+        {
+          "source": "hume-s-association",
+          "locator": "T 1.1.4.2, SBN 11",
+          "role": "support"
+        }
+      ],
+      "limit": "観念連合の説明。不可分な実在の結合とはしない。"
+    },
+    {
+      "id": "hume-a-causation",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-causation",
+      "text_ja": "原因と結果の関係が、観念の連合を強く促すと述べる。",
+      "evidence": [
+        {
+          "source": "hume-s-association",
+          "locator": "T 1.1.4.2, SBN 11",
+          "role": "support"
+        }
+      ],
+      "limit": "観念連合の一側面だけを扱う。因果論全体の要約ではない。"
+    },
+    {
+      "id": "hume-a-memory-identity",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-memory",
+      "text_ja": "記憶は知覚間の類似を通じ、同一性の成立にも寄与すると述べる。",
+      "evidence": [
+        {
+          "source": "hume-s-personal",
+          "locator": "T 1.4.6.18, SBN 260–261",
+          "role": "support"
+        }
+      ],
+      "limit": "T 1.4.6.20は忘れた時期への同一性の拡張も扱う。記憶の全能性を主張しない。"
+    },
+    {
+      "id": "hume-a-appendix-difficulty",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-personal-identity",
+      "text_ja": "補遺で、知覚を結ぶ説明に満足できる理論をまだ見いだせないと述べる。",
+      "evidence": [
+        {
+          "source": "hume-s-appendix",
+          "locator": "T App.20, SBN 635–636",
+          "role": "qualification"
+        }
+      ],
+      "limit": "本人が解決していないという留保。永久に解決不能とは言い換えない。"
+    },
+    {
+      "id": "hume-a-appendix-open",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "David Hume",
+      "subject": "hume-c-personal-identity",
+      "text_ja": "補遺で、この困難を絶対に克服不能とは判断しないと述べる。",
+      "evidence": [
+        {
+          "source": "hume-s-appendix",
+          "locator": "T App.21, SBN 636",
+          "role": "qualification"
+        }
+      ],
+      "limit": "将来の解決を保証する主張でも、本文を全面撤回する主張でもない。"
+    }
+  ],
+  "relationship_candidates": [
+    {
+      "from": "hume-p-hume",
+      "to": "hume-w-treatise",
+      "nature": "editorial",
+      "reason": "著者から今回読む著作へ進む。",
+      "basis": ["hume-a-author"]
+    },
+    {
+      "from": "hume-w-treatise",
+      "to": "hume-q-personal-identity",
+      "nature": "editorial",
+      "reason": "人格同一性を問う読書の入口。",
+      "basis": ["hume-a-scope"]
+    },
+    {
+      "from": "hume-q-personal-identity",
+      "to": "hume-c-personal-identity",
+      "nature": "editorial",
+      "reason": "日常の問いから当該節の論点へ進む。",
+      "basis": ["hume-a-scope"]
+    },
+    {
+      "from": "hume-c-personal-identity",
+      "to": "hume-c-bundle",
+      "nature": "editorial",
+      "reason": "本文の集合の説明を読む。",
+      "basis": ["hume-a-bundle"]
+    },
+    {
+      "from": "hume-c-bundle",
+      "to": "hume-c-perception",
+      "nature": "editorial",
+      "reason": "集合を構成する知覚という語を読む。",
+      "basis": ["hume-a-bundle", "hume-a-classification"]
+    },
+    {
+      "from": "hume-c-perception",
+      "to": "hume-c-impression",
+      "nature": "editorial",
+      "reason": "知覚の区分の一方を読む。",
+      "basis": ["hume-a-classification"]
+    },
+    {
+      "from": "hume-c-perception",
+      "to": "hume-c-idea",
+      "nature": "editorial",
+      "reason": "知覚の区分のもう一方を読む。",
+      "basis": ["hume-a-classification"]
+    },
+    {
+      "from": "hume-c-idea",
+      "to": "hume-c-memory",
+      "nature": "editorial",
+      "reason": "観念の順序を保つ記憶の働きを読む。",
+      "basis": ["hume-a-memory-order"]
+    },
+    {
+      "from": "hume-c-idea",
+      "to": "hume-c-imagination",
+      "nature": "editorial",
+      "reason": "観念を変える想像力の働きを読む。",
+      "basis": ["hume-a-imagination"]
+    },
+    {
+      "from": "hume-c-imagination",
+      "to": "hume-c-resemblance",
+      "nature": "editorial",
+      "reason": "想像力の移行を促す関係を読む。",
+      "basis": ["hume-a-resemblance"]
+    },
+    {
+      "from": "hume-c-imagination",
+      "to": "hume-c-causation",
+      "nature": "editorial",
+      "reason": "観念連合の別の関係を読む。",
+      "basis": ["hume-a-causation"]
+    },
+    {
+      "from": "hume-c-personal-identity",
+      "to": "hume-c-memory",
+      "nature": "editorial",
+      "reason": "同一性の議論での記憶の役割を読む。",
+      "basis": ["hume-a-memory-identity"]
+    },
+    {
+      "from": "hume-c-personal-identity",
+      "to": "hume-c-imagination",
+      "nature": "editorial",
+      "reason": "当該節の想像の側面へ進む。",
+      "basis": ["hume-a-scope"]
+    },
+    {
+      "from": "hume-c-personal-identity",
+      "to": "hume-w-treatise",
+      "nature": "editorial",
+      "reason": "本文に補遺の留保を添えて読む。",
+      "basis": ["hume-a-appendix-difficulty", "hume-a-appendix-open"]
+    }
+  ],
+  "temporal_candidates": [],
+  "review_requirements": [
+    "人が日本語の意味と強さを本文・補遺で確認する。知覚・印象・観念・人格同一性の訳語を統一する。",
+    "既存Entityとの対応を確認する。ヒュームに限定した概念を別の著者の概念と自動統合しない。",
+    "原著Workとオンライン版Sourceの対応を確認し、原刊本の正式な出版地・出版者・標題紙を必要に応じて補う。",
+    "オンライン本文の使用許諾を別途確認する。無料閲覧可能という説明を再配布許諾と読み替えない。",
+    "閲覧経路の編集理由と、裏付けAssertionを撤回したときの扱いを確認する。"
+  ],
+  "open_questions": [
+    "Hume Texts Onlineの本文・編集情報の利用条件と、公開引用や保存を許す具体的なライセンスは未確認。",
+    "Web版の初回公開日・最終更新日・固定版識別子は確認できていない。",
+    "原刊本の標題紙と出版者・出版地の校合、および既存DBの版Entity対応は未確認。",
+    "この12項目の日本語・編集経路の人による承認は未実施。"
+  ],
+  "acceptance_checks": [
+    "全12Nodeが一つの探索経路に接続し、関係には根拠Assertion IDがある。",
+    "本文の集合の説明と補遺の留保は別Assertionとして保持する。",
+    "解消できない困難という強すぎる旧要約は採用しない。本人が未解決で、将来の可能性を閉じない。",
+    "原著刊行年をオンライン版の公開年・編集年として登録しない。",
+    "draft / human_review pending / database_imported false / published falseを維持する。"
+  ],
+  "next_action": "人の照合に回す。承認前の候補を確認済み公開データへ変換しない。"
+}
