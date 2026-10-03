@@ -1,0 +1,2345 @@
+{
+  "schema_version": 1,
+  "release_id": "noemap-provisional-20261003-v1",
+  "publication_status": "provisional",
+  "human_review": {
+    "status": "pending",
+    "reviewer": null,
+    "approved_at": null
+  },
+  "authorized_by": "project-owner-request",
+  "manifest_sha256": "e4b7f58b2d6b72ca06dd9d1eb6571b2e96595daf379ffb03647d8fcf94550fc6",
+  "batches": [
+    {
+      "schema_version": 1,
+      "batch_id": "real-source-hume-review-20261003",
+      "status": "draft",
+      "human_review": {
+        "status": "pending",
+        "reviewer": null,
+        "approved_at": null
+      },
+      "database_imported": false,
+      "published": false,
+      "purpose": "ヒュームの人格同一性を入口に、本人の本文・補遺とオンライン版の編集説明を照合した12項目のレビュー草稿。",
+      "derivation": {
+        "pilot_file": "hume-pilot.json",
+        "pilot_modified": false,
+        "source_verification": "agent_checked",
+        "human_approval": "pending"
+      },
+      "editorial_policy": {
+        "summaries": "日本語の短い言い換え。既存日本語訳の引用ではない。",
+        "concept_identity": "概念ラベルはヒュームの用法に限定する。ロックや現代心理学の概念へ自動統合しない。",
+        "relationships": "閲覧経路の編集案。人物間の歴史的影響を表す関係は作らない。",
+        "dates": "原著刊行年とオンライン版の情報を分離する。今回、生没年や正確な刊行月日は登録しない。"
+      },
+      "bibliographic_review": {
+        "work_id": "hume-w-treatise",
+        "canonical_title": "A Treatise of Human Nature",
+        "title_ja": "人間本性論",
+        "original_publication": {
+          "volumes_1_and_2": {
+            "year": 1739,
+            "evidence": [
+              {
+                "source": "hume-s-copytexts",
+                "locator": "§1 List of Editions, Treatise paragraph",
+                "role": "support"
+              }
+            ]
+          },
+          "volume_3": {
+            "year": 1740,
+            "evidence": [
+              {
+                "source": "hume-s-copytexts",
+                "locator": "§1 List of Editions, Treatise paragraph",
+                "role": "support"
+              }
+            ]
+          },
+          "appendix": {
+            "year": 1740,
+            "evidence": [
+              {
+                "source": "hume-s-treatise-index",
+                "locator": "Contents: Appendix (1740)",
+                "role": "support"
+              }
+            ]
+          },
+          "publisher_place_and_imprint": "not_verified",
+          "full_original_title_page_transcription": "not_verified"
+        },
+        "online_edition": {
+          "host": "Hume Texts Online",
+          "editors": ["Amyas Merivale", "Peter Millican"],
+          "publication_or_revision_date": null,
+          "display_used": "default_edited_text",
+          "copytext": "原刊本のECCO所蔵スキャンを底本とするオンライン編集版。",
+          "editorial_notes_ja": "既定の編集表示は正誤表や補遺の訂正・追加を第1巻へ組み込み、組み込んだ追加を補遺側から外す。原文表示にも段落ラベル等の変更がある。SBNは底本ではなく参照版の頁番号。",
+          "evidence": [
+            {
+              "source": "hume-s-treatise-notes",
+              "locator": "Heading credits; introductory copytext paragraph; §1 ERRATA changes; §2 Appendix changes and additions",
+              "role": "support"
+            },
+            {
+              "source": "hume-s-original-notes",
+              "locator": "Introductory paragraph; §1 Labels and pagination",
+              "role": "support"
+            },
+            {
+              "source": "hume-s-edited-notes",
+              "locator": "Introductory paragraphs",
+              "role": "support"
+            }
+          ],
+          "scope_limit": "編集方針を確認した。今回の全段落について原刊スキャンとの逐語校合を完了したという意味ではない。"
+        }
+      },
+      "node_candidates": [
+        {
+          "id": "hume-q-personal-identity",
+          "type": "question",
+          "label": "私は同じ私なのか？",
+          "nature": "editorial",
+          "summary_ja": "変化する自分の同一性を問う入口。",
+          "basis": [
+            "hume-a-scope",
+            "hume-a-bundle",
+            "hume-a-appendix-difficulty"
+          ],
+          "scope_limit": "NOEMAPの問い。ヒューム自身の日本語の発言として表示しない。"
+        },
+        {
+          "id": "hume-p-hume",
+          "type": "person",
+          "label": "デイヴィッド・ヒューム",
+          "nature": "factual",
+          "aliases": ["David Hume", "ヒューム"],
+          "summary_ja": "『人間本性論』の著者。",
+          "evidence": [
+            {
+              "source": "hume-s-treatise-notes",
+              "locator": "Opening paragraph: Hume's first publication",
+              "role": "support"
+            }
+          ],
+          "scope_limit": "本草稿では著者の同定のみを扱う。生没年や生涯は未登録。"
+        },
+        {
+          "id": "hume-w-treatise",
+          "type": "work",
+          "label": "人間本性論",
+          "nature": "factual",
+          "aliases": ["A Treatise of Human Nature"],
+          "summary_ja": "1739〜1740年刊行の著作。",
+          "evidence": [
+            {
+              "source": "hume-s-treatise-index",
+              "locator": "Title and contents: Books 1–3 and Appendix",
+              "role": "support"
+            },
+            {
+              "source": "hume-s-copytexts",
+              "locator": "§1 List of Editions, Treatise paragraph",
+              "role": "support"
+            }
+          ],
+          "scope_limit": "原著というWork候補。参照するHume Texts Online版と同一の版Entityとして扱わない。"
+        },
+        {
+          "id": "hume-c-personal-identity",
+          "type": "concept",
+          "label": "人格同一性（ヒューム）",
+          "nature": "position",
+          "aliases": ["personal identity (Hume)"],
+          "summary_ja": "思考・想像に関する自己の同一性。",
+          "definition_scope": "T 1.4.6で扱う意味。情念や自己への関心の側面と区別して読む。",
+          "evidence": [
+            {
+              "source": "hume-s-personal",
+              "locator": "T 1.4.6.5, SBN 253",
+              "role": "support"
+            },
+            {
+              "source": "hume-s-appendix",
+              "locator": "T App.20–21, SBN 635–636",
+              "role": "qualification"
+            }
+          ],
+          "scope_limit": "本文の説明には補遺の留保を併記する。"
+        },
+        {
+          "id": "hume-c-perception",
+          "type": "concept",
+          "label": "知覚（ヒューム）",
+          "nature": "position",
+          "aliases": ["perception (Hume)"],
+          "summary_ja": "印象と観念を含む心の内容。",
+          "definition_scope": "T 1.1.1のperception。感覚だけに限定しない。",
+          "evidence": [
+            {
+              "source": "hume-s-ideas",
+              "locator": "T 1.1.1.1, SBN 1–2",
+              "role": "support"
+            }
+          ],
+          "scope_limit": "現代の知覚研究の一般定義ではない。"
+        },
+        {
+          "id": "hume-c-impression",
+          "type": "concept",
+          "label": "印象（ヒューム）",
+          "nature": "position",
+          "aliases": ["impression (Hume)"],
+          "summary_ja": "感覚・情念・感情の強く生き生きした現れ。",
+          "definition_scope": "T 1.1.1.1の初出の区別。",
+          "evidence": [
+            {
+              "source": "hume-s-ideas",
+              "locator": "T 1.1.1.1, SBN 1–2",
+              "role": "support"
+            }
+          ],
+          "scope_limit": "同段落は弱い印象など両者の強さが近づく場合も認める。強さだけの機械的分類にしない。"
+        },
+        {
+          "id": "hume-c-idea",
+          "type": "concept",
+          "label": "観念（ヒューム）",
+          "nature": "position",
+          "aliases": ["idea (Hume)"],
+          "summary_ja": "思考や推論における、印象の弱い像。",
+          "definition_scope": "T 1.1.1.1のidea。",
+          "evidence": [
+            {
+              "source": "hume-s-ideas",
+              "locator": "T 1.1.1.1, SBN 1–2",
+              "role": "support"
+            },
+            {
+              "source": "hume-s-ideas",
+              "locator": "T 1.1.1.4–5, SBN 3–4",
+              "role": "qualification"
+            }
+          ],
+          "scope_limit": "全ての複合観念が経験の完全な写しだとは述べない。"
+        },
+        {
+          "id": "hume-c-bundle",
+          "type": "concept",
+          "label": "知覚の束（ヒューム）",
+          "nature": "position",
+          "aliases": ["bundle of perceptions (Hume)"],
+          "summary_ja": "心を移り変わる知覚の集合とする説明。",
+          "definition_scope": "T 1.4.6.4の集合の説明を読むための編集ラベル。",
+          "evidence": [
+            {
+              "source": "hume-s-personal",
+              "locator": "T 1.4.6.4, SBN 252–253",
+              "role": "support"
+            },
+            {
+              "source": "hume-s-appendix",
+              "locator": "T App.20–21, SBN 635–636",
+              "role": "qualification"
+            }
+          ],
+          "scope_limit": "後世の理論名を本人の命名と同一視しない。補遺の未解決点を伴う説明として読む。"
+        },
+        {
+          "id": "hume-c-memory",
+          "type": "concept",
+          "label": "記憶（ヒューム）",
+          "nature": "position",
+          "aliases": ["memory (Hume)"],
+          "summary_ja": "過去の知覚の像を呼び戻す能力。",
+          "definition_scope": "T 1.4.6.18のmemory。T 1.1.3も参照する。",
+          "evidence": [
+            {
+              "source": "hume-s-personal",
+              "locator": "T 1.4.6.18, SBN 260–261",
+              "role": "support"
+            },
+            {
+              "source": "hume-s-personal",
+              "locator": "T 1.4.6.20, SBN 261–262",
+              "role": "qualification"
+            }
+          ],
+          "scope_limit": "記憶だけが人格同一性の全てを作るとはしない。T 1.4.6.20, SBN 261–262参照。"
+        },
+        {
+          "id": "hume-c-imagination",
+          "type": "concept",
+          "label": "想像力（ヒューム）",
+          "nature": "position",
+          "aliases": ["imagination (Hume)"],
+          "summary_ja": "観念を並べ替え、変える能力。",
+          "definition_scope": "T 1.1.3の記憶との対比。",
+          "evidence": [
+            {
+              "source": "hume-s-memory-imagination",
+              "locator": "T 1.1.3.4, SBN 10",
+              "role": "support"
+            }
+          ],
+          "scope_limit": "想像力の働きの一側面。人格同一性を扱う箇所ではT 1.4.6.5も読む。"
+        },
+        {
+          "id": "hume-c-resemblance",
+          "type": "concept",
+          "label": "類似（ヒューム）",
+          "nature": "position",
+          "aliases": ["resemblance (Hume)"],
+          "summary_ja": "似た観念への移行を促す関係。",
+          "definition_scope": "T 1.1.4の観念連合の原理としての類似。",
+          "evidence": [
+            {
+              "source": "hume-s-association",
+              "locator": "T 1.1.4.2, SBN 11",
+              "role": "support"
+            }
+          ],
+          "scope_limit": "類似していることと数的に同一であることを混同しない。"
+        },
+        {
+          "id": "hume-c-causation",
+          "type": "concept",
+          "label": "因果関係（ヒューム）",
+          "nature": "position",
+          "aliases": ["causation (Hume)", "cause and effect (Hume)"],
+          "summary_ja": "観念の連合を促す原因と結果の関係。",
+          "definition_scope": "T 1.1.4.2で説明する観念連合の側面に限定。",
+          "evidence": [
+            {
+              "source": "hume-s-association",
+              "locator": "T 1.1.4.2, SBN 11",
+              "role": "support"
+            }
+          ],
+          "scope_limit": "ヒュームの因果論全体や必然的結合の定義を、この一段落で代表させない。"
+        }
+      ],
+      "sources": [
+        {
+          "id": "hume-s-personal",
+          "title": "A Treatise of Human Nature, Book 1, Part 4, Section 6: Of personal identity",
+          "author": "David Hume",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/texts/t/1/4/6",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "primary_text_online_edition",
+          "edition": "Amyas Merivale / Peter Millican編、原刊本のECCOスキャンを底本とするHume Texts Onlineの既定編集表示。正誤表と補遺の変更を反映する。原刊第1巻1739年と、未確認のオンライン版の更新日を区別する。",
+          "examined_locations": [
+            "T 1.4.6.1–5, SBN 251–253",
+            "T 1.4.6.16–21, SBN 259–262"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-appendix",
+          "title": "A Treatise of Human Nature, Appendix",
+          "author": "David Hume",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/texts/t/app",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "primary_text_online_edition",
+          "edition": "Hume Texts Onlineの既定編集表示。原刊補遺1740年。第1巻へ組み込まれた追加部分はこの表示の補遺から取り除かれている。",
+          "examined_locations": [
+            "T App.10, SBN 633",
+            "T App.11–21, SBN 633–636"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-ideas",
+          "title": "A Treatise of Human Nature, Book 1, Part 1, Section 1: Of the Origin of our Ideas",
+          "author": "David Hume",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/texts/t/1/1/1",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "primary_text_online_edition",
+          "edition": "Hume Texts Onlineの既定編集表示。原刊第1巻1739年。オンラインの編集日未確認。",
+          "examined_locations": ["T 1.1.1.1, SBN 1–2", "T 1.1.1.4–5, SBN 3–4"],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-memory-imagination",
+          "title": "A Treatise of Human Nature, Book 1, Part 1, Section 3: Of the ideas of the memory and imagination",
+          "author": "David Hume",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/texts/t/1/1/3",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "primary_text_online_edition",
+          "edition": "Hume Texts Onlineの既定編集表示。原刊第1巻1739年。オンラインの編集日未確認。",
+          "examined_locations": ["T 1.1.3.1–4, SBN 8–10"],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-association",
+          "title": "A Treatise of Human Nature, Book 1, Part 1, Section 4: Of the connexion or association of ideas",
+          "author": "David Hume",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/texts/t/1/1/4",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "primary_text_online_edition",
+          "edition": "Hume Texts Onlineの既定編集表示。原刊第1巻1739年。オンラインの編集日未確認。",
+          "examined_locations": ["T 1.1.4.1–2, SBN 10–11"],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-treatise-index",
+          "title": "A Treatise of Human Nature (1739–40): contents",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/texts/t/",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "online_edition_metadata",
+          "edition": "オンライン版の目次。括弧内の年は原著各部の刊行年で、Web版の公開年ではない。",
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-copytexts",
+          "title": "Hume Texts Online: Copytexts",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/notes/copytexts",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "online_edition_metadata",
+          "edition": "サイトによる底本選択の説明。§1のTreatise刊行年を確認。",
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-treatise-notes",
+          "title": "A Treatise of Human Nature: Editorial Notes",
+          "author": "Amyas Merivale and Peter Millican",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/texts/t/notes",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "online_edition_metadata",
+          "edition": "オンライン版の編者名、ECCO底本、正誤表と補遺の処理に関する編者説明。",
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-original-notes",
+          "title": "Hume Texts Online: Original Versions",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/notes/original",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "online_edition_metadata",
+          "edition": "既定表示、原文表示、段落ラベルと参照版の頁番号に関する説明。",
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "hume-s-edited-notes",
+          "title": "Hume Texts Online: Edited Versions",
+          "host": "Hume Texts Online",
+          "url": "https://davidhume.org/notes/edited",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "source_kind": "online_edition_metadata",
+          "edition": "編集介入とShow Changesの説明。個別作品の変更点は作品別説明へ委ねる。",
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        }
+      ],
+      "assertion_candidates": [
+        {
+          "id": "hume-a-author",
+          "kind": "claim",
+          "nature": "fact_report",
+          "attribution": "Hume Texts Online編者 Amyas Merivale / Peter Millican（書誌説明）",
+          "subject": "hume-w-treatise",
+          "text_ja": "『人間本性論』はヒュームの著作である。",
+          "evidence": [
+            {
+              "source": "hume-s-treatise-notes",
+              "locator": "Opening paragraph: Hume's first publication",
+              "role": "support"
+            }
+          ],
+          "limit": "編者の書誌報告に基づく著者の同定。ヒューム本人の哲学的立場ではない。刊行年は別の書誌フィールドで扱う。"
+        },
+        {
+          "id": "hume-a-classification",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-perception",
+          "text_ja": "ヒュームは知覚を印象と観念に分ける。",
+          "evidence": [
+            {
+              "source": "hume-s-ideas",
+              "locator": "T 1.1.1.1, SBN 1–2",
+              "role": "support"
+            }
+          ],
+          "limit": "この用語区分への帰属。現代心理学の合意を主張しない。"
+        },
+        {
+          "id": "hume-a-introspection",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-p-hume",
+          "text_ja": "内省しても、知覚を離れた自己は捉えられないと述べる。",
+          "evidence": [
+            {
+              "source": "hume-s-personal",
+              "locator": "T 1.4.6.3, SBN 252",
+              "role": "support"
+            }
+          ],
+          "limit": "本人の内省の報告。T 1.4.6.1に紹介される他説を本人の立場にしない。"
+        },
+        {
+          "id": "hume-a-bundle",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-bundle",
+          "text_ja": "人を、移り変わる異なる知覚の集合として説明する。",
+          "evidence": [
+            {
+              "source": "hume-s-personal",
+              "locator": "T 1.4.6.4, SBN 252–253",
+              "role": "support"
+            }
+          ],
+          "limit": "本文の説明。補遺の留保を伴い、仏教等への影響や同一性は導かない。"
+        },
+        {
+          "id": "hume-a-scope",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-personal-identity",
+          "text_ja": "当該節の対象を、思考・想像に関する人格同一性に限定する。",
+          "evidence": [
+            {
+              "source": "hume-s-personal",
+              "locator": "T 1.4.6.5, SBN 253",
+              "role": "support"
+            }
+          ],
+          "limit": "情念や自己への関心の側面と区別する。著作全体の対象の限定ではない。"
+        },
+        {
+          "id": "hume-a-memory-order",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-memory",
+          "text_ja": "記憶の主な働きは、観念の元の順序と位置を保つことだと述べる。",
+          "evidence": [
+            {
+              "source": "hume-s-memory-imagination",
+              "locator": "T 1.1.3.3, SBN 9",
+              "role": "support"
+            }
+          ],
+          "limit": "同段落は記憶の欠陥や不完全さも認める。常に正確な記憶という主張にはしない。"
+        },
+        {
+          "id": "hume-a-imagination",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-imagination",
+          "text_ja": "想像力には観念を並べ替え、変える自由があると述べる。",
+          "evidence": [
+            {
+              "source": "hume-s-memory-imagination",
+              "locator": "T 1.1.3.4, SBN 10",
+              "role": "support"
+            }
+          ],
+          "limit": "想像力のこの働きに限定。人間の自由意志一般の主張にしない。"
+        },
+        {
+          "id": "hume-a-resemblance",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-resemblance",
+          "text_ja": "類似により、想像力は一つの観念から似た観念へ移りやすいと述べる。",
+          "evidence": [
+            {
+              "source": "hume-s-association",
+              "locator": "T 1.1.4.2, SBN 11",
+              "role": "support"
+            }
+          ],
+          "limit": "観念連合の説明。不可分な実在の結合とはしない。"
+        },
+        {
+          "id": "hume-a-causation",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-causation",
+          "text_ja": "原因と結果の関係が、観念の連合を強く促すと述べる。",
+          "evidence": [
+            {
+              "source": "hume-s-association",
+              "locator": "T 1.1.4.2, SBN 11",
+              "role": "support"
+            }
+          ],
+          "limit": "観念連合の一側面だけを扱う。因果論全体の要約ではない。"
+        },
+        {
+          "id": "hume-a-memory-identity",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-memory",
+          "text_ja": "記憶は知覚間の類似を通じ、同一性の成立にも寄与すると述べる。",
+          "evidence": [
+            {
+              "source": "hume-s-personal",
+              "locator": "T 1.4.6.18, SBN 260–261",
+              "role": "support"
+            }
+          ],
+          "limit": "T 1.4.6.20は忘れた時期への同一性の拡張も扱う。記憶の全能性を主張しない。"
+        },
+        {
+          "id": "hume-a-appendix-difficulty",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-personal-identity",
+          "text_ja": "補遺で、知覚を結ぶ説明に満足できる理論をまだ見いだせないと述べる。",
+          "evidence": [
+            {
+              "source": "hume-s-appendix",
+              "locator": "T App.20, SBN 635–636",
+              "role": "qualification"
+            }
+          ],
+          "limit": "本人が解決していないという留保。永久に解決不能とは言い換えない。"
+        },
+        {
+          "id": "hume-a-appendix-open",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "David Hume",
+          "subject": "hume-c-personal-identity",
+          "text_ja": "補遺で、この困難を絶対に克服不能とは判断しないと述べる。",
+          "evidence": [
+            {
+              "source": "hume-s-appendix",
+              "locator": "T App.21, SBN 636",
+              "role": "qualification"
+            }
+          ],
+          "limit": "将来の解決を保証する主張でも、本文を全面撤回する主張でもない。"
+        }
+      ],
+      "relationship_candidates": [
+        {
+          "from": "hume-p-hume",
+          "to": "hume-w-treatise",
+          "nature": "editorial",
+          "reason": "著者から今回読む著作へ進む。",
+          "basis": ["hume-a-author"]
+        },
+        {
+          "from": "hume-w-treatise",
+          "to": "hume-q-personal-identity",
+          "nature": "editorial",
+          "reason": "人格同一性を問う読書の入口。",
+          "basis": ["hume-a-scope"]
+        },
+        {
+          "from": "hume-q-personal-identity",
+          "to": "hume-c-personal-identity",
+          "nature": "editorial",
+          "reason": "日常の問いから当該節の論点へ進む。",
+          "basis": ["hume-a-scope"]
+        },
+        {
+          "from": "hume-c-personal-identity",
+          "to": "hume-c-bundle",
+          "nature": "editorial",
+          "reason": "本文の集合の説明を読む。",
+          "basis": ["hume-a-bundle"]
+        },
+        {
+          "from": "hume-c-bundle",
+          "to": "hume-c-perception",
+          "nature": "editorial",
+          "reason": "集合を構成する知覚という語を読む。",
+          "basis": ["hume-a-bundle", "hume-a-classification"]
+        },
+        {
+          "from": "hume-c-perception",
+          "to": "hume-c-impression",
+          "nature": "editorial",
+          "reason": "知覚の区分の一方を読む。",
+          "basis": ["hume-a-classification"]
+        },
+        {
+          "from": "hume-c-perception",
+          "to": "hume-c-idea",
+          "nature": "editorial",
+          "reason": "知覚の区分のもう一方を読む。",
+          "basis": ["hume-a-classification"]
+        },
+        {
+          "from": "hume-c-idea",
+          "to": "hume-c-memory",
+          "nature": "editorial",
+          "reason": "観念の順序を保つ記憶の働きを読む。",
+          "basis": ["hume-a-memory-order"]
+        },
+        {
+          "from": "hume-c-idea",
+          "to": "hume-c-imagination",
+          "nature": "editorial",
+          "reason": "観念を変える想像力の働きを読む。",
+          "basis": ["hume-a-imagination"]
+        },
+        {
+          "from": "hume-c-imagination",
+          "to": "hume-c-resemblance",
+          "nature": "editorial",
+          "reason": "想像力の移行を促す関係を読む。",
+          "basis": ["hume-a-resemblance"]
+        },
+        {
+          "from": "hume-c-imagination",
+          "to": "hume-c-causation",
+          "nature": "editorial",
+          "reason": "観念連合の別の関係を読む。",
+          "basis": ["hume-a-causation"]
+        },
+        {
+          "from": "hume-c-personal-identity",
+          "to": "hume-c-memory",
+          "nature": "editorial",
+          "reason": "同一性の議論での記憶の役割を読む。",
+          "basis": ["hume-a-memory-identity"]
+        },
+        {
+          "from": "hume-c-personal-identity",
+          "to": "hume-c-imagination",
+          "nature": "editorial",
+          "reason": "当該節の想像の側面へ進む。",
+          "basis": ["hume-a-scope"]
+        },
+        {
+          "from": "hume-c-personal-identity",
+          "to": "hume-w-treatise",
+          "nature": "editorial",
+          "reason": "本文に補遺の留保を添えて読む。",
+          "basis": ["hume-a-appendix-difficulty", "hume-a-appendix-open"]
+        }
+      ],
+      "temporal_candidates": [],
+      "review_requirements": [
+        "人が日本語の意味と強さを本文・補遺で確認する。知覚・印象・観念・人格同一性の訳語を統一する。",
+        "既存Entityとの対応を確認する。ヒュームに限定した概念を別の著者の概念と自動統合しない。",
+        "原著Workとオンライン版Sourceの対応を確認し、原刊本の正式な出版地・出版者・標題紙を必要に応じて補う。",
+        "オンライン本文の使用許諾を別途確認する。無料閲覧可能という説明を再配布許諾と読み替えない。",
+        "閲覧経路の編集理由と、裏付けAssertionを撤回したときの扱いを確認する。"
+      ],
+      "open_questions": [
+        "Hume Texts Onlineの本文・編集情報の利用条件と、公開引用や保存を許す具体的なライセンスは未確認。",
+        "Web版の初回公開日・最終更新日・固定版識別子は確認できていない。",
+        "原刊本の標題紙と出版者・出版地の校合、および既存DBの版Entity対応は未確認。",
+        "この12項目の日本語・編集経路の人による承認は未実施。"
+      ],
+      "acceptance_checks": [
+        "全12Nodeが一つの探索経路に接続し、関係には根拠Assertion IDがある。",
+        "本文の集合の説明と補遺の留保は別Assertionとして保持する。",
+        "解消できない困難という強すぎる旧要約は採用しない。本人が未解決で、将来の可能性を閉じない。",
+        "原著刊行年をオンライン版の公開年・編集年として登録しない。",
+        "draft / human_review pending / database_imported false / published falseを維持する。"
+      ],
+      "next_action": "人の照合に回す。承認前の候補を確認済み公開データへ変換しない。"
+    },
+    {
+      "schema_version": 1,
+      "batch_id": "locke-source-review-20261003",
+      "status": "draft",
+      "human_review": {
+        "status": "pending",
+        "reviewer": null,
+        "approved_at": null
+      },
+      "database_imported": false,
+      "published": false,
+      "purpose": "人格・人間・実体を区別する探索経路の候補を、本文の留保と版の違いを保って作る。",
+      "scope": "ジョン・ロック『人間知性論』第二巻第二十七章。意識・記憶・実体は同巻第一章・第十章・第二十三章を補助資料とする。",
+      "editorial_policy": {
+        "translation": "日本語はNOEMAPの短い要約案。既刊訳の引用ではない。",
+        "concept_merge": "同名でも他思想家の概念へ自動統合しない。",
+        "approval": "資料の機械的確認は人の編集承認を意味しない。"
+      },
+      "node_candidates": [
+        {
+          "id": "locke-person",
+          "type": "person",
+          "label": "ジョン・ロック",
+          "aliases": ["John Locke", "ロック"],
+          "summary_ja": "『人間知性論』の著者。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-catalog",
+              "locator": "About this eBook: Author / Title",
+              "role": "support"
+            }
+          ],
+          "biography_status": "本バッチでは生没年・人物史を採用しない"
+        },
+        {
+          "id": "locke-work",
+          "type": "work",
+          "label": "人間知性論",
+          "aliases": [
+            "An Essay Concerning Humane Understanding",
+            "An Essay Concerning Human Understanding",
+            "人間悟性論"
+          ],
+          "summary_ja": "ロックによる著作。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-catalog",
+              "locator": "About this eBook: Author / Title / Books 1 and 2",
+              "role": "support"
+            },
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+              "role": "support"
+            }
+          ],
+          "bibliography_status": "初刊・標題年・章追加・オンライン本文版を別々に記録。日本語書名と別名の採用は人の確認待ち"
+        },
+        {
+          "id": "locke-question-identity",
+          "type": "question",
+          "label": "忘れても私は同じ私なのか？",
+          "nature": "editorial",
+          "summary_ja": "一時的未想起と回復不能な断絶を分ける入口。",
+          "basis": [
+            "locke-claim-distinction",
+            "locke-claim-memory-limit",
+            "locke-claim-permanent-oblivion"
+          ],
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed headings 12 and 22",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-personal-identity",
+          "type": "concept",
+          "label": "人格同一性（ロック）",
+          "aliases": ["personal identity"],
+          "definition_scope": "『人間知性論』第二巻第二十七章の人格同一性",
+          "summary_ja": "意識による自己の同一性。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-person",
+          "type": "concept",
+          "label": "人格・person（ロック）",
+          "aliases": ["person"],
+          "definition_scope": "第二巻第二十七章のperson。日本語「人格」は仮の見出しで、人間・実体と区別する",
+          "summary_ja": "自身を同じ自身と考えうる存在。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-man",
+          "type": "concept",
+          "label": "人間・man（ロック）",
+          "aliases": ["man"],
+          "definition_scope": "第二巻第二十七章のman。人格の同一性とは別に読む",
+          "summary_ja": "生命の継続で考える人間。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 7: The Identity of Man",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-substance",
+          "type": "concept",
+          "label": "実体（ロック）",
+          "aliases": ["substance"],
+          "definition_scope": "第二巻第二十三章の一般的実体の観念を、第二十七章の同一性区別の背景として読む",
+          "summary_ja": "性質を支える未知のものの想定。",
+          "evidence": [
+            {
+              "source": "locke-source-substance",
+              "locator": "Locke.EHU.2.23.1–2",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-consciousness",
+          "type": "concept",
+          "label": "意識（ロック）",
+          "aliases": ["consciousness"],
+          "definition_scope": "第二巻第一章の意識の語義を、第二十七章の人格同一性の背景として読む。章・版間の対応は確認待ち",
+          "summary_ja": "自分の心で起こることの知覚。",
+          "evidence": [
+            {
+              "source": "locke-source-consciousness-background",
+              "locator": "Locke.EHU.2.1.19",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-memory",
+          "type": "concept",
+          "label": "記憶（ロック）",
+          "aliases": ["memory"],
+          "definition_scope": "第二巻第十章の記憶能力。第二十七章の意識と同一語扱いしない",
+          "summary_ja": "観念を再び心に呼び戻す能力。",
+          "evidence": [
+            {
+              "source": "locke-source-memory",
+              "locator": "Locke.EHU.2.10.2",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-life",
+          "type": "concept",
+          "label": "生命の継続（ロック）",
+          "aliases": ["continued life"],
+          "definition_scope": "第二巻第二十七章で身体・動物・人間の同一性を考える基準",
+          "summary_ja": "身体の組織を通じる生命。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed headings 5–7",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-accountability",
+          "type": "concept",
+          "label": "行為の帰属と責任（ロック）",
+          "aliases": ["accountability", "forensic term"],
+          "definition_scope": "第二巻第二十七章のpersonの法廷的用法。現代の法制度を定義しない",
+          "summary_ja": "行為の帰属と責任。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 28: Person a forensic Term",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-concept-prince-cobbler",
+          "type": "concept",
+          "label": "王子と靴職人の想定（ロック）",
+          "aliases": ["prince and cobbler"],
+          "definition_scope": "第二巻第二十七章の仮定的な事例を読むための編集見出し",
+          "summary_ja": "人格と人間を分ける想定。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 17: The body, as well as the soul, goes to the making of a Man",
+              "role": "support"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "locke-source-pg-text",
+          "title": "An Essay Concerning Humane Understanding, Volume I — Book II, Chapter XXVII and Epistle to the Reader",
+          "author": "John Locke",
+          "host": "Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/10615/10615-h/10615-h.htm",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "edition": "Gutenberg #10615の表示本文。カタログはBased on the 2nd Editionと記すが、本文表題のMDCXCを第二版の年として採用しない。底本の原本・編者・本文改変と節番号の完全な対応は未照合。",
+          "original_work": {
+            "title": "An Essay Concerning Humane Understanding",
+            "author": "John Locke",
+            "original_publication": "1689年12月（別資料の編集版情報で照合）",
+            "original_title_page_year": 1690,
+            "identity_chapter_added_edition": "second",
+            "identity_chapter_added_year": 1694,
+            "metadata_basis": [
+              "locke-claim-first-publication",
+              "locke-claim-second-edition",
+              "locke-claim-chapter-added"
+            ]
+          },
+          "observed_online_edition": {
+            "ebook_id": 10615,
+            "displayed_title_year": "MDCXC",
+            "catalog_basis": "Based on the 2nd Edition, Books 1 and 2",
+            "critical_edition_alignment": "未照合",
+            "numbering": "本バッチのlocatorは表示見出し番号。慣用的なII.27の節番号と同じと仮定しない。"
+          },
+          "examined_locations": [
+            "Epistle to the Reader: In the Second Edition I added as followeth; paragraph on one whole new chapter concerning Identity",
+            "Book II, CHAPTER XXVII, displayed headings 5–8, 11–12, 17, 22, 24–25, 28"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false,
+          "quote_words_stored": 0
+        },
+        {
+          "id": "locke-source-pg-catalog",
+          "title": "Project Gutenberg #10615 catalog — An Essay Concerning Humane Understanding, Volume 1",
+          "author": "Project Gutenberg catalog",
+          "host": "Project Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/10615",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "edition": "カタログの書誌欄のみ使用。自動生成要約は根拠にしない。",
+          "source_type": "catalog_metadata",
+          "observed_online_edition": {
+            "ebook_id": 10615,
+            "release_date": "2004-01-01",
+            "last_update": "2026-02-20",
+            "credits": ["Steve Harris", "David Widger"],
+            "catalog_note": "MDCXC, Based on the 2nd Edition, Books 1 and 2"
+          },
+          "examined_locations": [
+            "About this eBook: Author, Title, Credits, Release Date, Last Update, Copyright"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "locke-source-memory",
+          "title": "An Essay Concerning Humane Understanding — Book II, Chapter 10, Of Retention",
+          "author": "John Locke",
+          "host": "English Philosophical Texts Online",
+          "url": "https://englishphilosophy.org/locke/ehu/2/10",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "edition": "サイトはcopytextを1700年第四版と表示し、EEBO-TCP第一版転写から第四版へ合わせる変更を進めていると説明する。確定校訂版と扱わない。",
+          "observed_online_edition": {
+            "editor_or_maintainer": "Amyas Merivale",
+            "displayed_copytext": 1700,
+            "transcription_origin": "EEBO-TCP first edition",
+            "alignment_status": "サイト記載では修正進行中"
+          },
+          "examined_locations": [
+            "Locke.EHU.2.10.1–2",
+            "Copytext / source / edition note"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "locke-source-substance",
+          "title": "An Essay Concerning Humane Understanding — Book II, Chapter 23, Of Our Complex Ideas of Substances",
+          "author": "John Locke",
+          "host": "English Philosophical Texts Online",
+          "url": "https://englishphilosophy.org/locke/ehu/2/23",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "edition": "サイトはcopytextを1700年第四版と表示し、第一版転写からの版対応を進めていると説明する。第27章のGutenberg表示本文と同じ底本とは扱わない。",
+          "observed_online_edition": {
+            "editor_or_maintainer": "Amyas Merivale",
+            "displayed_copytext": 1700,
+            "transcription_origin": "EEBO-TCP first edition",
+            "alignment_status": "サイト記載では修正進行中"
+          },
+          "examined_locations": ["Locke.EHU.2.23.1–2 and 5"],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "locke-source-edition-note",
+          "title": "An Essay Concerning Humane Understanding — editor's edition and publication note",
+          "author": "English Philosophical Texts Online",
+          "host": "English Philosophical Texts Online",
+          "url": "https://englishphilosophy.org/locke/ehu",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "edition": "サイト編集者による刊行・転写・底本の説明。原典本文からの発言とは区別する。",
+          "source_type": "editorial_bibliography",
+          "examined_locations": [
+            "Published: 1689; Copytext: 1700; paragraph beginning Locke's Essay was first published"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "locke-source-second-edition-catalog",
+          "title": "An essay concerning humane understanding — second edition, 1694, OCLC 3075278",
+          "author": "OCLC WorldCat catalog",
+          "host": "WorldCat",
+          "url": "https://search.worldcat.org/title/An-essay-concerning-humane-understanding/oclc/3075278",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "edition": "1694年第二版の目録レコード。原本全体や版間異同を確認したものではない。",
+          "source_type": "catalog_metadata",
+          "examined_locations": [
+            "Print Book, English, 1694; Edition: 2d ed.; Publisher; OCLC Number"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        },
+        {
+          "id": "locke-source-consciousness-background",
+          "title": "An Essay Concerning Humane Understanding — Book II, Chapter 1, Of Ideas in general, and their Original",
+          "author": "John Locke",
+          "host": "English Philosophical Texts Online",
+          "url": "https://englishphilosophy.org/locke/ehu/2/1",
+          "language": "en",
+          "accessed_date": "2026-10-03",
+          "edition": "サイトはcopytextを1700年第四版と表示し、第一版転写からの版対応を進めていると説明する。第27章のGutenberg表示本文と同じ底本とは扱わない。",
+          "observed_online_edition": {
+            "editor_or_maintainer": "Amyas Merivale",
+            "displayed_copytext": 1700,
+            "transcription_origin": "EEBO-TCP first edition",
+            "alignment_status": "サイト記載では修正進行中"
+          },
+          "examined_locations": [
+            "Locke.EHU.2.1.19, sentence defining Consciousness"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "stored_full_text": false
+        }
+      ],
+      "assertion_candidates": [
+        {
+          "id": "locke-claim-distinction",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-personal-identity",
+          "text_ja": "ロックは人格・人間・実体の同一性を区別する。",
+          "context": "概念区別の探索用。",
+          "limit": "三語を同一ノードへ統合しない。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 8: Idea of Identity suited to the Idea it is applied to",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-person",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-person",
+          "text_ja": "personを理性・反省・自己意識をもつ思考存在とする。",
+          "context": "当該章の語義。",
+          "limit": "現代の人格概念の定義へ拡張しない。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-man",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-man",
+          "text_ja": "同じmanを、組織された身体で続く同じ生命として捉える。",
+          "context": "人格との比較用。",
+          "limit": "人格の基準へ置換しない。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 7: The Identity of Man",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-consciousness",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-personal-identity",
+          "text_ja": "人格同一性を、意識が過去へ及ぶ範囲に置く。",
+          "context": "同じ意識の議論。",
+          "limit": "単純な記憶説という呼称を自動付与しない。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-memory-limit",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-memory",
+          "text_ja": "全過去の同時想起ではなく、同じ意識での想起可能性を扱う。",
+          "context": "一時的未想起の検討。",
+          "limit": "永久的忘却の記述と併読し、あらゆる忘却で人格が保たれるとは解さない。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 12: Consciousness makes personal Identity",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-permanent-oblivion",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-personal-identity",
+          "text_ja": "回復不能な過去意識の断絶を仮定し、同じmanが異なるpersonとなる場合を論じる。",
+          "context": "永久的忘却への応答。",
+          "limit": "一時的未想起と分ける。健忘の医学的診断へ転用しない。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 22: Absolute oblivion separates what is thus forgotten from the person, but not from the man; paragraphs on beyond a possibility of retrieving and distinct incommunicable consciousness",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-prince-cobbler",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-prince-cobbler",
+          "text_ja": "王子の魂が過去意識とともに靴職人の身体へ移る仮定で、人格と人間を区別する。",
+          "context": "本文の思考実験。",
+          "limit": "魂の移動を事実化しない。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 17: The body, as well as the soul, goes to the making of a Man, prince/cobbler paragraph",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-accountability",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-accountability",
+          "text_ja": "personを行為の帰属と責任に関わる法廷的語とする。",
+          "context": "原典の責任論。",
+          "limit": "現行法の解説として使わない。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 28: Person a forensic Term",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-court-limit",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-accountability",
+          "text_ja": "人間の法には真の忘却を見分ける限界があると説明する。",
+          "context": "酩酊・睡眠の責任への応答。",
+          "limit": "本文の法廷と神の審判を区別する。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "Book II, CHAPTER XXVII, displayed heading 24, paragraph beginning Human laws punish both",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-memory-definition",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-memory",
+          "text_ja": "記憶を、見えなくなった観念を再び心に呼び戻す能力として扱う。",
+          "context": "第十章の観念保持論。",
+          "limit": "これだけから第27章の意識と記憶を同一視しない。",
+          "evidence": [
+            {
+              "source": "locke-source-memory",
+              "locator": "Locke.EHU.2.10.2",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-substance-background",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-substance",
+          "text_ja": "一般的実体の観念を、性質の未知の支えを想定するものと説明する。",
+          "context": "第二十三章の背景説明。",
+          "limit": "実体の不存在を述べたものとしない。",
+          "evidence": [
+            {
+              "source": "locke-source-substance",
+              "locator": "Locke.EHU.2.23.1–2; 5",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-first-publication",
+          "kind": "claim",
+          "nature": "fact_report",
+          "attribution": "English Philosophical Texts Online edition note",
+          "subject": "locke-work",
+          "text_ja": "同サイトの編集版情報は、初刊を1689年12月、標題頁の年を1690年と区別する。",
+          "context": "初刊年と表示年の管理。",
+          "limit": "初版原本・刊行記録の再確認待ち。第27章の刊行年にしない。",
+          "evidence": [
+            {
+              "source": "locke-source-edition-note",
+              "locator": "Published / Copytext / publication paragraph",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-second-edition",
+          "kind": "claim",
+          "nature": "fact_report",
+          "attribution": "OCLC WorldCat",
+          "subject": "locke-work",
+          "text_ja": "WorldCatは第二版を1694年、ロンドン刊として記録する。",
+          "context": "OCLC 3075278の目録。",
+          "limit": "目録は本文の版間異同を保証しない。",
+          "evidence": [
+            {
+              "source": "locke-source-second-edition-catalog",
+              "locator": "Edition: 2d ed.; Print Book, English, 1694; Publisher",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-chapter-added",
+          "kind": "claim",
+          "nature": "fact_report",
+          "attribution": "John Locke, Epistle to the Reader",
+          "subject": "locke-work",
+          "text_ja": "ロックは同一性の章を第二版で追加したと記す。",
+          "context": "著者の読者への書簡。",
+          "limit": "著作初刊年と章追加年を分ける。",
+          "evidence": [
+            {
+              "source": "locke-source-pg-text",
+              "locator": "THE EPISTLE TO THE READER, In the Second Edition I added as followeth; next paragraph on one whole new chapter concerning Identity",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "locke-claim-consciousness-background",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "John Locke",
+          "subject": "locke-concept-consciousness",
+          "text_ja": "第一章では意識を、自分の心で起こることの知覚と説明する。",
+          "context": "第二十七章の背景の語義。",
+          "limit": "この語義のみで人格同一性の全議論を代表させない。",
+          "evidence": [
+            {
+              "source": "locke-source-consciousness-background",
+              "locator": "Locke.EHU.2.1.19",
+              "role": "support"
+            }
+          ]
+        }
+      ],
+      "relationship_candidates": [
+        {
+          "from": "locke-question-identity",
+          "to": "locke-concept-personal-identity",
+          "nature": "editorial",
+          "reason": "一時的未想起と回復不能な断絶を区別し、人格と人間の同一性を読む。",
+          "basis": [
+            "locke-claim-distinction",
+            "locke-claim-memory-limit",
+            "locke-claim-permanent-oblivion"
+          ]
+        },
+        {
+          "from": "locke-concept-personal-identity",
+          "to": "locke-person",
+          "nature": "editorial",
+          "reason": "この問いの一つの議論としてロックを読む。",
+          "basis": ["locke-claim-consciousness"]
+        },
+        {
+          "from": "locke-person",
+          "to": "locke-work",
+          "nature": "editorial",
+          "reason": "記述の掲載作品と版の確認へ進む。",
+          "basis": ["locke-claim-chapter-added", "locke-claim-second-edition"]
+        },
+        {
+          "from": "locke-work",
+          "to": "locke-concept-person",
+          "nature": "editorial",
+          "reason": "当該章のpersonの意味を先に確かめる。",
+          "basis": ["locke-claim-person"]
+        },
+        {
+          "from": "locke-concept-person",
+          "to": "locke-concept-man",
+          "nature": "editorial",
+          "reason": "同一性を問う対象の違いを比較する。",
+          "basis": [
+            "locke-claim-distinction",
+            "locke-claim-man",
+            "locke-claim-permanent-oblivion"
+          ]
+        },
+        {
+          "from": "locke-concept-person",
+          "to": "locke-concept-substance",
+          "nature": "editorial",
+          "reason": "実体との区別と背景の語義を確認する。",
+          "basis": [
+            "locke-claim-distinction",
+            "locke-claim-substance-background"
+          ]
+        },
+        {
+          "from": "locke-concept-personal-identity",
+          "to": "locke-concept-consciousness",
+          "nature": "editorial",
+          "reason": "当該章が使う意識の役割へ進む。",
+          "basis": [
+            "locke-claim-consciousness",
+            "locke-claim-person",
+            "locke-claim-consciousness-background"
+          ]
+        },
+        {
+          "from": "locke-concept-consciousness",
+          "to": "locke-concept-memory",
+          "nature": "editorial",
+          "reason": "想起可能性と回復不能な断絶を併読し、意識と記憶を同一視しない。",
+          "basis": [
+            "locke-claim-memory-limit",
+            "locke-claim-memory-definition",
+            "locke-claim-permanent-oblivion"
+          ]
+        },
+        {
+          "from": "locke-concept-man",
+          "to": "locke-concept-life",
+          "nature": "editorial",
+          "reason": "人間の同一性を考える基準を辿る。",
+          "basis": ["locke-claim-man"]
+        },
+        {
+          "from": "locke-concept-person",
+          "to": "locke-concept-accountability",
+          "nature": "editorial",
+          "reason": "人格の用語が責任にどう関わるか読む。",
+          "basis": ["locke-claim-accountability", "locke-claim-court-limit"]
+        },
+        {
+          "from": "locke-concept-person",
+          "to": "locke-concept-prince-cobbler",
+          "nature": "editorial",
+          "reason": "人格と人間の区別を仮定的な事例で検討する。",
+          "basis": ["locke-claim-prince-cobbler", "locke-claim-distinction"]
+        }
+      ],
+      "temporal_candidates": [],
+      "review_requirements": [
+        "Gutenberg表示見出し番号と校訂版の慣用節番号を対応付ける。番号を黙って変換しない。",
+        "第27章本文の正式な底本、転写、追加・改訂と第2版・第4版との対応を照合する。",
+        "person/man/substance/consciousnessの日本語見出し・要約・強さを人が照合する。",
+        "意識と記憶の関係に関する解釈は、人の確認なく単純な記憶理論にまとめない。",
+        "初刊1689・標題年1690・第二版1694・章追加を、確定書誌と原本で別々に照合する。",
+        "既存ノード・資料との重複、関係述語、公開用途・利用条件を確認する。",
+        "表示見出し12の一時的未想起と、22の回復不能な過去意識の断絶を併読し、日本語の留保を人が確認する。"
+      ],
+      "acceptance_checks": [
+        "node_candidatesは12項目で、すべてlocke-接頭辞をもつ。",
+        "編集質問と編集関係のbasisは本バッチのAssertionを参照する。",
+        "人格・人間・実体は別ノードであり、同じという関係を登録しない。",
+        "王子と靴職人は仮定として保つ。歴史的事件や影響関係へ変換しない。",
+        "資料を撤回した候補は下流の検索・図・本文に残さない。",
+        "人の承認待ち、DB未登録、未公開を保持する。",
+        "一時的未想起と回復不能な意識の断絶を別Assertionに保ち、あらゆる忘却で人格が保たれるとは表示しない。"
+      ],
+      "next_action": "校訂版・日本語要約・書誌の人による確認後、個別の候補と依存関係をDB下書き形式へ対応付ける。"
+    },
+    {
+      "schema_version": 1,
+      "batch_id": "descartes-real-source-draft-20261003",
+      "status": "draft",
+      "human_review": {
+        "status": "pending",
+        "reviewer": null,
+        "approved_at": null
+      },
+      "database_imported": false,
+      "published": false,
+      "purpose": "第一・第二省察を、訳・編集の経路と議論の段階を残して探索する。資料照合は済、採用は人のレビュー待ち。",
+      "node_candidates": [
+        {
+          "id": "descartes-q-certainty",
+          "type": "question",
+          "label": "確かな知はあるか？",
+          "nature": "editorial",
+          "summary_ja": "疑いから確かさを探る入口。",
+          "basis": ["descartes-a-doubt", "descartes-a-existence"]
+        },
+        {
+          "id": "descartes-q-self",
+          "type": "question",
+          "label": "私は何か？",
+          "nature": "editorial",
+          "summary_ja": "存在の確かさから自己を問う入口。",
+          "basis": [
+            "descartes-a-existence",
+            "descartes-a-thinking-thing",
+            "descartes-a-body-undecided"
+          ]
+        },
+        {
+          "id": "descartes-p-descartes",
+          "type": "person",
+          "label": "ルネ・デカルト",
+          "aliases": ["René Descartes", "デカルト"],
+          "summary_ja": "『省察』の著者。",
+          "biography_status": "本候補では生没年・経歴を未照合",
+          "evidence": [
+            {
+              "source": "descartes-s-bennett",
+              "locator": "扉：著者名",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-w-meditations",
+          "type": "work",
+          "label": "省察",
+          "aliases": [
+            "Meditationes de prima philosophia",
+            "Meditations on First Philosophy",
+            "第一哲学についての省察"
+          ],
+          "summary_ja": "本候補は第一・第二省察を扱う。",
+          "bibliography_status": "原著と今回の訳・編集版をsourcesで区別。邦訳書誌は未照合。",
+          "evidence": [
+            {
+              "source": "descartes-s-bennett",
+              "locator": "扉、目次、第一・第二省察見出し",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-c-doubt",
+          "type": "concept",
+          "label": "方法的懐疑（第一省察）",
+          "aliases": ["methodical doubt"],
+          "summary_ja": "確かさのために同意を留保する。",
+          "definition_scope": "デカルト『省察』第一省察の探究手続き。案内語としての「方法的懐疑」。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第一省察：疑いを含む意見への同意留保を述べる段落",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-c-senses",
+          "type": "concept",
+          "label": "感覚の誤り（第一省察）",
+          "aliases": ["sensory deception"],
+          "summary_ja": "感覚を全面的に信頼できるか。",
+          "definition_scope": "第一省察で感覚の誤りを疑いの理由とする箇所。感覚一般の心理学的定義ではない。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第一省察：感覚が時に誤ると述べる段落",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-c-dream",
+          "type": "concept",
+          "label": "夢による疑い（第一省察）",
+          "aliases": ["dream argument"],
+          "summary_ja": "夢と覚醒を確実に区別できるか。",
+          "definition_scope": "第一省察の夢による懐疑。作品内の検討段階を保持する。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第一省察：夢と覚醒の確実な指標を検討する段落",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-c-deceiver",
+          "type": "concept",
+          "label": "欺く者の仮定（第一省察）",
+          "aliases": ["悪霊の仮定", "malicious demon"],
+          "summary_ja": "強力な欺く者を仮に置く。",
+          "definition_scope": "第一省察末尾の、疑いを維持するための仮定。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第一省察末尾：悪意ある欺く者を想定する段落",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-c-existence",
+          "type": "concept",
+          "label": "存在の確かさ（第二省察）",
+          "aliases": ["コギト（案内語）"],
+          "summary_ja": "自分の存在を考える際の確かさ。",
+          "definition_scope": "第二省察の存在命題。「我思う、ゆえに我あり」をこの箇所の原文引用として登録しない。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第二省察：欺かれていても、自分の存在を述べ・考える際の真を述べる段落",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-c-thinking-thing",
+          "type": "concept",
+          "label": "考えるもの（第二省察）",
+          "aliases": ["thinking thing"],
+          "summary_ja": "省察者が確実に認める自己。",
+          "definition_scope": "第二省察でその段階において認められる自己の把握。身体との実在的区別はここだけで確定しない。",
+          "evidence": [
+            {
+              "source": "descartes-s-veitch",
+              "locator": "第二省察 §6（編者付与段落番号）、PDF23枚目",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-c-thought",
+          "type": "concept",
+          "label": "思考の諸様態（第二省察）",
+          "aliases": ["modes of thinking"],
+          "summary_ja": "疑い・意志・想像なども思考。",
+          "definition_scope": "第二省察で考えるものの活動を列挙する箇所。感覚は「そう感じられる」という限定された意味で扱う。",
+          "evidence": [
+            {
+              "source": "descartes-s-bennett",
+              "locator": "第二省察、印刷pp.5–6（PDF6–7枚目）：思考活動の列挙と感覚の限定",
+              "role": "support"
+            }
+          ]
+        },
+        {
+          "id": "descartes-c-wax",
+          "type": "concept",
+          "label": "蝋の考察（第二省察）",
+          "aliases": ["wax example"],
+          "summary_ja": "変化する蝋を知る働きを考える。",
+          "definition_scope": "第二省察の一片の蝋をめぐる認識の考察。物体の実在証明として扱わない。",
+          "evidence": [
+            {
+              "source": "descartes-s-bennett",
+              "locator": "第二省察、印刷pp.6–8（PDF7–9枚目）：蝋の考察",
+              "role": "support"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "descartes-s-johnston",
+          "title": "Meditations on First Philosophy — Ian Johnston translation",
+          "author": "René Descartes",
+          "host": "Vancouver Island University",
+          "url": "https://web.viu.ca/johnstoi/descartes/descartesmeditations.htm",
+          "accessed_date": "2026-10-03",
+          "language": "en",
+          "original_work": {
+            "title": "Meditationes de prima philosophia",
+            "language": "la",
+            "first_publication_year": 1641,
+            "basis_locator": "TRANSLATOR’S NOTE"
+          },
+          "edition": "Ian Johnston 英訳。2012年ウェブ掲載。訳者注は1641年ラテン語版を基礎とし、1642年の訂正と1647年フランス語版の一部追加を反映すると説明。",
+          "translator": "Ian Johnston",
+          "edition_notes_locator": "扉、TRANSLATOR’S NOTE",
+          "editorial_processing": [
+            "反論・答弁を省略",
+            "角括弧でフランス語版の追加を表示",
+            "訳者の解説注を付与"
+          ],
+          "examined_locations": ["訳者注", "第一省察", "第二省察の存在命題"],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "usage_notice": "翻訳には著作権上の制限あり。用途の具体条件は未確認。",
+          "stored_full_text": false,
+          "original_language_collation": false
+        },
+        {
+          "id": "descartes-s-bennett",
+          "title": "Meditations on First Philosophy — Jonathan Bennett edited version, Meditations I–II",
+          "author": "René Descartes",
+          "host": "Simon Fraser University",
+          "url": "https://www.sfu.ca/~jillmc/descartes1641_1-2.pdf",
+          "accessed_date": "2026-10-03",
+          "language": "en",
+          "original_work": {
+            "title": "Meditationes de prima philosophia",
+            "original_work_ref": "descartes-w-meditations",
+            "original_edition_not_identical_to_accessed_file": true
+          },
+          "edition": "Jonathan Bennett による英語編集版。扉は初公開2004年7月、最終改訂2007年4月、著作権表示2017年。原語底本・翻訳底本の詳細はこのファイルだけでは未確認。",
+          "editor": "Jonathan Bennett",
+          "edition_notes_locator": "扉（PDF1枚目）；対話形式の注記：印刷pp.1,4（PDF2,5枚目）",
+          "editorial_processing": [
+            "角括弧の編者説明",
+            "小点で囲む追加",
+            "短い難解箇所の省略",
+            "原著にない対話形式"
+          ],
+          "examined_locations": [
+            "扉",
+            "第一省察の編集注記",
+            "第二省察、印刷pp.4–8"
+          ],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "usage_notice": "扉にAll rights reservedの表示。本文転載の許可として扱わない。",
+          "stored_full_text": false,
+          "original_language_collation": false
+        },
+        {
+          "id": "descartes-s-veitch",
+          "title": "Descartes' Meditations — A Trilingual HTML Edition (PDF reproduction)",
+          "author": "René Descartes",
+          "host": "Wright State University / CORE Scholar",
+          "url": "https://research.wright.edu/ws/portalfiles/portal/40561546/Descartes%20Meditations%20-%20Trilingual%20Edition.pdf",
+          "accessed_date": "2026-10-03",
+          "language": "en",
+          "original_work": {
+            "title": "Meditationes de prima philosophia",
+            "language": "la",
+            "first_publication_year": 1641,
+            "basis_locator": "PDF2–3枚目：Introduction to the HTML Edition"
+          },
+          "edition": "David B. Manley / Charles S. Taylor 編の三言語版（著作権表示1996年）。今回の本文照合は John Veitch 1901年英訳部分。原文・仏訳の全面照合はしていない。",
+          "translator": "John Veitch",
+          "editors": ["David B. Manley", "Charles S. Taylor"],
+          "edition_notes_locator": "PDF2–3枚目：編者・使用版・段落付番の説明",
+          "editorial_processing": [
+            "英訳・ラテン語版・1647年フランス語版を収録",
+            "原ラテン語の段落区分に基づく編者付与番号"
+          ],
+          "examined_locations": ["編集版の紹介", "第二省察 §6–7（PDF23枚目）"],
+          "usage_permissions": {
+            "internal_storage": "unknown",
+            "quote_display": "unknown",
+            "full_text_publication": "unknown"
+          },
+          "usage_notice": "学術目的の配布に言及し、有償販売は編者許可が必要と説明。NOEMAP公開用途は未確認。",
+          "stored_full_text": false,
+          "original_language_collation": false
+        }
+      ],
+      "assertion_candidates": [
+        {
+          "id": "descartes-a-doubt",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-doubt",
+          "text_ja": "省察者は、疑いを含む意見への同意を留保する。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第一省察：疑わしい意見への同意留保の段落（Now, for this で始まる）",
+              "role": "support"
+            }
+          ],
+          "limit": "全意見の偽を証明したとは扱わない。",
+          "argument_role": "position"
+        },
+        {
+          "id": "descartes-a-senses",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-senses",
+          "text_ja": "省察者は、感覚が時に誤ることを疑いの理由にする。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第一省察：感覚の信頼性を述べる段落（Up to this で始まる）",
+              "role": "support"
+            }
+          ],
+          "limit": "感覚が常に偽であるという主張にしない。",
+          "argument_role": "position"
+        },
+        {
+          "id": "descartes-a-dream",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-dream",
+          "text_ja": "省察者は、夢と覚醒を確実に区別する指標を疑う。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第一省察：夢の検討（Yes, of course で始まる段落）",
+              "role": "support"
+            }
+          ],
+          "limit": "夢を見ている事実の確定ではない。",
+          "argument_role": "position"
+        },
+        {
+          "id": "descartes-a-deceiver",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-deceiver",
+          "text_ja": "省察者は、強力な欺く者を仮定して疑いを維持する。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第一省察末尾：欺く者の仮定（Therefore, I will で始まる段落）",
+              "role": "support"
+            }
+          ],
+          "limit": "欺く者の実在を断定しない。",
+          "argument_role": "hypothetical-supposition"
+        },
+        {
+          "id": "descartes-a-existence",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-existence",
+          "text_ja": "省察者は、自分の存在を述べ・考える際の真を認める。",
+          "evidence": [
+            {
+              "source": "descartes-s-johnston",
+              "locator": "第二省察：存在命題（But then, if で始まる段落）",
+              "role": "support"
+            }
+          ],
+          "limit": "この時点の認識の確かさに限る。",
+          "argument_role": "position"
+        },
+        {
+          "id": "descartes-a-duration-limit",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-existence",
+          "text_ja": "省察者は、思考が止まった場合の存在をここでは確定しない。",
+          "evidence": [
+            {
+              "source": "descartes-s-veitch",
+              "locator": "第二省察 §6、PDF23枚目",
+              "role": "qualification"
+            }
+          ],
+          "limit": "自己の永続性の証明にも、不存在の断定にもしない。",
+          "argument_role": "qualification"
+        },
+        {
+          "id": "descartes-a-thinking-thing",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-thinking-thing",
+          "text_ja": "省察者は、この段階の自己を考えるものと捉える。",
+          "evidence": [
+            {
+              "source": "descartes-s-veitch",
+              "locator": "第二省察 §6、PDF23枚目",
+              "role": "support"
+            }
+          ],
+          "limit": "著作全体の心身論をこの一節で代表させない。",
+          "argument_role": "position"
+        },
+        {
+          "id": "descartes-a-body-undecided",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-thinking-thing",
+          "text_ja": "省察者は、未確定な身体と自己の同一性をここでは決めない。",
+          "evidence": [
+            {
+              "source": "descartes-s-veitch",
+              "locator": "第二省察 §7、PDF23枚目",
+              "role": "qualification"
+            }
+          ],
+          "limit": "第二省察のみから実在的な心身の区別を導かない。",
+          "argument_role": "qualification"
+        },
+        {
+          "id": "descartes-a-thought-modes",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-thought",
+          "text_ja": "省察者は、疑い・理解・意志・想像・感覚を思考に含める。",
+          "evidence": [
+            {
+              "source": "descartes-s-bennett",
+              "locator": "第二省察、印刷pp.5–6（PDF6–7枚目）",
+              "role": "support"
+            }
+          ],
+          "limit": "感覚は対象の実在でなく、そう感じられることとして扱う。",
+          "argument_role": "position"
+        },
+        {
+          "id": "descartes-a-wax",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-wax",
+          "text_ja": "省察者は、変化する蝋を捉える知性の働きを論じる。",
+          "evidence": [
+            {
+              "source": "descartes-s-bennett",
+              "locator": "第二省察、印刷pp.6–7（PDF7–8枚目）",
+              "role": "support"
+            }
+          ],
+          "limit": "蝋を観察する経験的実験として登録しない。",
+          "argument_role": "position"
+        },
+        {
+          "id": "descartes-a-mind-priority",
+          "kind": "claim",
+          "nature": "position",
+          "attribution": "René Descartes",
+          "attribution_role": "著作内の省察者の議論",
+          "subject": "descartes-c-wax",
+          "text_ja": "省察者は、蝋の認識から自分の心をより確かに知ると論じる。",
+          "evidence": [
+            {
+              "source": "descartes-s-bennett",
+              "locator": "第二省察、印刷pp.7–8（PDF8–9枚目）",
+              "role": "support"
+            }
+          ],
+          "limit": "認識の順序と存在論上の独立を混同しない。",
+          "argument_role": "position"
+        }
+      ],
+      "relationship_candidates": [
+        {
+          "id": "descartes-r-certainty-doubt",
+          "from": "descartes-q-certainty",
+          "to": "descartes-c-doubt",
+          "nature": "editorial",
+          "reason": "確かさを探す手続きへ進む。",
+          "basis": ["descartes-a-doubt"]
+        },
+        {
+          "id": "descartes-r-doubt-senses",
+          "from": "descartes-c-doubt",
+          "to": "descartes-c-senses",
+          "nature": "editorial",
+          "reason": "疑いの理由として感覚を読む。",
+          "basis": ["descartes-a-doubt", "descartes-a-senses"]
+        },
+        {
+          "id": "descartes-r-doubt-dream",
+          "from": "descartes-c-doubt",
+          "to": "descartes-c-dream",
+          "nature": "editorial",
+          "reason": "夢による疑いへ進む。",
+          "basis": ["descartes-a-doubt", "descartes-a-dream"]
+        },
+        {
+          "id": "descartes-r-doubt-deceiver",
+          "from": "descartes-c-doubt",
+          "to": "descartes-c-deceiver",
+          "nature": "editorial",
+          "reason": "疑いを維持する仮定を読む。",
+          "basis": ["descartes-a-doubt", "descartes-a-deceiver"]
+        },
+        {
+          "id": "descartes-r-deceiver-existence",
+          "from": "descartes-c-deceiver",
+          "to": "descartes-c-existence",
+          "nature": "editorial",
+          "reason": "欺きの仮定下での存在命題を読む。",
+          "basis": ["descartes-a-deceiver", "descartes-a-existence"]
+        },
+        {
+          "id": "descartes-r-self-existence",
+          "from": "descartes-q-self",
+          "to": "descartes-c-existence",
+          "nature": "editorial",
+          "reason": "自己を問う前提を検討する。",
+          "basis": ["descartes-a-existence"]
+        },
+        {
+          "id": "descartes-r-existence-thinker",
+          "from": "descartes-c-existence",
+          "to": "descartes-c-thinking-thing",
+          "nature": "editorial",
+          "reason": "確かさから自己の把握へ進む。",
+          "basis": [
+            "descartes-a-existence",
+            "descartes-a-thinking-thing",
+            "descartes-a-duration-limit",
+            "descartes-a-body-undecided"
+          ]
+        },
+        {
+          "id": "descartes-r-thinker-modes",
+          "from": "descartes-c-thinking-thing",
+          "to": "descartes-c-thought",
+          "nature": "editorial",
+          "reason": "思考に含められる活動を読む。",
+          "basis": ["descartes-a-thinking-thing", "descartes-a-thought-modes"]
+        },
+        {
+          "id": "descartes-r-person-work",
+          "from": "descartes-p-descartes",
+          "to": "descartes-w-meditations",
+          "nature": "editorial",
+          "reason": "今回照合した著作の議論へ進む。",
+          "basis": ["descartes-a-doubt", "descartes-a-thinking-thing"]
+        },
+        {
+          "id": "descartes-r-work-doubt",
+          "from": "descartes-w-meditations",
+          "to": "descartes-c-doubt",
+          "nature": "editorial",
+          "reason": "第一省察の探究手続きへ進む。",
+          "basis": ["descartes-a-doubt"]
+        },
+        {
+          "id": "descartes-r-work-wax",
+          "from": "descartes-w-meditations",
+          "to": "descartes-c-wax",
+          "nature": "editorial",
+          "reason": "第二省察の具体例を読む。",
+          "basis": ["descartes-a-wax", "descartes-a-mind-priority"]
+        },
+        {
+          "id": "descartes-r-wax-thinker",
+          "from": "descartes-c-wax",
+          "to": "descartes-c-thinking-thing",
+          "nature": "editorial",
+          "reason": "蝋の認識と心の認識を併せて読む。",
+          "basis": [
+            "descartes-a-wax",
+            "descartes-a-mind-priority",
+            "descartes-a-thinking-thing"
+          ]
+        },
+        {
+          "id": "descartes-r-senses-thought",
+          "from": "descartes-c-senses",
+          "to": "descartes-c-thought",
+          "nature": "editorial",
+          "reason": "感覚の信頼性と感じられることの区別を読む。",
+          "basis": ["descartes-a-senses", "descartes-a-thought-modes"]
+        }
+      ],
+      "temporal_candidates": [],
+      "review_requirements": [
+        "日本語要約と各訳の意味を人が照合",
+        "原語・他訳との対応と正式な底本書誌の追加確認",
+        "概念ラベルの案内語と原文の語を区別",
+        "既存Entityとの重複・版対応を確認",
+        "編集関係の根拠と述語をDB形式へ対応付け",
+        "公開用途の条件と最終文章の承認"
+      ],
+      "acceptance_checks": [
+        "Bennett版の対話役名を人物Entityにしない",
+        "編者注・追加をデカルトの原文として保存しない",
+        "第二省察だけから自己の永続性・魂の不死・心身の実在的区別を確定しない",
+        "存在の確かさと、その自己が何であるかの問いを分ける",
+        "根拠を撤回した際は依存する記述・編集関係も非公開にする",
+        "生没年は照合なしに年表へ追加しない",
+        "草稿を人の公開承認として扱わない"
+      ],
+      "next_action": "資料・要約・編集関係を人が確認した後、DBの下書きへの登録を検討する。"
+    }
+  ],
+  "withdrawn": {
+    "sources": [],
+    "nodes": [],
+    "assertions": [],
+    "relationships": []
+  },
+  "temporal_records": [
+    {
+      "id": "descartes-t-original-publication",
+      "node_id": "descartes-w-meditations",
+      "role": "publication",
+      "date_label": "1641年 — ラテン語初版",
+      "original_label": "1641",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1641,
+      "start_latest": 1641,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "TRANSLATOR’S NOTE: first Latin edition (1641)",
+          "role": "support"
+        }
+      ],
+      "text_ja": "ラテン語初版の刊行年。",
+      "limit": "訳者注による書誌情報。今回参照した英訳の公開年ではない。原刊本との直接照合は未実施。"
+    },
+    {
+      "id": "locke-t-original-publication",
+      "node_id": "locke-work",
+      "role": "publication",
+      "date_label": "1689年 — 実際の初刊年",
+      "original_label": "1689",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1689,
+      "start_latest": 1689,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "locke-source-edition-note",
+          "locator": "Published / Copytext / publication paragraph",
+          "role": "support"
+        }
+      ],
+      "text_ja": "初刊年。標題頁の年とは区別する。",
+      "limit": "サイトの書誌説明は1689年12月刊、標題頁1690年と区別する。月日は正規化しない。人格同一性の章の追加年ではない。"
+    },
+    {
+      "id": "locke-t-title-page-year",
+      "node_id": "locke-work",
+      "role": "publication",
+      "date_label": "1690年 — 初版標題頁の年",
+      "original_label": "1690",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1690,
+      "start_latest": 1690,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "locke-source-edition-note",
+          "locator": "Published / Copytext / publication paragraph: title page year",
+          "role": "support"
+        }
+      ],
+      "text_ja": "初版標題頁に記された年。",
+      "limit": "実際の初刊年1689年とは別の表示年。第二版や人格同一性の章の刊行年として扱わない。原刊標題頁の再照合待ち。"
+    },
+    {
+      "id": "hume-t-volumes-1-2",
+      "node_id": "hume-w-treatise",
+      "role": "publication",
+      "date_label": "1739年 — 第1・第2巻",
+      "original_label": "1739",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1739,
+      "start_latest": 1739,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "hume-s-copytexts",
+          "locator": "§1 List of Editions, Treatise paragraph: volumes 1 and 2",
+          "role": "support"
+        }
+      ],
+      "text_ja": "第1・第2巻の刊行年。",
+      "limit": "オンライン版の公開年ではない。現在のBook区分と原刊巻の区分を混同しない。"
+    },
+    {
+      "id": "hume-t-volume-3",
+      "node_id": "hume-w-treatise",
+      "role": "publication",
+      "date_label": "1740年 — 第3巻",
+      "original_label": "1740",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1740,
+      "start_latest": 1740,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "hume-s-copytexts",
+          "locator": "§1 List of Editions, Treatise paragraph: volume 3",
+          "role": "support"
+        }
+      ],
+      "text_ja": "第3巻の刊行年。",
+      "limit": "全巻が1739年に刊行されたとは表示しない。オンラインの本文編集日とは別。"
+    }
+  ]
+}

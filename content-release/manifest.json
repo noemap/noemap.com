@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "release_id": "noemap-provisional-20261003-v1",
+  "publication_status": "provisional",
+  "human_review": {
+    "status": "pending",
+    "reviewer": null,
+    "approved_at": null
+  },
+  "authorized_by": "project-owner-request",
+  "authorized_date": "2026-10-03",
+  "authorization_scope": "provisional-publication-with-human-content-review-pending",
+  "expected_node_count": 36,
+  "batch_files": [
+    {
+      "file": "hume-reviewed.json",
+      "sha256": "a0bd5d276dec6e426ac82a6f9b569ac3cb9d9872ce454b28e98ee7466ec444f3",
+      "content_sha256": "e53950dc41a75fe2a4d367c0ea49a955d076586e1ae6c640f0b0b951a4e2d239"
+    },
+    {
+      "file": "locke-reviewed.json",
+      "sha256": "55a78b3ea59f49e0f4366929db75ac9b029ed1e521cdb944a9341d822e55d331",
+      "content_sha256": "0c1d0f9d37254775ee40d8cdc924228b0489c57ee50e80c690645f42069a32ed"
+    },
+    {
+      "file": "descartes-reviewed.json",
+      "sha256": "79fadd160778fd5bfa23747fd9139411b79dede9f23f0ce30f6516cd7244206b",
+      "content_sha256": "ff2e7605a22351ade06474142d4da611203686b9b5c5e78b56ab85f72e65de9b"
+    }
+  ],
+  "withdrawn": {
+    "sources": [],
+    "nodes": [],
+    "assertions": [],
+    "relationships": []
+  },
+  "temporal_records": [
+    {
+      "id": "descartes-t-original-publication",
+      "node_id": "descartes-w-meditations",
+      "role": "publication",
+      "date_label": "1641年 — ラテン語初版",
+      "original_label": "1641",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1641,
+      "start_latest": 1641,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "descartes-s-johnston",
+          "locator": "TRANSLATOR’S NOTE: first Latin edition (1641)",
+          "role": "support"
+        }
+      ],
+      "text_ja": "ラテン語初版の刊行年。",
+      "limit": "訳者注による書誌情報。今回参照した英訳の公開年ではない。原刊本との直接照合は未実施。"
+    },
+    {
+      "id": "locke-t-original-publication",
+      "node_id": "locke-work",
+      "role": "publication",
+      "date_label": "1689年 — 実際の初刊年",
+      "original_label": "1689",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1689,
+      "start_latest": 1689,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "locke-source-edition-note",
+          "locator": "Published / Copytext / publication paragraph",
+          "role": "support"
+        }
+      ],
+      "text_ja": "初刊年。標題頁の年とは区別する。",
+      "limit": "サイトの書誌説明は1689年12月刊、標題頁1690年と区別する。月日は正規化しない。人格同一性の章の追加年ではない。"
+    },
+    {
+      "id": "locke-t-title-page-year",
+      "node_id": "locke-work",
+      "role": "publication",
+      "date_label": "1690年 — 初版標題頁の年",
+      "original_label": "1690",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1690,
+      "start_latest": 1690,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "locke-source-edition-note",
+          "locator": "Published / Copytext / publication paragraph: title page year",
+          "role": "support"
+        }
+      ],
+      "text_ja": "初版標題頁に記された年。",
+      "limit": "実際の初刊年1689年とは別の表示年。第二版や人格同一性の章の刊行年として扱わない。原刊標題頁の再照合待ち。"
+    },
+    {
+      "id": "hume-t-volumes-1-2",
+      "node_id": "hume-w-treatise",
+      "role": "publication",
+      "date_label": "1739年 — 第1・第2巻",
+      "original_label": "1739",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1739,
+      "start_latest": 1739,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "hume-s-copytexts",
+          "locator": "§1 List of Editions, Treatise paragraph: volumes 1 and 2",
+          "role": "support"
+        }
+      ],
+      "text_ja": "第1・第2巻の刊行年。",
+      "limit": "オンライン版の公開年ではない。現在のBook区分と原刊巻の区分を混同しない。"
+    },
+    {
+      "id": "hume-t-volume-3",
+      "node_id": "hume-w-treatise",
+      "role": "publication",
+      "date_label": "1740年 — 第3巻",
+      "original_label": "1740",
+      "calendar": "unspecified",
+      "normalization": "astronomical_year",
+      "precision": "year",
+      "start_earliest": 1740,
+      "start_latest": 1740,
+      "end_earliest": null,
+      "end_latest": null,
+      "evidence": [
+        {
+          "source": "hume-s-copytexts",
+          "locator": "§1 List of Editions, Treatise paragraph: volume 3",
+          "role": "support"
+        }
+      ],
+      "text_ja": "第3巻の刊行年。",
+      "limit": "全巻が1739年に刊行されたとは表示しない。オンラインの本文編集日とは別。"
+    }
+  ]
+}

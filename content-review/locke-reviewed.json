@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "batch_id": "locke-source-review-20261003",
+  "status": "draft",
+  "human_review": {
+    "status": "pending",
+    "reviewer": null,
+    "approved_at": null
+  },
+  "database_imported": false,
+  "published": false,
+  "purpose": "人格・人間・実体を区別する探索経路の候補を、本文の留保と版の違いを保って作る。",
+  "scope": "ジョン・ロック『人間知性論』第二巻第二十七章。意識・記憶・実体は同巻第一章・第十章・第二十三章を補助資料とする。",
+  "editorial_policy": {
+    "translation": "日本語はNOEMAPの短い要約案。既刊訳の引用ではない。",
+    "concept_merge": "同名でも他思想家の概念へ自動統合しない。",
+    "approval": "資料の機械的確認は人の編集承認を意味しない。"
+  },
+  "node_candidates": [
+    {
+      "id": "locke-person",
+      "type": "person",
+      "label": "ジョン・ロック",
+      "aliases": ["John Locke", "ロック"],
+      "summary_ja": "『人間知性論』の著者。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-catalog",
+          "locator": "About this eBook: Author / Title",
+          "role": "support"
+        }
+      ],
+      "biography_status": "本バッチでは生没年・人物史を採用しない"
+    },
+    {
+      "id": "locke-work",
+      "type": "work",
+      "label": "人間知性論",
+      "aliases": [
+        "An Essay Concerning Humane Understanding",
+        "An Essay Concerning Human Understanding",
+        "人間悟性論"
+      ],
+      "summary_ja": "ロックによる著作。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-catalog",
+          "locator": "About this eBook: Author / Title / Books 1 and 2",
+          "role": "support"
+        },
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+          "role": "support"
+        }
+      ],
+      "bibliography_status": "初刊・標題年・章追加・オンライン本文版を別々に記録。日本語書名と別名の採用は人の確認待ち"
+    },
+    {
+      "id": "locke-question-identity",
+      "type": "question",
+      "label": "忘れても私は同じ私なのか？",
+      "nature": "editorial",
+      "summary_ja": "一時的未想起と回復不能な断絶を分ける入口。",
+      "basis": [
+        "locke-claim-distinction",
+        "locke-claim-memory-limit",
+        "locke-claim-permanent-oblivion"
+      ],
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed headings 12 and 22",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-personal-identity",
+      "type": "concept",
+      "label": "人格同一性（ロック）",
+      "aliases": ["personal identity"],
+      "definition_scope": "『人間知性論』第二巻第二十七章の人格同一性",
+      "summary_ja": "意識による自己の同一性。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-person",
+      "type": "concept",
+      "label": "人格・person（ロック）",
+      "aliases": ["person"],
+      "definition_scope": "第二巻第二十七章のperson。日本語「人格」は仮の見出しで、人間・実体と区別する",
+      "summary_ja": "自身を同じ自身と考えうる存在。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-man",
+      "type": "concept",
+      "label": "人間・man（ロック）",
+      "aliases": ["man"],
+      "definition_scope": "第二巻第二十七章のman。人格の同一性とは別に読む",
+      "summary_ja": "生命の継続で考える人間。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 7: The Identity of Man",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-substance",
+      "type": "concept",
+      "label": "実体（ロック）",
+      "aliases": ["substance"],
+      "definition_scope": "第二巻第二十三章の一般的実体の観念を、第二十七章の同一性区別の背景として読む",
+      "summary_ja": "性質を支える未知のものの想定。",
+      "evidence": [
+        {
+          "source": "locke-source-substance",
+          "locator": "Locke.EHU.2.23.1–2",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-consciousness",
+      "type": "concept",
+      "label": "意識（ロック）",
+      "aliases": ["consciousness"],
+      "definition_scope": "第二巻第一章の意識の語義を、第二十七章の人格同一性の背景として読む。章・版間の対応は確認待ち",
+      "summary_ja": "自分の心で起こることの知覚。",
+      "evidence": [
+        {
+          "source": "locke-source-consciousness-background",
+          "locator": "Locke.EHU.2.1.19",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-memory",
+      "type": "concept",
+      "label": "記憶（ロック）",
+      "aliases": ["memory"],
+      "definition_scope": "第二巻第十章の記憶能力。第二十七章の意識と同一語扱いしない",
+      "summary_ja": "観念を再び心に呼び戻す能力。",
+      "evidence": [
+        {
+          "source": "locke-source-memory",
+          "locator": "Locke.EHU.2.10.2",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-life",
+      "type": "concept",
+      "label": "生命の継続（ロック）",
+      "aliases": ["continued life"],
+      "definition_scope": "第二巻第二十七章で身体・動物・人間の同一性を考える基準",
+      "summary_ja": "身体の組織を通じる生命。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed headings 5–7",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-accountability",
+      "type": "concept",
+      "label": "行為の帰属と責任（ロック）",
+      "aliases": ["accountability", "forensic term"],
+      "definition_scope": "第二巻第二十七章のpersonの法廷的用法。現代の法制度を定義しない",
+      "summary_ja": "行為の帰属と責任。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 28: Person a forensic Term",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-concept-prince-cobbler",
+      "type": "concept",
+      "label": "王子と靴職人の想定（ロック）",
+      "aliases": ["prince and cobbler"],
+      "definition_scope": "第二巻第二十七章の仮定的な事例を読むための編集見出し",
+      "summary_ja": "人格と人間を分ける想定。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 17: The body, as well as the soul, goes to the making of a Man",
+          "role": "support"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "locke-source-pg-text",
+      "title": "An Essay Concerning Humane Understanding, Volume I — Book II, Chapter XXVII and Epistle to the Reader",
+      "author": "John Locke",
+      "host": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/files/10615/10615-h/10615-h.htm",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "edition": "Gutenberg #10615の表示本文。カタログはBased on the 2nd Editionと記すが、本文表題のMDCXCを第二版の年として採用しない。底本の原本・編者・本文改変と節番号の完全な対応は未照合。",
+      "original_work": {
+        "title": "An Essay Concerning Humane Understanding",
+        "author": "John Locke",
+        "original_publication": "1689年12月（別資料の編集版情報で照合）",
+        "original_title_page_year": 1690,
+        "identity_chapter_added_edition": "second",
+        "identity_chapter_added_year": 1694,
+        "metadata_basis": [
+          "locke-claim-first-publication",
+          "locke-claim-second-edition",
+          "locke-claim-chapter-added"
+        ]
+      },
+      "observed_online_edition": {
+        "ebook_id": 10615,
+        "displayed_title_year": "MDCXC",
+        "catalog_basis": "Based on the 2nd Edition, Books 1 and 2",
+        "critical_edition_alignment": "未照合",
+        "numbering": "本バッチのlocatorは表示見出し番号。慣用的なII.27の節番号と同じと仮定しない。"
+      },
+      "examined_locations": [
+        "Epistle to the Reader: In the Second Edition I added as followeth; paragraph on one whole new chapter concerning Identity",
+        "Book II, CHAPTER XXVII, displayed headings 5–8, 11–12, 17, 22, 24–25, 28"
+      ],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false,
+      "quote_words_stored": 0
+    },
+    {
+      "id": "locke-source-pg-catalog",
+      "title": "Project Gutenberg #10615 catalog — An Essay Concerning Humane Understanding, Volume 1",
+      "author": "Project Gutenberg catalog",
+      "host": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/ebooks/10615",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "edition": "カタログの書誌欄のみ使用。自動生成要約は根拠にしない。",
+      "source_type": "catalog_metadata",
+      "observed_online_edition": {
+        "ebook_id": 10615,
+        "release_date": "2004-01-01",
+        "last_update": "2026-02-20",
+        "credits": ["Steve Harris", "David Widger"],
+        "catalog_note": "MDCXC, Based on the 2nd Edition, Books 1 and 2"
+      },
+      "examined_locations": [
+        "About this eBook: Author, Title, Credits, Release Date, Last Update, Copyright"
+      ],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "locke-source-memory",
+      "title": "An Essay Concerning Humane Understanding — Book II, Chapter 10, Of Retention",
+      "author": "John Locke",
+      "host": "English Philosophical Texts Online",
+      "url": "https://englishphilosophy.org/locke/ehu/2/10",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "edition": "サイトはcopytextを1700年第四版と表示し、EEBO-TCP第一版転写から第四版へ合わせる変更を進めていると説明する。確定校訂版と扱わない。",
+      "observed_online_edition": {
+        "editor_or_maintainer": "Amyas Merivale",
+        "displayed_copytext": 1700,
+        "transcription_origin": "EEBO-TCP first edition",
+        "alignment_status": "サイト記載では修正進行中"
+      },
+      "examined_locations": [
+        "Locke.EHU.2.10.1–2",
+        "Copytext / source / edition note"
+      ],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "locke-source-substance",
+      "title": "An Essay Concerning Humane Understanding — Book II, Chapter 23, Of Our Complex Ideas of Substances",
+      "author": "John Locke",
+      "host": "English Philosophical Texts Online",
+      "url": "https://englishphilosophy.org/locke/ehu/2/23",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "edition": "サイトはcopytextを1700年第四版と表示し、第一版転写からの版対応を進めていると説明する。第27章のGutenberg表示本文と同じ底本とは扱わない。",
+      "observed_online_edition": {
+        "editor_or_maintainer": "Amyas Merivale",
+        "displayed_copytext": 1700,
+        "transcription_origin": "EEBO-TCP first edition",
+        "alignment_status": "サイト記載では修正進行中"
+      },
+      "examined_locations": ["Locke.EHU.2.23.1–2 and 5"],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "locke-source-edition-note",
+      "title": "An Essay Concerning Humane Understanding — editor's edition and publication note",
+      "author": "English Philosophical Texts Online",
+      "host": "English Philosophical Texts Online",
+      "url": "https://englishphilosophy.org/locke/ehu",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "edition": "サイト編集者による刊行・転写・底本の説明。原典本文からの発言とは区別する。",
+      "source_type": "editorial_bibliography",
+      "examined_locations": [
+        "Published: 1689; Copytext: 1700; paragraph beginning Locke's Essay was first published"
+      ],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "locke-source-second-edition-catalog",
+      "title": "An essay concerning humane understanding — second edition, 1694, OCLC 3075278",
+      "author": "OCLC WorldCat catalog",
+      "host": "WorldCat",
+      "url": "https://search.worldcat.org/title/An-essay-concerning-humane-understanding/oclc/3075278",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "edition": "1694年第二版の目録レコード。原本全体や版間異同を確認したものではない。",
+      "source_type": "catalog_metadata",
+      "examined_locations": [
+        "Print Book, English, 1694; Edition: 2d ed.; Publisher; OCLC Number"
+      ],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    },
+    {
+      "id": "locke-source-consciousness-background",
+      "title": "An Essay Concerning Humane Understanding — Book II, Chapter 1, Of Ideas in general, and their Original",
+      "author": "John Locke",
+      "host": "English Philosophical Texts Online",
+      "url": "https://englishphilosophy.org/locke/ehu/2/1",
+      "language": "en",
+      "accessed_date": "2026-10-03",
+      "edition": "サイトはcopytextを1700年第四版と表示し、第一版転写からの版対応を進めていると説明する。第27章のGutenberg表示本文と同じ底本とは扱わない。",
+      "observed_online_edition": {
+        "editor_or_maintainer": "Amyas Merivale",
+        "displayed_copytext": 1700,
+        "transcription_origin": "EEBO-TCP first edition",
+        "alignment_status": "サイト記載では修正進行中"
+      },
+      "examined_locations": [
+        "Locke.EHU.2.1.19, sentence defining Consciousness"
+      ],
+      "usage_permissions": {
+        "internal_storage": "unknown",
+        "quote_display": "unknown",
+        "full_text_publication": "unknown"
+      },
+      "stored_full_text": false
+    }
+  ],
+  "assertion_candidates": [
+    {
+      "id": "locke-claim-distinction",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-personal-identity",
+      "text_ja": "ロックは人格・人間・実体の同一性を区別する。",
+      "context": "概念区別の探索用。",
+      "limit": "三語を同一ノードへ統合しない。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 8: Idea of Identity suited to the Idea it is applied to",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-person",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-person",
+      "text_ja": "personを理性・反省・自己意識をもつ思考存在とする。",
+      "context": "当該章の語義。",
+      "limit": "現代の人格概念の定義へ拡張しない。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-man",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-man",
+      "text_ja": "同じmanを、組織された身体で続く同じ生命として捉える。",
+      "context": "人格との比較用。",
+      "limit": "人格の基準へ置換しない。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 7: The Identity of Man",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-consciousness",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-personal-identity",
+      "text_ja": "人格同一性を、意識が過去へ及ぶ範囲に置く。",
+      "context": "同じ意識の議論。",
+      "limit": "単純な記憶説という呼称を自動付与しない。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 11: Personal Identity",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-memory-limit",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-memory",
+      "text_ja": "全過去の同時想起ではなく、同じ意識での想起可能性を扱う。",
+      "context": "一時的未想起の検討。",
+      "limit": "永久的忘却の記述と併読し、あらゆる忘却で人格が保たれるとは解さない。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 12: Consciousness makes personal Identity",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-permanent-oblivion",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-personal-identity",
+      "text_ja": "回復不能な過去意識の断絶を仮定し、同じmanが異なるpersonとなる場合を論じる。",
+      "context": "永久的忘却への応答。",
+      "limit": "一時的未想起と分ける。健忘の医学的診断へ転用しない。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 22: Absolute oblivion separates what is thus forgotten from the person, but not from the man; paragraphs on beyond a possibility of retrieving and distinct incommunicable consciousness",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-prince-cobbler",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-prince-cobbler",
+      "text_ja": "王子の魂が過去意識とともに靴職人の身体へ移る仮定で、人格と人間を区別する。",
+      "context": "本文の思考実験。",
+      "limit": "魂の移動を事実化しない。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 17: The body, as well as the soul, goes to the making of a Man, prince/cobbler paragraph",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-accountability",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-accountability",
+      "text_ja": "personを行為の帰属と責任に関わる法廷的語とする。",
+      "context": "原典の責任論。",
+      "limit": "現行法の解説として使わない。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 28: Person a forensic Term",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-court-limit",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-accountability",
+      "text_ja": "人間の法には真の忘却を見分ける限界があると説明する。",
+      "context": "酩酊・睡眠の責任への応答。",
+      "limit": "本文の法廷と神の審判を区別する。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "Book II, CHAPTER XXVII, displayed heading 24, paragraph beginning Human laws punish both",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-memory-definition",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-memory",
+      "text_ja": "記憶を、見えなくなった観念を再び心に呼び戻す能力として扱う。",
+      "context": "第十章の観念保持論。",
+      "limit": "これだけから第27章の意識と記憶を同一視しない。",
+      "evidence": [
+        {
+          "source": "locke-source-memory",
+          "locator": "Locke.EHU.2.10.2",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-substance-background",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-substance",
+      "text_ja": "一般的実体の観念を、性質の未知の支えを想定するものと説明する。",
+      "context": "第二十三章の背景説明。",
+      "limit": "実体の不存在を述べたものとしない。",
+      "evidence": [
+        {
+          "source": "locke-source-substance",
+          "locator": "Locke.EHU.2.23.1–2; 5",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-first-publication",
+      "kind": "claim",
+      "nature": "fact_report",
+      "attribution": "English Philosophical Texts Online edition note",
+      "subject": "locke-work",
+      "text_ja": "同サイトの編集版情報は、初刊を1689年12月、標題頁の年を1690年と区別する。",
+      "context": "初刊年と表示年の管理。",
+      "limit": "初版原本・刊行記録の再確認待ち。第27章の刊行年にしない。",
+      "evidence": [
+        {
+          "source": "locke-source-edition-note",
+          "locator": "Published / Copytext / publication paragraph",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-second-edition",
+      "kind": "claim",
+      "nature": "fact_report",
+      "attribution": "OCLC WorldCat",
+      "subject": "locke-work",
+      "text_ja": "WorldCatは第二版を1694年、ロンドン刊として記録する。",
+      "context": "OCLC 3075278の目録。",
+      "limit": "目録は本文の版間異同を保証しない。",
+      "evidence": [
+        {
+          "source": "locke-source-second-edition-catalog",
+          "locator": "Edition: 2d ed.; Print Book, English, 1694; Publisher",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-chapter-added",
+      "kind": "claim",
+      "nature": "fact_report",
+      "attribution": "John Locke, Epistle to the Reader",
+      "subject": "locke-work",
+      "text_ja": "ロックは同一性の章を第二版で追加したと記す。",
+      "context": "著者の読者への書簡。",
+      "limit": "著作初刊年と章追加年を分ける。",
+      "evidence": [
+        {
+          "source": "locke-source-pg-text",
+          "locator": "THE EPISTLE TO THE READER, In the Second Edition I added as followeth; next paragraph on one whole new chapter concerning Identity",
+          "role": "support"
+        }
+      ]
+    },
+    {
+      "id": "locke-claim-consciousness-background",
+      "kind": "claim",
+      "nature": "position",
+      "attribution": "John Locke",
+      "subject": "locke-concept-consciousness",
+      "text_ja": "第一章では意識を、自分の心で起こることの知覚と説明する。",
+      "context": "第二十七章の背景の語義。",
+      "limit": "この語義のみで人格同一性の全議論を代表させない。",
+      "evidence": [
+        {
+          "source": "locke-source-consciousness-background",
+          "locator": "Locke.EHU.2.1.19",
+          "role": "support"
+        }
+      ]
+    }
+  ],
+  "relationship_candidates": [
+    {
+      "from": "locke-question-identity",
+      "to": "locke-concept-personal-identity",
+      "nature": "editorial",
+      "reason": "一時的未想起と回復不能な断絶を区別し、人格と人間の同一性を読む。",
+      "basis": [
+        "locke-claim-distinction",
+        "locke-claim-memory-limit",
+        "locke-claim-permanent-oblivion"
+      ]
+    },
+    {
+      "from": "locke-concept-personal-identity",
+      "to": "locke-person",
+      "nature": "editorial",
+      "reason": "この問いの一つの議論としてロックを読む。",
+      "basis": ["locke-claim-consciousness"]
+    },
+    {
+      "from": "locke-person",
+      "to": "locke-work",
+      "nature": "editorial",
+      "reason": "記述の掲載作品と版の確認へ進む。",
+      "basis": ["locke-claim-chapter-added", "locke-claim-second-edition"]
+    },
+    {
+      "from": "locke-work",
+      "to": "locke-concept-person",
+      "nature": "editorial",
+      "reason": "当該章のpersonの意味を先に確かめる。",
+      "basis": ["locke-claim-person"]
+    },
+    {
+      "from": "locke-concept-person",
+      "to": "locke-concept-man",
+      "nature": "editorial",
+      "reason": "同一性を問う対象の違いを比較する。",
+      "basis": [
+        "locke-claim-distinction",
+        "locke-claim-man",
+        "locke-claim-permanent-oblivion"
+      ]
+    },
+    {
+      "from": "locke-concept-person",
+      "to": "locke-concept-substance",
+      "nature": "editorial",
+      "reason": "実体との区別と背景の語義を確認する。",
+      "basis": ["locke-claim-distinction", "locke-claim-substance-background"]
+    },
+    {
+      "from": "locke-concept-personal-identity",
+      "to": "locke-concept-consciousness",
+      "nature": "editorial",
+      "reason": "当該章が使う意識の役割へ進む。",
+      "basis": [
+        "locke-claim-consciousness",
+        "locke-claim-person",
+        "locke-claim-consciousness-background"
+      ]
+    },
+    {
+      "from": "locke-concept-consciousness",
+      "to": "locke-concept-memory",
+      "nature": "editorial",
+      "reason": "想起可能性と回復不能な断絶を併読し、意識と記憶を同一視しない。",
+      "basis": [
+        "locke-claim-memory-limit",
+        "locke-claim-memory-definition",
+        "locke-claim-permanent-oblivion"
+      ]
+    },
+    {
+      "from": "locke-concept-man",
+      "to": "locke-concept-life",
+      "nature": "editorial",
+      "reason": "人間の同一性を考える基準を辿る。",
+      "basis": ["locke-claim-man"]
+    },
+    {
+      "from": "locke-concept-person",
+      "to": "locke-concept-accountability",
+      "nature": "editorial",
+      "reason": "人格の用語が責任にどう関わるか読む。",
+      "basis": ["locke-claim-accountability", "locke-claim-court-limit"]
+    },
+    {
+      "from": "locke-concept-person",
+      "to": "locke-concept-prince-cobbler",
+      "nature": "editorial",
+      "reason": "人格と人間の区別を仮定的な事例で検討する。",
+      "basis": ["locke-claim-prince-cobbler", "locke-claim-distinction"]
+    }
+  ],
+  "temporal_candidates": [],
+  "review_requirements": [
+    "Gutenberg表示見出し番号と校訂版の慣用節番号を対応付ける。番号を黙って変換しない。",
+    "第27章本文の正式な底本、転写、追加・改訂と第2版・第4版との対応を照合する。",
+    "person/man/substance/consciousnessの日本語見出し・要約・強さを人が照合する。",
+    "意識と記憶の関係に関する解釈は、人の確認なく単純な記憶理論にまとめない。",
+    "初刊1689・標題年1690・第二版1694・章追加を、確定書誌と原本で別々に照合する。",
+    "既存ノード・資料との重複、関係述語、公開用途・利用条件を確認する。",
+    "表示見出し12の一時的未想起と、22の回復不能な過去意識の断絶を併読し、日本語の留保を人が確認する。"
+  ],
+  "acceptance_checks": [
+    "node_candidatesは12項目で、すべてlocke-接頭辞をもつ。",
+    "編集質問と編集関係のbasisは本バッチのAssertionを参照する。",
+    "人格・人間・実体は別ノードであり、同じという関係を登録しない。",
+    "王子と靴職人は仮定として保つ。歴史的事件や影響関係へ変換しない。",
+    "資料を撤回した候補は下流の検索・図・本文に残さない。",
+    "人の承認待ち、DB未登録、未公開を保持する。",
+    "一時的未想起と回復不能な意識の断絶を別Assertionに保ち、あらゆる忘却で人格が保たれるとは表示しない。"
+  ],
+  "next_action": "校訂版・日本語要約・書誌の人による確認後、個別の候補と依存関係をDB下書き形式へ対応付ける。"
+}
