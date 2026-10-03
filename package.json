@@ -22,7 +22,10 @@
     "content:release": "node scripts/build-public-release.mjs",
     "content:review": "node scripts/content-review.mjs",
     "content:preview": "node scripts/serve-content-review.mjs",
-    "format:check": "prettier --check src scripts/dev-local.mjs tests/db/editorial.mjs tests/db/editor-api.mjs tests/fixtures tests/web next.config.ts tsconfig.json package.json"
+    "format:check": "prettier --check src scripts/dev-local.mjs scripts/build-brand-assets.mjs tests/db/editorial.mjs tests/db/editor-api.mjs tests/fixtures tests/web next.config.ts tsconfig.json package.json",
+    "test:entry": "node tests/entry.test.mjs",
+    "test:entry:http": "node tests/web/entry.mjs",
+    "brand:build": "node scripts/build-brand-assets.mjs"
   },
   "devDependencies": {
     "@types/node": "26.6.4",
@@ -31,6 +34,7 @@
     "@types/react-dom": "19.3.0",
     "embedded-postgres": "18.4.0-beta.17",
     "prettier": "3.9.9",
+    "sharp": "0.35.5",
     "supabase": "2.119.0",
     "typescript": "7.0.2"
   },

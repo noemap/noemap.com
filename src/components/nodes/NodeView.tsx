@@ -6,35 +6,37 @@ import {
   type NeighborPage,
 } from "../../domain/nodes";
 import { Neighborhood } from "./Neighborhood";
-function httpsSourceUrl(value: string | null) {
-  if (!value) return null;
-  try {
-    const url = new URL(value);
-    return url.protocol === "https:" && !url.username && !url.password
-      ? url.href
-      : null;
-  } catch {
-    return null;
-  }
-}
+import { EntryReturnLink } from "../entry/EntryReturnLink";
+import type { classificationFor } from "../../domain/entry";
+import {
+  questionPerspectives,
+  QuestionPerspectives,
+  ReadingContinuation,
+  type ReadingRoute,
+} from "../reading/ReadingGuides";
+import { articleSources, SourceReferences } from "../reading/SourceReferences";
+import styles from "../reading/Reading.module.css";
 export function NodeView({
   node,
   neighbors,
+  classification,
+  readingRoutes = [],
 }: {
   node: NodeDocument;
   neighbors: NeighborPage;
+  classification?: ReturnType<typeof classificationFor>;
+  readingRoutes?: ReadingRoute[];
 }) {
-  const sources = new Map(
-    node.article.sections.flatMap((section) =>
-      section.assertions.flatMap((assertion) =>
-        assertion.sources.map(
-          (source) => [source.source_revision_id, source] as const,
-        ),
-      ),
-    ),
-  );
+  const sources = articleSources(node);
+  const perspectives = questionPerspectives(node, neighbors, readingRoutes);
+  const perspectiveIds = new Set(perspectives.map((card) => card.node.id));
   return (
-    <>
+    <div className={styles.page}>
+      <EntryReturnLink
+        nodeId={node.id}
+        fallbackHref={`/${nodeCollections[node.type]}`}
+        fallbackLabel={nodeTypeNames[node.type]}
+      />
       <nav className="node-breadcrumb" aria-label="現在位置">
         <a href="/">人間とは何か？</a>
         <span aria-hidden="true">/</span>
@@ -45,14 +47,48 @@ export function NodeView({
       <div className="article-heading">
         <span className="type-label">{nodeTypeNames[node.type]}</span>
         <h1>{node.title}</h1>
+        <p className="node-introduction">{node.summary}</p>
+        {classification ? (
+          <div className="entry-node-meta">
+            {classification.themes.map((t) => (
+              <a key={t.id} href={`/themes/${t.slug}`}>
+                {t.title}
+              </a>
+            ))}
+            {classification.disciplines.map((d) => (
+              <a key={d.id} href={`/explore?discipline=${d.id}`}>
+                {d.title}
+              </a>
+            ))}
+            {classification.updatedAt ? (
+              <span>
+                更新日：
+                <time dateTime={classification.updatedAt}>
+                  {classification.updatedAt}
+                </time>
+              </span>
+            ) : null}
+          </div>
+        ) : null}
         {node.aliases.length ? (
           <p className="muted">別名：{node.aliases.join("、")}</p>
         ) : null}
-        <div className="counts">
-          <span>{node.article.sections.length}件の説明</span>
-          <span>{sources.size}件の資料</span>
-        </div>
+        {sources.length ? (
+          <a className={styles.sourceCount} href="#reading-sources">
+            {sources.length}つの参照資料から読む
+            <span aria-hidden="true">↓</span>
+          </a>
+        ) : null}
       </div>
+      <nav className={styles.readingNav} aria-label="このページの読み方">
+        {perspectives.length ? (
+          <a href="#reading-perspectives">考え方を見てみる</a>
+        ) : null}
+        {sources.length ? <a href="#reading-sources">出典を確かめる</a> : null}
+        {neighbors.items.length || neighbors.offset ? (
+          <a href="#connections">つながりをたどる</a>
+        ) : null}
+      </nav>
       <div className="node-grid">
         <article className="reading">
           {node.article.sections.length > 1 ? (
@@ -69,16 +105,31 @@ export function NodeView({
               </ol>
             </nav>
           ) : null}
+          <QuestionPerspectives cards={perspectives} />
           {node.article.sections.map((section, index) => {
             const [heading, ...paragraphs] = section.text.split("\n");
+            const content = paragraphs.filter(Boolean);
+            const repeatsIntroduction =
+              content[0]?.trim() === node.summary.trim();
+            const visibleParagraphs = repeatsIntroduction
+              ? content.slice(1)
+              : content;
+            const visibleHeading =
+              heading === "概要" && repeatsIntroduction
+                ? visibleParagraphs.length
+                  ? "読み方と出典"
+                  : node.type === "question"
+                    ? "この問いの出典"
+                    : "このページの出典"
+                : heading;
             return (
               <section
                 id={`section-${index}`}
                 className="article-section"
                 key={section.revision_id}
               >
-                <h2>{heading}</h2>
-                {paragraphs.filter(Boolean).map((paragraph, paragraphIndex) => (
+                <h2>{visibleHeading}</h2>
+                {visibleParagraphs.map((paragraph, paragraphIndex) => (
                   <p key={paragraphIndex}>{paragraph}</p>
                 ))}
                 {section.assertions.length ? (
@@ -116,6 +167,9 @@ export function NodeView({
                             (attribution, attributionIndex) => (
                               <p className="small" key={attributionIndex}>
                                 発言・考え方の帰属：{attribution.speaker}
+                                {attribution.context ? (
+                                  <span>{attribution.context}</span>
+                                ) : null}
                               </p>
                             ),
                           )}
@@ -130,34 +184,13 @@ export function NodeView({
               </section>
             );
           })}
-          {sources.size ? (
-            <section>
-              <h2>参照資料</h2>
-              <ol className="source-list">
-                {Array.from(sources.values()).map((source) => {
-                  const url = httpsSourceUrl(source.url);
-                  return (
-                    <li key={source.source_revision_id}>
-                      {source.citation}
-                      <span className="small">{source.locator}</span>
-                      {source.edition ? (
-                        <span className="small">版：{source.edition}</span>
-                      ) : null}
-                      {url ? (
-                        <a
-                          className="source-link"
-                          href={url}
-                          rel="noopener noreferrer"
-                        >
-                          掲載元を読む →
-                        </a>
-                      ) : null}
-                    </li>
-                  );
-                })}
-              </ol>
-            </section>
-          ) : null}
+          <ReadingContinuation
+            node={node}
+            neighbors={neighbors}
+            routes={readingRoutes}
+            perspectiveIds={perspectiveIds}
+          />
+          <SourceReferences sources={sources} />
           {node.dates?.length ? (
             <section className="node-dates">
               <h2>年代</h2>
@@ -178,6 +211,6 @@ export function NodeView({
           <Neighborhood node={node} page={neighbors} />
         </aside>
       </div>
-    </>
+    </div>
   );
 }

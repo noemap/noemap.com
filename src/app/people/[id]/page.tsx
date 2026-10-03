@@ -6,3 +6,12 @@ export default function People(props: {
 }) {
   return <NodeRoute collection="people" {...props} />;
 }
+
+import { nodeMetadata } from "../../../server/node-metadata";
+export function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  return nodeMetadata("people", params);
+}

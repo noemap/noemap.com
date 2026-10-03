@@ -1,0 +1,164 @@
+.searchForm {
+  padding: 24px;
+  margin: 24px 0 36px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+}
+
+.searchRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.searchForm .queryField,
+.searchForm .filterField {
+  margin: 0;
+  font-size: 14px;
+}
+
+.searchForm .queryField input,
+.searchForm .filterField select {
+  margin-top: 8px;
+  min-height: 48px;
+  border-color: var(--line);
+  border-radius: 10px;
+}
+
+.searchForm .queryField input {
+  font-size: 16px;
+  padding-inline: 16px;
+}
+
+.searchForm .queryField input:focus,
+.searchForm .filterField select:focus {
+  border-color: var(--green);
+}
+
+.searchForm .searchButton {
+  gap: 10px;
+  min-height: 48px;
+  border-radius: 10px;
+  padding-inline: 22px;
+  font-size: 15px;
+}
+
+.searchButton svg {
+  flex-shrink: 0;
+}
+
+.searchForm .hint {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 10px 0 12px;
+}
+
+.filters {
+  border-top: 1px solid var(--line);
+}
+
+.filterSummary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 0 0;
+  list-style: none;
+  color: var(--green);
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filterSummary::-webkit-details-marker {
+  display: none;
+}
+
+.filterSummary:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.conditionCount {
+  padding: 1px 8px;
+  background: var(--pale);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.chevron {
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.filters[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.filterFields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.filterFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 16px;
+  padding-top: 8px;
+}
+
+.filterFooter p {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filterFooter a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .searchForm {
+    padding: 18px;
+    margin-bottom: 28px;
+  }
+
+  .searchRow {
+    gap: 8px;
+  }
+
+  .searchForm .searchButton {
+    padding-inline: 16px;
+  }
+
+  .searchButton svg {
+    display: none;
+  }
+
+  .filterFields {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .searchButton,
+  .queryField input,
+  .filterField select {
+    transition:
+      border-color 0.15s,
+      background-color 0.15s;
+  }
+}

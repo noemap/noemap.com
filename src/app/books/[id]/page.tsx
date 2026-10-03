@@ -6,3 +6,12 @@ export default function Books(props: {
 }) {
   return <NodeRoute collection="books" {...props} />;
 }
+
+import { nodeMetadata } from "../../../server/node-metadata";
+export function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  return nodeMetadata("books", params);
+}

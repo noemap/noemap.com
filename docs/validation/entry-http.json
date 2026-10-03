@@ -1,0 +1,42 @@
+{
+  "origin": "http://127.0.0.1:4351",
+  "checked_at": "2026-10-03T14:17:59.246Z",
+  "checks": [
+    {
+      "name": "eight cards precede search and use real published article links",
+      "status": "passed"
+    },
+    {
+      "name": "theme list and detail pages resolve without dummy article content",
+      "status": "passed"
+    },
+    {
+      "name": "direct question URL has sources, metadata, update date and valid return link",
+      "status": "passed"
+    },
+    {
+      "name": "theme, discipline, type and alias search compose",
+      "status": "passed"
+    },
+    {
+      "name": "unknown classification query returns 400, not an unfiltered result",
+      "status": "passed"
+    },
+    {
+      "name": "search disclosures and clear links preserve the keyword",
+      "status": "passed"
+    },
+    {
+      "name": "a discovered public question is restored on a direct return URL",
+      "status": "passed"
+    },
+    {
+      "name": "explore and empty search provide continuing navigation",
+      "status": "passed"
+    },
+    {
+      "name": "fresh sitemap contains public canonical routes and excludes management and placeholder topics",
+      "status": "passed"
+    }
+  ]
+}

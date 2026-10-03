@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "themes": [
+    {
+      "id": "body",
+      "slug": "body",
+      "title": "からだと生命",
+      "shortLabel": "からだと生命",
+      "prompt": "生きているってどういうこと？",
+      "icon": "activity",
+      "order": 0,
+      "showOnHome": true
+    },
+    {
+      "id": "mind",
+      "slug": "mind",
+      "title": "こころと意識",
+      "shortLabel": "こころと意識",
+      "prompt": "こころはどこにある？",
+      "icon": "brain",
+      "order": 1,
+      "showOnHome": true
+    },
+    {
+      "id": "self",
+      "slug": "self",
+      "title": "自分と他者",
+      "shortLabel": "自分と他者",
+      "prompt": "自分らしさって何だろう？",
+      "icon": "users",
+      "order": 2,
+      "showOnHome": true
+    },
+    {
+      "id": "society",
+      "slug": "society",
+      "title": "社会と文明",
+      "shortLabel": "社会と文明",
+      "prompt": "なぜ人は社会をつくる？",
+      "icon": "landmark",
+      "order": 3,
+      "showOnHome": true
+    },
+    {
+      "id": "ethics",
+      "slug": "ethics",
+      "title": "善悪と正義",
+      "shortLabel": "善悪と正義",
+      "prompt": "正しさは誰が決める？",
+      "icon": "scale",
+      "order": 4,
+      "showOnHome": true
+    },
+    {
+      "id": "happiness",
+      "slug": "happiness",
+      "title": "幸福と意味",
+      "shortLabel": "幸福と意味",
+      "prompt": "幸せに生きるってどういうこと？",
+      "icon": "sun",
+      "order": 5,
+      "showOnHome": true
+    },
+    {
+      "id": "death",
+      "slug": "death",
+      "title": "死と信仰",
+      "shortLabel": "死と信仰",
+      "prompt": "死をどう受け止める？",
+      "icon": "hourglass",
+      "order": 6,
+      "showOnHome": true
+    },
+    {
+      "id": "knowledge",
+      "slug": "knowledge",
+      "title": "知識と真実",
+      "shortLabel": "知識と真実",
+      "prompt": "本当だとどう分かる？",
+      "icon": "compass",
+      "order": 7,
+      "showOnHome": true
+    }
+  ],
+  "disciplines": [
+    {
+      "id": "philosophy",
+      "title": "哲学"
+    },
+    {
+      "id": "psychology",
+      "title": "心理学"
+    },
+    {
+      "id": "religion",
+      "title": "宗教学"
+    },
+    {
+      "id": "history",
+      "title": "歴史学"
+    },
+    {
+      "id": "biology",
+      "title": "生物学"
+    },
+    {
+      "id": "neuroscience",
+      "title": "脳科学"
+    },
+    {
+      "id": "sociology",
+      "title": "社会学"
+    }
+  ],
+  "groups": [
+    {
+      "id": "identity",
+      "title": "変わっても、同じ自分？",
+      "themeIds": ["mind", "self"],
+      "overviewNodeId": "b9fe47dc-fcf6-46db-a2bd-71d39d731348",
+      "questionIds": [
+        "b9fe47dc-fcf6-46db-a2bd-71d39d731348",
+        "58c91402-263b-45a6-8386-64bbde1003a8"
+      ],
+      "orderByTheme": {
+        "mind": 0,
+        "self": 0
+      }
+    },
+    {
+      "id": "thinking-self",
+      "title": "「私」とは何か？",
+      "themeIds": ["mind", "self"],
+      "overviewNodeId": "4f43d8f5-7bcf-44b1-a763-32765ca427a3",
+      "questionIds": ["4f43d8f5-7bcf-44b1-a763-32765ca427a3"],
+      "orderByTheme": {
+        "mind": 1,
+        "self": 1
+      }
+    },
+    {
+      "id": "certainty",
+      "title": "何を確かなものと考える？",
+      "themeIds": ["knowledge"],
+      "overviewNodeId": "b2687749-2f67-4664-989d-3f5f25fc11b2",
+      "questionIds": ["b2687749-2f67-4664-989d-3f5f25fc11b2"],
+      "orderByTheme": {
+        "knowledge": 0
+      }
+    }
+  ],
+  "classifications": [
+    {
+      "nodeId": "a357de66-770a-4fdd-8d6a-46d34aac63c0",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "e54e1f8d-814b-46ad-bc29-49ab411d1ca1",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "60e7188d-b9c0-4364-bfdf-a31210dcc0f4",
+      "themeIds": ["knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "893d6d6d-4dbe-46b5-9694-e3099ec4fa30",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "e976661e-84cc-4bc4-9d03-337c6dc355ff",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "135c43c4-6b94-475d-aef4-3af0608c858a",
+      "themeIds": ["mind", "knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "f49dd791-156a-4252-815e-26740c660a0c",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "b2687749-2f67-4664-989d-3f5f25fc11b2",
+      "themeIds": ["knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "e18757b5-e428-45b3-8cf3-8924cd92232c",
+      "themeIds": ["knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "d833fa1d-737f-44c5-86ce-52fea570ae07",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "90e960c2-f075-4da7-9e5e-0e08032fdf37",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "838ee83e-50cf-4371-8162-dfc21f5bd7d8",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "96a34e4b-1f29-4f04-bdd8-a77487fc3728",
+      "themeIds": ["knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "42280cc6-2f99-4da7-84f3-dce1191def46",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "f4e29b76-03b6-4935-85ea-d0d94a531d5a",
+      "themeIds": ["self", "ethics"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "a4cbf9c4-94fc-450f-9023-623c39108639",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "4f43d8f5-7bcf-44b1-a763-32765ca427a3",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "b9fe47dc-fcf6-46db-a2bd-71d39d731348",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "fb074804-5ec1-4fae-bc9d-0479dbc46a71",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "33179a7c-80fd-4985-b5aa-73483581540a",
+      "themeIds": ["knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "42de8b69-30d6-43b1-9b1b-c0a1e029d141",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "4a34e31c-93ca-4732-8b3a-917f47299d06",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "f3220e2b-8503-4bde-b4f4-d259b88d8177",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "32060c0b-e2a4-4c87-8c79-89fdbeba1dc1",
+      "themeIds": ["body", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "6e8ba027-9002-406b-90c6-ea407889bfd3",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "4ca288b6-bb5b-4854-a153-cd742c7118f5",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "ebca9aa0-23e2-4bfa-ac0f-939a63df1e98",
+      "themeIds": ["body", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "b4c2236a-b6ab-4fe5-9e24-1b28cadb6fcc",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "18a5b0d3-4e23-4d51-aab0-17865f87302c",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "6dba032c-73fe-4836-92bb-fc3b2d8212cc",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "d7bcdf73-52ea-4207-8c27-293ec946a433",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "9a2848a5-17b8-47ce-bb62-c99dac1a1e7f",
+      "themeIds": ["knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "58c91402-263b-45a6-8386-64bbde1003a8",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "e4003538-30b6-4705-aceb-81cf70d0b747",
+      "themeIds": ["knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "55dc0099-f185-421b-b74d-e7d01f532dea",
+      "themeIds": ["mind", "self"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "nodeId": "c42352ac-a5e3-429b-8432-8025be9377ec",
+      "themeIds": ["knowledge"],
+      "disciplineIds": ["philosophy"],
+      "updatedAt": "2026-10-03"
+    }
+  ],
+  "routes": [
+    {
+      "id": "identity-reading",
+      "title": "「同じ私」を二人の資料で考える",
+      "description": "問いから人格同一性の概念へ進み、ロックとヒュームの資料を読み比べる編集上の読書ルートです。歴史的な影響関係を示すものではありません。",
+      "nodeIds": [
+        "b9fe47dc-fcf6-46db-a2bd-71d39d731348",
+        "4a34e31c-93ca-4732-8b3a-917f47299d06",
+        "f3220e2b-8503-4bde-b4f4-d259b88d8177",
+        "58c91402-263b-45a6-8386-64bbde1003a8"
+      ]
+    }
+  ]
+}
