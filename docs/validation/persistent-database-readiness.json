@@ -1,6 +1,6 @@
 {
   "prepared_at": "2026-10-03T03:38:02.882Z",
-  "status": "prepared_locally_pending_destination",
+  "status": "cloud_initialized_pending_production_deployment",
   "initial_public_nodes": 36,
   "human_review": "pending",
   "local_checks": {
@@ -14,16 +14,35 @@
     "unconfigured_manage_http": 4,
     "typecheck": "passed",
     "format": "passed",
-    "production_build": "passed"
+    "production_build": "passed",
+    "google_login_http": 5
   },
   "production": {
-    "supabase_project_selected": false,
-    "schema_applied": false,
-    "data_imported": false,
-    "editor_account_enrolled": false,
-    "environment_configured": false,
+    "supabase_project_selected": true,
+    "schema_applied": true,
+    "data_imported": true,
+    "editor_account_enrolled": true,
+    "environment_configured": true,
     "production_auth_verified": false,
-    "advisors_run": false,
-    "live_site_changed": false
+    "advisors_run": true,
+    "live_site_changed": false,
+    "oauth_redirect_configured": true
+  },
+  "updated_at": "2026-10-03T04:15:35.7083670Z",
+  "cloud_checks": {
+    "public_projection": "matches application projection",
+    "anonymous_read": "passed",
+    "private_rest_read": "denied",
+    "anonymous_editor_rpc": "denied",
+    "anonymous_direct_write": "denied",
+    "unenrolled_authenticated_editor_rpc": "denied",
+    "enrolled_editor_rpc": "passed using transaction-local identity; browser login pending"
+  },
+  "initial_cloud_content": {
+    "nodes": 36,
+    "sources": 20,
+    "assertions": 38,
+    "relationships": 38,
+    "temporal_records": 5
   }
 }

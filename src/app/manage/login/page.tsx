@@ -25,31 +25,38 @@ export default async function Login({
         <>
           {query.error ? (
             <p className="notice warning" role="alert">
-              ログインできませんでした。登録されたメールアドレスとパスワードを確認してください。
+              ログインできませんでした。登録されたアカウントで再度お試しください。
             </p>
           ) : null}
           <form method="post" action="/manage/auth">
-            <input type="hidden" name="action" value="login" />
-            <label htmlFor="manage-email">メールアドレス</label>
-            <input
-              id="manage-email"
-              name="email"
-              type="email"
-              autoComplete="username"
-              required
-              maxLength={254}
-            />
-            <label htmlFor="manage-password">パスワード</label>
-            <input
-              id="manage-password"
-              name="password"
-              type="password"
-              autoComplete="current-password"
-              required
-              maxLength={1024}
-            />
-            <button type="submit">ログイン</button>
+            <input type="hidden" name="action" value="google" />
+            <button type="submit">Googleでログイン</button>
           </form>
+          <details>
+            <summary>メールアドレスとパスワードでログイン</summary>
+            <form method="post" action="/manage/auth">
+              <input type="hidden" name="action" value="login" />
+              <label htmlFor="manage-email">メールアドレス</label>
+              <input
+                id="manage-email"
+                name="email"
+                type="email"
+                autoComplete="username"
+                required
+                maxLength={254}
+              />
+              <label htmlFor="manage-password">パスワード</label>
+              <input
+                id="manage-password"
+                name="password"
+                type="password"
+                autoComplete="current-password"
+                required
+                maxLength={1024}
+              />
+              <button type="submit">ログイン</button>
+            </form>
+          </details>
           <p className="field-note">
             アカウントの登録と編集権限は運営者が設定します。
           </p>

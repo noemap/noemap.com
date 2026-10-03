@@ -79,6 +79,24 @@ export async function POST(request: NextRequest) {
       );
       return response;
     }
+    if (form.get("action") === "google") {
+      const signedIn = await client.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: new URL("/manage/auth/callback", request.url).href,
+          skipBrowserRedirect: true,
+        },
+      });
+      if (signedIn.error || !signedIn.data.url) return response;
+      const destination = new URL(signedIn.data.url);
+      if (
+        destination.origin !== connection.url ||
+        destination.pathname !== "/auth/v1/authorize"
+      )
+        return response;
+      response.headers.set("Location", destination.href);
+      return response;
+    }
     if (form.get("action") !== "login")
       return new Response("この操作は許可されていません。", { status: 400 });
     const email = String(form.get("email") ?? "").trim();
