@@ -1,0 +1,29 @@
+{
+  "prepared_at": "2026-10-03T03:38:02.882Z",
+  "status": "prepared_locally_pending_destination",
+  "initial_public_nodes": 36,
+  "human_review": "pending",
+  "local_checks": {
+    "postgresql": 15,
+    "public_projection": 25,
+    "public_store": 7,
+    "editable": 6,
+    "manage_forms_and_backup": 9,
+    "existing_release_and_adapter": 32,
+    "public_http_regression": 10,
+    "unconfigured_manage_http": 4,
+    "typecheck": "passed",
+    "format": "passed",
+    "production_build": "passed"
+  },
+  "production": {
+    "supabase_project_selected": false,
+    "schema_applied": false,
+    "data_imported": false,
+    "editor_account_enrolled": false,
+    "environment_configured": false,
+    "production_auth_verified": false,
+    "advisors_run": false,
+    "live_site_changed": false
+  }
+}

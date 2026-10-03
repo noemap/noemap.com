@@ -11,11 +11,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body>
-        <div className="local-notice">
-          {local
-            ? "ローカル確認版・本文と資料は架空例"
-            : "公開試行版 · 出典を照合した要約 · 人による内容確認は準備中"}
-        </div>
+        {local ? (
+          <div className="local-notice">ローカル確認版・本文と資料は架空例</div>
+        ) : null}
         <div className="site-wrap">
           <header className="site-header">
             <a className="brand" href="/">
@@ -31,6 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <main>{children}</main>
           <footer>
             <span>NOEMAP</span>
+            <a href="/about">このサイトについて</a>
             <a href="/">人間とは何か？から始める</a>
           </footer>
         </div>

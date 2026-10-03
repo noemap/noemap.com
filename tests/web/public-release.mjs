@@ -33,11 +33,14 @@ async function json(path) {
 }
 
 await check(
-  "home serves real content with honest publication status",
+  "home serves real content and links to the site introduction",
   async () => {
     const page = await html("/");
-    assert.match(page, /公開試行版/);
-    assert.match(page, /人による内容確認/);
+    assert.doesNotMatch(page, /公開試行版|人による内容確認は準備中/);
+    assert.match(page, /href="\/about"/);
+    const about = await html("/about");
+    assert.match(about, /このサイトについて/);
+    assert.match(about, /問いから、考え方のつながりをたどる/);
     assert.doesNotMatch(page, /本文と資料は架空例|Coming Soon/);
     assert.doesNotMatch(page, /href="\/editor"/);
   },

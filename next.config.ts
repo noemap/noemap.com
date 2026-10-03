@@ -19,6 +19,10 @@ const config: NextConfig = {
         source: process.env.NOEMAP_RUNTIME_FILE ? "/:path*" : "/editor/:path*",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
+      {
+        source: "/manage/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
     ];
   },
 };
